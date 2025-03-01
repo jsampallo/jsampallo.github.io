@@ -1,0 +1,5 @@
+--text: hsl(0, 0%, 9%);
+--background: hsl(0, 0%, 100%);
+--primary: hsl(235, 100%, 80%);
+--secondary: hsl(0, 0%, 91%);
+--accent: hsl(305, 98%, 83%);

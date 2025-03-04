@@ -643,12 +643,17 @@ h2{
     }
     
     .ttl{
-        font-size: 2rem;
-        line-height: 2rem;
+        font-size: 1.5rem;
+        line-height: 1.5rem;
+        font-weight: 500;
     }
     
     .dsc{
         font-size: 1rem;
         margin-top: 0;
+    }
+
+    #tools p{
+        font-size: .90rem;
     }
 }

@@ -256,6 +256,7 @@ h2{
     align-items: center;
     padding: 2rem;
     text-decoration: none;
+    border: 1px solid red;
 }
 
 .card:hover{

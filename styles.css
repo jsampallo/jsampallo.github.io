@@ -1,0 +1,617 @@
+:root{
+    --black: #161616;
+    --red: #FF9999;
+    --pink: #FEABF7;
+    --green: #BDFFCB;
+    --blue: #99A1FF;
+    --grey: #7C7C7C;
+
+    --shadow: 0px 4px 10px rgba(0,0,0,0.3);
+    --noise: url("noise.png");
+    --maincard: document.getElementById("maincard");
+}
+
+html {
+    scroll-behavior: smooth;
+    font-size: 16px;
+}
+
+*{
+    padding: 0px;
+    margin: 0px;
+    box-sizing: border-box;
+    /* border: 1px solid red; */
+}
+
+#container{
+    display: flex;
+    flex-direction: column;
+}
+
+header{
+    background-color: #fff;
+    position: fixed;
+    top: 0;
+    z-index: 99;
+    width: 100%;
+    height: 58px;
+}
+
+.x{
+    display: none;
+    transition: 0.5s;
+}
+
+ul{
+    list-style-type: none;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+li{
+    padding: 18px;
+}
+
+header a{
+    font-family: "Funnel Display", serif;
+    font-weight: 500;
+    font-size: 1rem;
+    color: var(--black);
+    text-decoration: none;
+}
+
+main{
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#maincard{
+    /* background-color:rgba(255, 255, 255, 0.6); */
+    border-radius: 33px;
+    /* box-shadow: var(--shadow); */
+    width: 40rem;
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+}
+
+h1{
+    font-family: "Funnel Display", serif;
+    font-weight: 600;
+    font-size: 2.7rem;
+    margin-bottom: .5rem;
+}
+
+h3{
+    font-family: "Space Grotesk", serif;
+    font-weight: 400;
+    font-size: 2rem;
+}
+
+#knowmore{
+    font-family: "Space Grotesk", serif;
+    font-weight: 400;
+    font-size: 1rem;
+    padding-top: 8.3vw;
+    color: var(--grey);
+}
+
+#download, #download:visited, #download:active{
+    display: inline-block;
+    text-align: center; 
+    background-color: var(--blue);
+    line-height: 3vw;
+    border-radius: 2.6vw;
+    width: 8.6vw;
+    font-family: "Funnel Display", serif;
+    font-weight: 500;
+    font-size: 0.83vw;
+    color: var(--black);
+    text-decoration: none;
+    margin-right: 1rem;
+}
+
+#profpic{
+    grid-column: 2 / 3;
+    grid-row: 1 / 5;
+}
+
+#profpic img{
+    object-fit: cover;
+    aspect-ratio: 1 / 1;
+    width: 100%;
+    border-radius: 15%;
+    /* box-shadow: var(--shadow); */
+    border: 1px solid var(--black);
+}
+
+#social{
+    display: flex;
+    align-items: center;
+    margin-top: 1rem;
+}
+
+#socialicons{
+    display: flex;
+}
+
+#social img{
+    display: block;
+    width: 2rem;
+    height: 2rem;
+    margin-right: .2rem;
+}
+
+.hamburger{
+    display: none;
+}
+
+#about{
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+	align-items: center;
+    justify-content: center;
+}
+
+h2{
+    z-index: 5;
+    font-family: "Space Grotesk", serif;
+    font-weight: 600;
+    font-size: 2rem;
+	width: 40rem;
+}
+
+#skills{
+    display: flex;
+    flex-direction: column;
+    margin-top: 4vw;
+}
+
+.skill{
+    display: grid;
+    grid-template-columns: 4rem 38rem;
+    margin-bottom: 1vw;
+    z-index: 2;
+}
+
+.num{
+    font-family: "Space Grotesk", serif;
+    font-weight: 600;
+    font-size: 2rem;
+    grid-row-start: 1;
+    grid-row-end: 3;
+}
+
+.ttl{
+    font-family: "Space Grotesk", serif;
+    font-weight: 400;
+    font-size: 2rem;
+    color: var(--black);
+}
+
+.dsc{
+    font-family: "Space Grotesk", serif;
+    font-weight: 400;
+    font-size: 1rem;
+    color: var(--grey);
+}
+
+#tools{
+    display: flex;
+    margin-top: 4.2vw;
+    width: 30rem;
+    position: relative;
+    overflow: hidden;
+    justify-content: center;
+}
+
+.logo{
+    width: 2rem;
+    margin: 0 1rem 0 1rem;
+}
+
+.logo img{
+    width: 100%;
+    z-index: 2;
+    filter: brightness(10%);
+    opacity: 100%;
+}
+
+@keyframes autoRun{
+    from{
+        left: 100%;
+    }
+    to{
+        left: calc(5vw * -1); /*el 5vw viene del ancho del logo*/
+    }
+}
+
+
+#work{
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+	align-items: center;
+    justify-content: center;
+}
+
+#cardcontainer{
+    margin-top: 50px;
+    display: flex;
+    width: 40rem;
+    flex-direction: column;
+}
+
+.card{
+    background-color: hsla(0, 0%, 65%, 0.2);
+    /* box-shadow: var(--shadow); */
+    border-radius: 33px;
+    width: 100%;
+    height: 8rem;
+    margin: .5rem 0 .5rem 0;
+    display: flex;
+    align-items: center;
+    padding: 2rem;
+    text-decoration: none;
+}
+
+.card:hover{
+    background-color: hsl(305, 98%, 83%, 20%);
+}
+
+/* #card1{
+    height: 12rem;
+} */
+
+.card img{
+    border-radius: 50%;
+    height: 4rem;
+}
+
+.cardtext{
+    font-family: "Space Grotesk", serif;
+    font-size: 2rem;
+    font-weight: 400;
+    color: var(--black);
+    padding-left: 20px;
+}
+
+
+#contact{
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+	align-items: center;
+    justify-content: center;
+}
+
+#you{
+    font-family: "Space Grotesk", serif;
+    font-weight: 400;
+    font-size: 2rem;
+    width: 840px;
+    text-align: center;
+}
+
+#question{
+    margin: 24px;
+    width: 40rem;
+    height: 15vw;
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+#questiontext{
+    font-family: "Space Grotesk", serif;
+    font-weight: 600;
+    color: var(--black);
+    font-size: 2rem;
+    text-align: center;
+
+}
+
+#question a, #question a:visited, #question a:active{
+    display: inline-block;
+    text-align: center; 
+    background-color: var(--blue);
+    border-radius: 50px;
+    width: 13rem;
+    font-family: "Funnel Display", serif;
+    font-weight: 500;
+    font-size: 1rem;
+    line-height: 3.3vw;
+    color: var(--black);
+    text-decoration: none;
+}
+
+#credits{
+    font-family: "Funnel Display", serif;
+    font-weight: 400;
+    font-size: 1rem;
+    color: var(--grey);
+}
+
+
+#bg{
+    position: fixed;
+    background-color: #fff;
+    opacity: 50%;
+    z-index: -1;
+    height: 100%;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.blurball1{
+    background: var(--pink);
+    opacity: 70%;
+    width: 17rem;
+    height: 17rem;
+    position:absolute;
+    border-radius: 50%;
+    z-index: 1;
+    filter: blur(50px);
+    transform-origin: 135% center;
+    animation: spin 7s linear infinite;
+}
+.blurball2{
+    background: var(--blue);
+    opacity: 70%;
+    width: 13rem;
+    height: 13rem;
+    position:absolute;
+    border-radius: 50%;
+    z-index: 1;
+    filter: blur(50px);
+    transform-origin: -70% center;
+    animation: spin 7s linear infinite;
+}
+
+@keyframes spin {
+    100%{
+        transform: rotate(360deg);
+    }
+}
+
+
+
+
+
+@media screen and (max-width: 1024px) {
+
+    header{
+        width: 100vw;
+        height: 58px;
+    }
+    
+    ul{
+        list-style-type: none;
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+    }
+    
+    li{
+        padding: 18px;
+    }
+    
+
+    main{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+
+    #maincard{
+        border-radius: 33px;
+        margin: 0px;
+        width: calc(100vw - 3rem);
+        display: grid;
+        grid-template-columns: 1.5fr 1fr;
+    }
+    
+    h1{
+        font-size: 8vw;
+    }
+    
+    h3{
+        font-size: 5vw;
+    }
+    
+    #knowmore{
+        font-size: 1rem;
+        font-weight: 400;
+        padding-top: 7vh;
+    }
+
+
+    #profilepic{
+        display: none;
+    }
+
+
+    #download, #download:visited, #download:active{
+        border-radius: 50px;
+        width: 40vw;
+        font-family: "Funnel Display", serif;
+        font-weight: 200;
+        font-size: 1rem;
+        line-height: 12vw;
+        margin-top: 0;
+        margin-right: 0;
+    }
+
+    #social{
+        grid-column: 1 / 3;
+        margin-top: 1rem;
+        justify-content: space-between;
+    }
+
+    #social img{
+        display: block;
+        width: 3rem;
+        height: 3rem;
+        margin-right: .2rem;
+    }
+
+    h2{
+        font-size: 5.5vw;
+        width: 80vw;
+    }
+
+
+    
+    #skills{
+        margin-top: 10vw;
+        width: calc(100vw - 3rem);
+    }
+    
+    .skill{
+        display: grid;
+        grid-template-columns: 1fr 5fr;
+        margin-bottom: 3vw;
+    }
+    
+    .num{
+        font-size: 9vw;
+        line-height: 9vw;
+        grid-row-start: 1;
+        grid-row-end: 3;
+    }
+    
+    .ttl{
+        font-size: 5.5vw;
+    }
+    
+    .dsc{
+        font-size: 1rem;
+        margin-top: 0;
+    }
+    
+
+    #tools{
+        margin-top: 15vw;
+        height: 12vw;
+        width: 80vw;
+    }
+    
+    .logo{
+        width: 2rem;
+        margin: 0 .5rem 0 .5rem;
+    }
+
+    
+    .logo img{
+        width: 100%;
+        filter: brightness(10%);
+        opacity: 100%;
+    }
+
+    #cardcontainer{
+        width: calc(100vw - 3rem);
+    }
+
+    #you{
+        font-family: "Space Grotesk", serif;
+        font-size: 5.5vw;
+        font-weight: 500;
+        width: 80vw;
+        margin-bottom: 12vw;
+    }
+    #question{
+        margin: 24px;
+        width: 88vw;
+        height: 36vw;
+    }
+    
+    #questiontext{
+        font-size: 5.5vw;
+    }
+
+    #question a, #question a:visited, #question a:active{
+        border-radius: 50px;
+        width: calc(100vw - 3rem);
+        font-family: "Funnel Display", serif;
+        font-weight: 200;
+        font-size: 4vw;
+        line-height: 12vw;
+        margin-top: 6vw;
+    }
+
+    #credits{
+        font-size: 4vw;
+        padding-top: 15vw;
+    }
+    
+}
+
+@media screen and (max-width: 760px) {
+
+    header{
+        width: 80%;
+        height: 100vh;
+        display: flex;
+        left: -100%;
+        justify-content: center;
+        align-items: center;
+        transition: 0.3s;
+    }
+
+    header.active{
+        left: 0;
+    }
+
+    ul{
+        display: inline-block;
+        text-align: center;
+    }
+
+    header a{
+        font-size: 5vw;
+    }
+
+    .hamburger{
+        display: flex;
+        position: fixed;
+        top: 6vw;
+        left: 6vw;
+        width: 12vw;
+        height: 12vw;
+        background-color: rgba(255, 255, 255, 1);
+        /* box-shadow: var(--shadow); */
+        border-radius: 50%;
+        justify-content: center;
+        z-index: 98;
+    }
+
+    .hamburger img{
+        width: 55%;
+    }
+
+    .x.active{
+        display: flex;
+        position: fixed;
+        top: 6vw;
+        left: 6vw;
+        width: 12vw;
+        height: 12vw;
+        background-color: rgba(255, 255, 255, 1);
+        /* box-shadow: var(--shadow); */
+        border-radius: 50%;
+        justify-content: center;
+        z-index: 99;
+    }
+
+    .x img{
+        width: 55%;
+    }
+}

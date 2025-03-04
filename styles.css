@@ -150,6 +150,7 @@ h3{
 
 #about{
     height: 100vh;
+    padding-top: 58px;
     display: flex;
     flex-direction: column;
 	align-items: center;
@@ -167,7 +168,7 @@ h2{
 #skills{
     display: flex;
     flex-direction: column;
-    margin-top: 4vw;
+    margin-top: 50px;
 }
 
 .skill{
@@ -201,14 +202,21 @@ h2{
 
 #tools{
     display: flex;
-    margin-top: 4.2vw;
+    margin-top: 50px;
     width: 30rem;
     position: relative;
     overflow: hidden;
     justify-content: center;
 }
 
-.logo{
+#tools p{
+    font-family: "Space Grotesk", serif;
+    font-weight: 400;
+    font-size: 1rem;
+    color: var(--blue);
+}
+
+/* .logo{
     width: 2rem;
     margin: 0 1rem 0 1rem;
 }
@@ -218,7 +226,7 @@ h2{
     z-index: 2;
     filter: brightness(10%);
     opacity: 100%;
-}
+} */
 
 @keyframes autoRun{
     from{
@@ -465,7 +473,7 @@ h2{
     }
 
     h2{
-        font-size: 5.5vw;
+        font-size: 2rem;
         width: 80vw;
     }
 
@@ -473,24 +481,25 @@ h2{
     
     #skills{
         margin-top: 10vw;
-        width: calc(100vw - 3rem);
     }
     
     .skill{
         display: grid;
-        grid-template-columns: 1fr 5fr;
+        grid-template-columns: 1fr 8fr;
         margin-bottom: 3vw;
     }
     
     .num{
-        font-size: 9vw;
-        line-height: 9vw;
+        font-size: 2rem;
+        font-weight: 600;
+        line-height: 2rem;
         grid-row-start: 1;
         grid-row-end: 3;
     }
     
     .ttl{
-        font-size: 5.5vw;
+        font-size: 2rem;
+        line-height: 2rem;
     }
     
     .dsc{
@@ -614,5 +623,32 @@ h2{
 
     .x img{
         width: 55%;
+    }
+
+    #skills{
+        margin-top: 10vw;
+        width: calc(100vw - 3rem);
+    }
+
+    .skill{
+        grid-template-columns: 1fr 6fr;
+    }
+
+    .num{
+        font-size: 2rem;
+        font-weight: 600;
+        line-height: 2rem;
+        grid-row-start: 1;
+        grid-row-end: 3;
+    }
+    
+    .ttl{
+        font-size: 2rem;
+        line-height: 2rem;
+    }
+    
+    .dsc{
+        font-size: 1rem;
+        margin-top: 0;
     }
 }

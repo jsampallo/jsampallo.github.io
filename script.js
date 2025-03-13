@@ -24,7 +24,7 @@ document.querySelectorAll("li").forEach(n => n.addEventListener("click", ()=> {
 
 
 // IDIOMAS
-let language = window.navigator.language;
+let language = navigator.language;
 let lang = language.substr(0, 2);
 var menuhome = document.getElementById("menuhome")
 

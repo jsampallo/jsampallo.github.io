@@ -27,11 +27,17 @@ document.querySelectorAll("li").forEach(n => n.addEventListener("click", ()=> {
 let language = navigator.language;
 let lang = language.substr(0, 2);
 var menuhome = document.getElementById("menuhome")
+var menuabout = document.getElementById("menuabout")
+var menuwork = document.getElementById("menuwork")
+var menucontact = document.getElementById("menucontact")
+var desc = document.getElementById("desc")
 
 
 
 if (lang === 'es') {
-    menuhome.innerHTML = "Casa";
-}else{
-    menuhome.innerHTML = "Home"
-}
+    menuhome.innerHTML = "Inicio";
+    menuabout.innerHTML = "Sobre Mí";
+    menuwork.innerHTML = "Trabajos";
+    menucontact.innerHTML = "Contacto";
+    desc.innerHTML = "Soy diseñador visual<br>de productos digitales";
+}else{}

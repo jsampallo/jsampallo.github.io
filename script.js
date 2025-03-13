@@ -21,3 +21,17 @@ document.querySelectorAll("li").forEach(n => n.addEventListener("click", ()=> {
     header.classList.remove("active");
     x.classList.remove("active");
 } ))
+
+
+// IDIOMAS
+let language = window.navigator.language;
+let lang = language.substr(0, 2);
+var menuhome = document.getElementById("menuhome")
+
+
+
+if (lang === 'es') {
+    menuhome.innerHTML = "Casa";
+}else{
+    menuhome.innerHTML = "Home"
+}

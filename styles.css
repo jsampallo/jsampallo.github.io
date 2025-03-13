@@ -98,7 +98,7 @@ h3{
     color: var(--grey);
 }
 
-#download, #download:visited, #download:active{
+#knowmorebtn, #knowmorebtn:visited, #knowmorebtn:active{
     display: inline-block;
     text-align: center; 
     background-color: var(--blue);
@@ -448,7 +448,7 @@ h2{
     }
 
 
-    #download, #download:visited, #download:active{
+    #knowmorebtn, #knowmorebtn:visited, #knowmorebtn:active{
         border-radius: 50px;
         width: 40vw;
         font-family: "Funnel Display", serif;

@@ -37,6 +37,10 @@ var h2b = document.getElementById("h2b");
 var you = document.getElementById("you");
 var questiontext = document.getElementById("questiontext");
 var sendemail = document.getElementById("sendemail");
+var dsc_ui = document.getElementById("dsc_ui");
+var dsc_ux = document.getElementById("dsc_ux");
+var dsc_3d = document.getElementById("dsc_3d");
+var dsc_web = document.getElementById("dsc_web");
 
 
 
@@ -52,4 +56,8 @@ if (lang === 'es') {
     you.innerHTML = "Ahora, me gustaría<br>que me cuentes";
     questiontext.innerHTML = "¿Cómo se ve tu proyecto?";
     sendemail.innerHTML = "ESCRIBIR E-MAIL"
+    dsc_ui.innerHTML = "Interfaces para mobile y web."
+    dsc_ux.innerHTML = "Definición de problema, investigacion e ideación."
+    dsc_3d.innerHTML = "Renderizado de producto y animación"
+    dsc_web.innerHTML = "Landing page, portfolio, sitios para artistas y bandas."
 }else{}

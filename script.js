@@ -41,6 +41,10 @@ var dsc_ui = document.getElementById("dsc_ui");
 var dsc_ux = document.getElementById("dsc_ux");
 var dsc_3d = document.getElementById("dsc_3d");
 var dsc_web = document.getElementById("dsc_web");
+var ttl_ui = document.getElementById("ttl_ui");
+var ttl_ux = document.getElementById("ttl_ux");
+var ttl_3d = document.getElementById("ttl_3d");
+var ttl_web = document.getElementById("ttl_web");
 
 
 
@@ -60,4 +64,8 @@ if (lang === 'es') {
     dsc_ux.innerHTML = "Definición de problema, investigacion e ideación."
     dsc_3d.innerHTML = "Renderizado de producto y animación"
     dsc_web.innerHTML = "Landing page, portfolio, sitios para artistas y bandas."
+    ttl_ui.innerHTML = "Diseño UI"
+    ttl_ux.innerHTML = "Diseño UX"
+    ttl_3d.innerHTML = "Habilidades 3D"
+    ttl_web.innerHTML = "Maquetado web"
 }else{}

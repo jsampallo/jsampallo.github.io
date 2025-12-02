@@ -101,6 +101,7 @@ h4{
     line-height: 1;
     color: #959B9D;
     display: flex;
+    flex-direction: row;
     gap: 8px;
 }
 

@@ -48,6 +48,11 @@ header{
 #idcard{
     display: flex;
     flex-grow:1;
+    gap: 1rem;
+}
+
+#idcard span{
+    color:#959B9D;
 }
 
 #navbar{
@@ -75,4 +80,30 @@ h3{
 h4{
     font-size: 1.5rem;
     font-weight: 600;
+}
+#postsContainer{
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    align-items: flex-start;
+}
+
+#flair{
+    line-height: 1;
+    background-color: var(--red);
+    color: var(--black);
+    border-radius: 1rem;
+    padding: 8px 16px;
+    display: inline-block;
+}
+
+#status{
+    line-height: 1;
+    color: #959B9D;
+    display: flex;
+    gap: 8px;
+}
+
+#point{
+    color: #9CE557;
 }

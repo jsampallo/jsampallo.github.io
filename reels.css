@@ -1,0 +1,78 @@
+:root{
+    --black: #141318;
+    --red: #FF9999;
+    --pink: #FEABF7;
+    --green: #BDFFCB;
+    --blue: #99A1FF;
+    --grey: #7C7C7C;
+    --white: #FBFBFB;
+
+    --shadow: 0px 4px 10px rgba(0,0,0,0.3);
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+*{
+    padding: 0px;
+    margin: 0px;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 1rem;
+    /* border: 1px solid red; */
+}
+
+body{
+    background-color: var(--black);
+    color: var(--white);
+    display: flex;
+    margin-top: 5rem;
+    margin-bottom: 5rem;
+}
+
+#container{
+    width: 800px;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+}
+
+header{
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    margin-bottom: 4rem;
+}
+
+#idcard{
+    display: flex;
+    flex-grow:1;
+}
+
+#navbar{
+    list-style-type: none;
+    display: flex;
+    align-items: start;
+}
+
+li{
+    background-color: #322F38;
+    padding: 4px 16px 4px 16px;
+    border-radius: 16px;
+    line-height: 130%;
+    margin: 0 4px;
+}
+
+h1{
+    font-size: 1.5rem;
+    font-weight: 600;
+}
+h3{
+    font-size: 2rem;
+    font-weight: 600;
+}
+h4{
+    font-size: 1.5rem;
+    font-weight: 600;
+}

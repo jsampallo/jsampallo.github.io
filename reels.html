@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Joaquin Sampallo</title>
+    <meta name="description" content="UX/UI Designer">
+    <meta name="keywords" content="ux, ui, design, web design, argentina">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Funnel+Display:wght@300..800&family=Space+Grotesk:wght@300..700&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/x-icon" href="favico.png">
+</head>
+<body>
+    <div id="container">
+        <header>
+            <div class="x">
+                <img src="x.svg">
+            </div>
+            <ul>
+                <li><a href="#main" id="menuhome">Home</a></li>
+                <li><a href="#about" id="menuabout">About</a></li>
+                <li><a href="#work" id="menuwork">Work</a></li>
+                <li><a href="#contact" id="menucontact">Contact</a></li>
+            </ul>
+        </header>
+        <main id="main">
+            <div class="hamburger">
+                <img src="menu.svg">
+            </div>
+            <div id="maincard">
+                <h1>Joaquin Sampallo</h1>
+                <div id="profpic">
+                    <img src="profilepic.jpg" alt="Joaquin Sampallo">
+                </div>
+                <h3 id="desc">I'm a compositor<br>& VFX artist</h3>
+                <p id="knowmore"></p>
+                <div id="social">
+                    <a href="#about" id="knowmorebtn">KNOW MORE</a>
+                    <div id="socialicons">
+                        <a href="https://www.linkedin.com/in/jsampallo" target="_blank"><img src="icolinkedin.svg"></a>
+                        <a href="https://calendly.com/jsampallo" target="_blank"><img src="icoc.svg"></a>
+                    </div>   
+                </div> 
+            </div>       
+        </main>
+        <div id="about">
+            <h2 id="h2a">What do I offer?</h2>
+            <div id="skills">
+                <div class="skill">
+                    <p class="num">01</p>
+                    <p class="ttl" id="ttl_ui">UI design</p>
+                    <p class="dsc" id="dsc_ui">Mobile and web interfaces.</p>
+                </div>
+                <div class="skill">
+                    <p class="num">02</p>
+                    <p class="ttl" id="ttl_ux">UX design</p>
+                    <p class="dsc" id="dsc_ux">Problem definition, research and ideation.</p>
+                </div>
+                <div class="skill">
+                    <p class="num">03</p>
+                    <p class="ttl" id="ttl_3d">3D skills</p>
+                    <p class="dsc" id="dsc_3d">Product render and animation.</p>
+                </div>
+                <div class="skill">
+                    <p class="num">04</p>
+                    <p class="ttl" id="ttl_web">Web layout</p>
+                    <p class="dsc" id="dsc_web">Landing page, portfolio, artists and band sites.</p>
+                </div> 
+            </div>
+            <div id="tools">
+                <p>Figma ⠀  Photoshop ⠀ Blender ⠀ HTML⠀  CSS</p>
+                <!-- <div class="logo"><img src="logofigma.svg"></div>
+                <div class="logo"><img src="logops.svg"></div>
+                <div class="logo"><img src="logoblender.svg"></div>
+                <div class="logo"><img src="logohtml.svg"></div>
+                <div class="logo"><img src="logocss.svg"></div> -->
+            </div>
+        </div>
+        <div id="work">
+            <h2 id="h2b">Recent projects</h2>
+            <div id="cardcontainer">
+                <a href="https://www.behance.net/gallery/222687375/Easy-News" class="card" target="_blank">
+                    <img src="ico_1.png">
+                    <p class="cardtext">Easy News</p>
+                </a>
+                <a href="https://www.behance.net/gallery/221038485/Superior-Yerba-Mate" class="card" target="_blank">
+                    <img src="ico_2.png">
+                    <p class="cardtext">Superior</p>
+                </a>
+                <a href="https://www.behance.net/gallery/220419041/CONTNDR" class="card" target="_blank">
+                    <img src="ico_3.png">
+                    <p class="cardtext">Contndr</p>
+                </a>
+            </div>
+        </div>
+        <div id="contact">
+            <p id="you">Now it’s time to know<br>about you</p>
+            <div id="question">
+                <p id="questiontext">How is your project looking?</p>
+                <a href="mailto:jsampallo97@gmail.com?Subject=Inquire" id="sendemail">SEND ME AN E-MAIL</a>
+            </div>
+            <p id="credits">© 2025 Joaquin Sampallo.</p>
+        </div>
+        <div id="bg">
+            <div class="blurball1"></div>
+            <div class="blurball2"></div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

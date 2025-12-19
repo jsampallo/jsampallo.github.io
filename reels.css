@@ -90,13 +90,25 @@ h4{
     margin-bottom: 40px;
 }
 
-#flair{
+.flair_n{
     line-height: 1;
     background-color: var(--red);
     color: var(--black);
     border-radius: 1rem;
-    padding: 8px 16px;
-    display: inline-block;
+    padding: 4px 12px 6px;
+    font-weight: 600;
+}
+.flair_b{
+    line-height: 1;
+    background-color: var(--pink);
+    color: var(--black);
+    border-radius: 1rem;
+    padding: 4px 12px 6px;
+    font-weight: 600;
+}
+#flair_cont{
+    display: flex;
+    gap: 8px;
 }
 
 #status{
@@ -133,6 +145,10 @@ h4{
     #container{
         width: 100vw;
         padding: 0px 20px;
+    }
+
+    *{
+        font-size: .8rem;
     }
 
 

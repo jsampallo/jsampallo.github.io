@@ -166,10 +166,6 @@ a:link, a:visited, a:active, a:hover {
     gap: 1rem;
 }
 
-h4{
-    display: inline-block;
-}
-
 .cta{
     color: var(--white);
     background-color: #322F38;
@@ -197,8 +193,18 @@ footer{
         padding: 0px 20px;
     }
 
-    *{
-        font-size: .8rem;
-    }
+    h1{
+    font-weight: 400;
+    font-size: 1.5rem;
+}
+    h3{
+    font-weight: 400;
+    font-size: 1.5rem;
+}
+    h4{
+    font-weight: 400;
+    font-size: 1.5rem;
+    text-align: center;
+}
 
 }

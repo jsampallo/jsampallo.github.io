@@ -16,94 +16,70 @@
 <body>
     <div id="container">
         <header>
-            <div class="x">
-                <img src="x.svg">
+            <div id="idcard">
+                <img src="img/joaquin.jpg">
+                <div>
+                    <h1>Joaquin Sampallo</h1>
+                    <span>UX UI Designer • AR 🇦🇷</span>
+                    <div id="status">
+                        <p>Currently available</p>
+                        <p id="point">●</p>
+                    </div>
+                </div>
             </div>
-            <ul>
-                <li><a href="#main" id="menuhome">Home</a></li>
-                <li><a href="#about" id="menuabout">About</a></li>
-                <li><a href="#work" id="menuwork">Work</a></li>
-                <li><a href="#contact" id="menucontact">Contact</a></li>
+
+            <ul id="navbar">
+                    <li>Work</li>
+                    <li>About</li>
+                    <li>Contact</li> 
             </ul>
         </header>
-        <main id="main">
-            <div class="hamburger">
-                <img src="menu.svg">
+        <section>
+            <a href="https://www.behance.net/gallery/222687375/Easy-News" target="_blank">
+                <div class="post">
+                    <p class="flair_c">Case Study</p>
+                    <h3>Easy News App</h3>
+                    <img class="postimg" src="img/post1.jpg">
+                    <p>Easy News delivers up-to-date news, specifically adapted for users who face reading comprehension issues and learning disabilities.</p>
+                </div>
+            </a>
+            <a href="https://www.behance.net/gallery/221038485/Superior-Yerba-Mate" target="_blank">
+                <div class="post">
+                    <p class="flair_c">Case Study</p>
+                    <h3>Superior Yerba Mate</h3>
+                    <img class="postimg" src="img/post2.jpg">
+                    <p>Web design and content for a high-end brand of yerba mate.</p>
+                </div>
+            </a>
+            
+            <a href="https://www.behance.net/gallery/220419041/CONTNDR" target="_blank">
+                <div class="post">
+                    <p class="flair_c">Case Study</p>
+                    <h3>CONTNDR</h3>
+                    <img class="postimg" src="img/post3.jpg">
+                    <p>Matching app designed for people in need of home service providers.</p>
+                </div>
+            </a>
+            
+            <div class="post">
+                    <p class="flair_e">Design exercise</p>
+                    <h3>Bates Center Homepage</h3>
+                    <img class="postimg" src="img/post4.png">
+                    <p>Bates Center is a plastic surgery center focused on refined, patient-first care, combining clinical excellence with warmth, trust, clarity, and a modern digital experience.</p>
             </div>
-            <div id="maincard">
-                <h1>Joaquin Sampallo</h1>
-                <div id="profpic">
-                    <img src="profilepic.jpg" alt="Joaquin Sampallo">
-                </div>
-                <h3 id="desc">I'm a visual designer<br>for digital products</h3>
-                <p id="knowmore"></p>
-                <div id="social">
-                    <a href="#about" id="knowmorebtn">KNOW MORE</a>
-                    <div id="socialicons">
-                        <a href="https://www.linkedin.com/in/jsampallo" target="_blank"><img src="icolinkedin.svg"></a>
-                        <a href="https://calendly.com/jsampallo" target="_blank"><img src="icoc.svg"></a>
-                    </div>   
-                </div> 
-            </div>       
-        </main>
-        <div id="about">
-            <h2 id="h2a">What do I offer?</h2>
-            <div id="skills">
-                <div class="skill">
-                    <p class="num">01</p>
-                    <p class="ttl" id="ttl_ui">UI design</p>
-                    <p class="dsc" id="dsc_ui">Mobile and web interfaces.</p>
-                </div>
-                <div class="skill">
-                    <p class="num">02</p>
-                    <p class="ttl" id="ttl_ux">UX design</p>
-                    <p class="dsc" id="dsc_ux">Problem definition, research and ideation.</p>
-                </div>
-                <div class="skill">
-                    <p class="num">03</p>
-                    <p class="ttl" id="ttl_3d">3D skills</p>
-                    <p class="dsc" id="dsc_3d">Product render and animation.</p>
-                </div>
-                <div class="skill">
-                    <p class="num">04</p>
-                    <p class="ttl" id="ttl_web">Web layout</p>
-                    <p class="dsc" id="dsc_web">Landing page, portfolio, artists and band sites.</p>
-                </div> 
-            </div>
-            <div id="tools">
-                <p>Figma ⠀  Photoshop ⠀ Blender ⠀ HTML⠀  CSS</p>
-                <!-- <div class="logo"><img src="logofigma.svg"></div>
-                <div class="logo"><img src="logops.svg"></div>
-                <div class="logo"><img src="logoblender.svg"></div>
-                <div class="logo"><img src="logohtml.svg"></div>
-                <div class="logo"><img src="logocss.svg"></div> -->
-            </div>
+        </section>
+        
+        <div id="skills">
         </div>
-        <div id="work">
-            <h2 id="h2b">Recent projects</h2>
-            <div id="cardcontainer">
-                <a href="https://www.behance.net/gallery/222687375/Easy-News" class="card" target="_blank">
-                    <img src="ico_1.png">
-                    <p class="cardtext">Easy News</p>
-                </a>
-                <a href="https://www.behance.net/gallery/221038485/Superior-Yerba-Mate" class="card" target="_blank">
-                    <img src="ico_2.png">
-                    <p class="cardtext">Superior</p>
-                </a>
-                <a href="https://www.behance.net/gallery/220419041/CONTNDR" class="card" target="_blank">
-                    <img src="ico_3.png">
-                    <p class="cardtext">Contndr</p>
-                </a>
-            </div>
-        </div>
+
         <div id="contact">
-            <p id="you">Now it’s time to know<br>about you</p>
-            <div id="question">
-                <p id="questiontext">How is your project looking?</p>
-                <a href="mailto:jsampallo97@gmail.com?Subject=Inquire" id="sendemail">SEND ME AN E-MAIL</a>
+                <h4>How's your project looking?</h4>
+                <a href="#contact" class="cta"">Contact Me</a>
             </div>
-            <p id="credits">© 2025 Joaquin Sampallo.</p>
-        </div>
+        <footer>
+            <p id="credits">© 2026 Joaquin Sampallo.</p>
+        </footer>
+    </div>
         <div id="bg">
             <div class="blurball1"></div>
             <div class="blurball2"></div>

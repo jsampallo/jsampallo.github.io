@@ -235,6 +235,7 @@ footer{
     font-weight: 400;
     text-box-trim: trim-both;
     text-box-edge: cap alphabetic;
+    color: red;
     }
     .flair_c, .flair_e{
         font-weight: 500;

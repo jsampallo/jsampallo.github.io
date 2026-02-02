@@ -95,6 +95,11 @@ h4{
     font-weight: 600;
 }
 
+h5{
+    font-size: 1.25rem;
+    font-weight: 600;
+}
+
 section{
     display: flex;
     flex-direction: column;
@@ -186,6 +191,19 @@ footer{
     color:#959B9D;
 }
 
+/* PAGINAS */
+
+.fauxh1{
+    font-size: 1.5rem;
+    font-weight: 600;
+    text-box-trim: none;
+}
+.fauxh3{
+    font-size: 2rem;
+    font-weight: 600;
+    text-box-trim: trim-both;
+    text-box-edge: cap alphabetic;
+}
 
 @media screen and (max-width: 800px) {
     #container{
@@ -211,11 +229,11 @@ footer{
     }
     #idcard{
     gap: 1rem;
-    justify-content: space-between;
+    justify-content: center;
     }
     #navbar{
         width: 100%;
-    justify-content: space-between;
+    justify-content: center;
     }
     header{
         gap: 1rem;

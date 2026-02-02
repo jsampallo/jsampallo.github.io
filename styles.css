@@ -224,6 +224,18 @@ footer{
     font-size: 1.5rem;
     text-align: center;
     }
+
+    .fauxh1{
+    font-size: 1.5rem;
+    font-weight: 400;
+    text-box-trim: none;
+    }
+    .fauxh3{
+    font-size: 1.5rem;
+    font-weight: 400;
+    text-box-trim: trim-both;
+    text-box-edge: cap alphabetic;
+    }
     .flair_c, .flair_e{
         font-weight: 500;
     }

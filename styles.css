@@ -76,7 +76,14 @@ li{
 }
 
 li:hover{
+    background-color: #606060;
+}
+
+#li_cta{
     background-color: #7a5cff;
+}
+#li_cta:hover{
+    box-shadow: inset 0 0 20px rgba(255, 255, 255, 0.3);
 }
 
 h1{
@@ -108,6 +115,7 @@ section{
 
 a:link, a:visited, a:active, a:hover {
   text-decoration: none;
+  color: var(--white);
 }
 
 .post{
@@ -173,7 +181,7 @@ a:link, a:visited, a:active, a:hover {
 
 .cta{
     color: var(--white);
-    background-color: #322F38;
+    background-color: #7a5cff;
     padding: 4px 16px 4px 16px;
     border-radius: 16px;
     line-height: 130%;
@@ -183,6 +191,7 @@ a:link, a:visited, a:active, a:hover {
 
 .cta:hover{
     background-color: #7a5cff;
+    box-shadow: inset 0 0 10px rgba(255, 255, 255, 0.3);
 }
 
 footer{

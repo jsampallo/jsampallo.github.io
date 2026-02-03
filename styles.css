@@ -169,6 +169,7 @@ a:link, a:visited, a:active, a:hover {
     border-radius: 16px;
     aspect-ratio: 16/9;
     object-fit: cover;
+    outline: 1px solid #322F38;
 }
 
 
@@ -215,6 +216,11 @@ footer{
 }
 
 @media screen and (max-width: 800px) {
+
+    body{
+    margin-top: 3rem;
+    margin-bottom: 3rem;
+    }
     #container{
         width: 100vw;
         padding: 0px 20px;

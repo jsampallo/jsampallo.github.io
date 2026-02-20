@@ -147,6 +147,17 @@ a:link, a:visited, a:active, a:hover {
     padding: 6px 12px 6px;
     font-weight: 600;
 }
+.flair_d{
+    line-height: 1;
+    background-color: var(--green);
+    color: var(--black);
+    border-radius: 1rem;
+    text-box-trim: trim-both;
+    text-box-edge: cap alphabetic;
+    padding: 6px 12px 6px;
+    font-weight: 600;
+}
+
 #flair_cont{
     display: flex;
     gap: 8px;

@@ -95,6 +95,7 @@ h3{
     font-weight: 600;
     text-box-trim: trim-both;
     text-box-edge: cap alphabetic;
+    margin-bottom: 0.5rem;
 }
 
 h4{
@@ -103,8 +104,9 @@ h4{
 }
 
 h5{
-    font-size: 1.25rem;
+    font-size: 1.5rem;
     font-weight: 600;
+    margin-top: 1.5rem;
 }
 
 section{
@@ -125,6 +127,9 @@ a:link, a:visited, a:active, a:hover {
     align-items: flex-start;
     margin-bottom: 40px;
     color: var(--white);
+}
+.post p{
+    color: #c7c7c7;
 }
 
 .flair_e{
@@ -224,6 +229,7 @@ footer{
     font-weight: 600;
     text-box-trim: trim-both;
     text-box-edge: cap alphabetic;
+    margin-bottom: 0.5rem;
 }
 
 @media screen and (max-width: 800px) {

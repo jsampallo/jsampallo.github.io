@@ -255,6 +255,11 @@ footer{
     font-size: 1.5rem;
     text-align: center;
     }
+    h5{
+    font-size: 1.25rem;
+    font-weight: 500;
+    margin-top: 1.5rem;
+}
 
     .fauxh1{
     font-size: 1.5rem;

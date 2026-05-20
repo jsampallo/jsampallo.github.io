@@ -18,7 +18,7 @@ html {
     padding: 0px;
     margin: 0px;
     box-sizing: border-box;
-    font-family: 'Segoe UI', Helvetica, Arial, sans-serif;
+    font-family: 'Inter', Helvetica, Arial, sans-serif;
     font-size: 1rem;
     /* border: 1px solid red; */
 }
@@ -29,6 +29,12 @@ body{
     display: flex;
     margin-top: 5rem;
     margin-bottom: 5rem;
+}
+
+p{
+    font-size: 20px;
+    font-weight: 300;
+    line-height: 140%;
 }
 
 #container{
@@ -48,6 +54,7 @@ header{
 
 #idcard{
     display: flex;
+    align-items: center;
     flex-grow:1;
     gap: 1rem;
 }
@@ -67,28 +74,46 @@ header{
     align-items: start;
 }
 
-li{
+#nvb{
+    display: flex;
+    gap: .5rem;
+}
+
+.nvb_itm{
     background-color: #322F38;
     padding: 4px 16px 4px 16px;
     border-radius: 16px;
     line-height: 130%;
-    margin: 0 4px;
-}
 
-li:hover{
+}
+.nvb_itm:hover{
     background-color: #606060;
 }
 
-#li_cta{
+#nvb_cta{
     background-color: #7a5cff;
+    padding: 4px 16px 4px 16px;
+    border-radius: 16px;
+    line-height: 130%;
 }
-#li_cta:hover{
+#nvb_cta:hover{
     box-shadow: inset 0 0 20px rgba(255, 255, 255, 0.3);
+}
+
+ul{
+    margin-left: 1.5rem;
+}
+
+li{
+    color: #c7c7c7;
+    font-size: 20px;
+    font-weight: 300;
+    line-height: 140%;
 }
 
 h1{
     font-size: 1.5rem;
-    font-weight: 600;
+    font-weight: 500;
 }
 h3{
     font-size: 2rem;
@@ -100,12 +125,12 @@ h3{
 
 h4{
     font-size: 2rem;
-    font-weight: 600;
+    font-weight: 500;
 }
 
 h5{
     font-size: 1.5rem;
-    font-weight: 600;
+    font-weight: 500;
     margin-top: 1.5rem;
 }
 
@@ -130,6 +155,12 @@ a:link, a:visited, a:active, a:hover {
 }
 .post p{
     color: #c7c7c7;
+}
+
+.post_header{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
 }
 
 .flair_e{
@@ -169,6 +200,7 @@ a:link, a:visited, a:active, a:hover {
 }
 
 #status{
+    font-size: 1rem;
     line-height: 1;
     color: #959B9D;
     display: flex;
@@ -216,23 +248,32 @@ footer{
     color:#959B9D;
 }
 
+.data{
+    color: #c7c7c7;
+    display: flex;
+    flex-direction: row;
+    gap: 1rem;
+}
+
 /* PAGINAS */
 
 .fauxh1{
     font-size: 1.5rem;
-    font-weight: 600;
+    font-weight: 500;
     text-box-trim: none;
     margin-bottom: 0px;
 }
 .fauxh3{
     font-size: 2rem;
-    font-weight: 600;
+    font-weight: 500;
     text-box-trim: trim-both;
     text-box-edge: cap alphabetic;
     margin-bottom: 0.5rem;
 }
 
 strong{
+    font-size: 20px;
+    font-weight: 600;
     display: inline;
     white-space: nowrap;
 }
@@ -285,7 +326,7 @@ strong{
     gap: 1rem;
     justify-content: center;
     }
-    #navbar{
+    #nvb{
         width: 100%;
     justify-content: center;
     }

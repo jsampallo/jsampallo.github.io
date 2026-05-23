@@ -118,7 +118,7 @@ h1{
 }
 h3{
     font-size: 2rem;
-    font-weight: 600;
+    font-weight: 500;
     text-box-trim: trim-both;
     text-box-edge: cap alphabetic;
     margin-bottom: 0.5rem;
@@ -227,6 +227,15 @@ a:link, a:visited, a:active, a:hover {
     object-fit: cover;
     outline: 1px solid #322F38;
 }
+
+.postvid{
+    width: 100%;
+    border-radius: 16px;
+    aspect-ratio: 16/9;
+    object-fit: cover;
+    outline: 1px solid #322F38;
+}
+
 
 
 #contact{

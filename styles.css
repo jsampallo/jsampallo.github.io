@@ -265,6 +265,107 @@ footer{
     color:#959B9D;
 }
 
+.g{
+    width: 100%;
+    display: flex;
+    gap: 16px;
+}
+
+.half{
+    flex: 2;
+    height: 100%;
+    aspect-ratio: 1/1;
+}
+
+.pile{
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.three{
+    display: flex;
+    flex-direction: row;
+    gap: 16px;
+}
+
+.sqimg{
+    width: 100%;
+    height: 100%;
+    border-radius: 16px;
+    object-fit: cover;
+    outline: 1px solid #322F38;
+}
+
+.sqimg2{
+    width: 33%;
+    aspect-ratio: 1/1;
+    border-radius: 16px;
+    object-fit: cover;
+    outline: 1px solid #322F38;
+}
+
+/* GALLERY STYLING */
+
+.layout-container {
+    /* FIXED: Re-added the missing flexbox math variables here! */
+    --gap: 16px;
+    --w-1: calc((100% - (2 * var(--gap))) / 3);  
+    --w-2: calc((var(--w-1) * 2) + var(--gap));   
+    --w-3: 100%;    
+
+
+    width: 100%;
+    max-width: var(--container-width);
+    display: flex;
+    flex-direction: column;
+    gap: var(--gap);
+    --border-radius: 12px;
+}
+
+ .row {
+    display: flex;
+    flex-direction: row;
+    gap: var(--gap);
+    width: 100%;
+}
+
+.col {
+    display: flex;
+    flex-direction: column;
+    gap: var(--gap);
+    flex-shrink: 0;
+}
+
+.box {
+    border-radius: var(--border-radius);
+    box-sizing: border-box;
+    overflow: hidden; /* Ensures images respect the rounded corners */
+    display: flex;
+}
+
+.box img,
+.box video {
+    width: 100%;
+    height: 100%;
+    min-width: 0;
+    min-height: 0;
+    object-fit: cover;
+    display: block; /* Removes bottom spacing issue with inline elements */
+}
+
+/* * Width Classes 
+*/
+.w-1 { width: var(--w-1); flex-shrink: 0; }
+.w-2 { width: var(--w-2); flex-shrink: 0;}
+.w-3 { width: var(--w-3); flex-shrink: 0;}
+.w-full { width: 100%; flex-shrink: 0;} /* Used inside the .col wrapper */
+
+/* * Aspect Ratio Classes 
+*/
+.ar-square { aspect-ratio: 1 / 1; }
+.ar-landscape { aspect-ratio: 2 / 1; } /* Exception for the final row */
 
 /* PAGINAS */
 
@@ -349,5 +450,16 @@ strong{
         flex-direction: column;
         align-items: flex-start;
         gap: 1rem;
+    }
+
+    /* GALLERY STYLING */
+
+    .row {
+        flex-direction: column;
+    }
+
+    /* Force all modular width elements to take full width */
+    .w-1, .w-2, .w-3 {
+        width: 100%;
     }
 }

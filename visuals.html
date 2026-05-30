@@ -96,7 +96,60 @@
         </div>
     </div>
 
-    <script src="script.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            // 1. Create the overlay element and add it to the page
+            const overlay = document.createElement('div');
+            overlay.className = 'lightbox-overlay';
+            document.body.appendChild(overlay);
+
+            // 2. Select all media elements inside the boxes
+            const mediaItems = document.querySelectorAll('.box img, .box video');
+
+            mediaItems.forEach(item => {
+                // Find the parent .box and attach click listener to it
+                item.closest('.box').addEventListener('click', () => {
+
+                    if (window.matchMedia("(max-width: 800px)").matches) return;
+
+                    overlay.innerHTML = ''; // Clear previous content
+
+                    // Clone the media so we don't remove it from the grid
+                    // true copies all attributes like muted, autoplay, and loop
+                    const clone = item.cloneNode(true);
+                    
+                    // If it's a video, explicitly call play() but do NOT add controls
+                    if (clone.tagName === 'VIDEO') {
+                        clone.play(); 
+                    }
+
+                    // Add it to overlay and show
+                    overlay.appendChild(clone);
+                    overlay.classList.add('active');
+                    
+                    // Prevent background layout shift by calculating scrollbar width
+                    const scrollbarWidth = window.innerWidth - document.documentElement.clientWidth;
+                    document.body.style.paddingRight = `${scrollbarWidth}px`;
+                    document.body.style.overflow = 'hidden'; 
+                });
+            });
+
+            // 3. Close the modal when clicking OUTSIDE the image (on the overlay)
+            overlay.addEventListener('click', (e) => {
+                // Ensure they actually clicked the background, not the image itself
+                if (e.target === overlay) {
+                    overlay.classList.remove('active');
+                    
+                    // We wait for the 0.3s fade transition to finish before restoring the scrollbar
+                    setTimeout(() => {
+                        overlay.innerHTML = ''; 
+                        document.body.style.overflow = ''; 
+                        document.body.style.paddingRight = ''; 
+                    }, 300);
+                }
+            });
+        });
+    </script>
 </body>
 
 </html>

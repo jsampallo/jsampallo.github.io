@@ -376,6 +376,17 @@ footer{
 .ar-square { aspect-ratio: 1 / 1; }
 .ar-landscape { aspect-ratio: 2 / 1; } /* Exception for the final row */
 
+/* Object Position Utilities */
+.pos-top {
+    object-position: top; /* Aligns to the absolute top edge */
+}
+.pos-high {
+    object-position: center 22%; /* Shows more top, but not the absolute edge */
+}
+.pos-bottom {
+    object-position: bottom; /* Aligns to the absolute bottom edge */
+}
+
 /* --- NEW LIGHTBOX STYLES --- */
 .lightbox-overlay {
     position: fixed;
@@ -522,6 +533,10 @@ strong{
     /* Force all modular width elements to take full width */
     .w-1, .w-2, .w-3 {
         width: 100%;
+    }
+
+    .ar-landscape {
+        aspect-ratio: 1 / 1;
     }
 
     /* Disable hover effects and pointer cursor on mobile */

@@ -141,6 +141,12 @@ section{
     gap: 2rem;
 }
 
+#visuals{
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
 a:link, a:visited, a:active, a:hover {
   text-decoration: none;
   color: var(--white);
@@ -192,6 +198,7 @@ a:link, a:visited, a:active, a:hover {
     font-weight: 600;
 }
 .flair_d{
+    overflow: hidden;
     line-height: 1;
     background-color: var(--green);
     color: var(--black);
@@ -427,6 +434,9 @@ footer{
     text-box-edge: cap alphabetic;
     margin-bottom: 0.5rem;
 }
+.hidden_h1{
+    display: none;
+}
 
 strong{
     font-size: 20px;
@@ -476,8 +486,14 @@ strong{
     text-box-trim: trim-both;
     text-box-edge: cap alphabetic;
     }
-    .flair_c, .flair_e{
+    .flair_c, .flair_d, .flair_e{
         font-weight: 500;
+        white-space: nowrap;
+        font-size: clamp(9px, 3.8vw, 14px);
+        padding: 6px clamp(8px, 2.5vw, 12px) 6px;
+    }
+    #flair_cont{
+    justify-content: center;
     }
     #idcard{
     gap: 1rem;

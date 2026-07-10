@@ -4,94 +4,265 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Joaquin Sampallo</title>
+    
+    <!-- Original Meta Tags -->
+    <title>Joaquin Sampallo | Visual Designer</title>
     <meta name="description" content="UX/UI Designer from Argentina. Worked on several projects, from web design to marketing content.">
     <meta name="keywords" content="ux, ui, design, web design, argentina">
-    <link rel="stylesheet" href="styles.css">
+    <link rel="icon" type="image/x-icon" href="favico.png">
+    
+    <!-- Load Geist Font from Google Fonts (from Landing Design) -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible+Next:ital,wght@0,200..800;1,200..800&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Funnel+Display:wght@300..800&family=Space+Grotesk:wght@300..700&display=swap" rel="stylesheet">
-    <link rel="icon" type="image/x-icon" href="favico.png">
+    <link href="https://fonts.googleapis.com/css2?family=Geist:wght@100..900&display=swap" rel="stylesheet">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['"Geist"', 'sans-serif'],
+                    },
+                    colors: {
+                        stone: {
+                            50: '#faf9f6',
+                            300: '#d6d3d1',
+                            900: '#1a1a1a', 
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        ::selection {
+            background-color: #1a1a1a;
+            color: #faf9f6;
+        }
+    </style>
 </head>
-<body>
-    <div id="container">
-        <header>
-            <div id="idcard">
-                <img src="img/joaquin.jpg">
-                <div>
-                    <h1>Joaquin Sampallo</h1>
-                    <!-- <span>UX UI Designer • AR 🇦🇷</span> -->
-                    <div id="status">
-                        <div>Currently available</div>
-                        <div id="point">●</div>
+
+<body class="bg-[#fffdf7] text-stone-900 font-sans antialiased overflow-x-hidden max-w-[1024px] mx-auto min-h-screen border-x border-stone-900/5">
+
+    <!-- Navigation -->
+    <nav class="w-full px-6 py-4 md:px-8 flex justify-between items-center bg-[#fffdf7] text-stone-900 sticky top-0 z-50 border-b border-stone-900/5 backdrop-blur-sm bg-[#fffdf7]/90">
+        <div class="flex items-center gap-3 md:gap-4">
+            <img src="img/joaquin.jpg" alt="Joaquin Sampallo" class="w-10 h-10 md:w-11 md:h-11 rounded-full object-cover grayscale border border-stone-900/10">
+            <div class="flex flex-col">
+                <span class="font-medium text-base md:text-[17px] leading-tight tracking-tight">Joaquin Sampallo</span>
+                <div class="text-[#a1a1aa] text-xs md:text-sm flex items-center gap-1.5 mt-0.5 font-normal tracking-wide">
+                    Currently available <span class="w-1.5 h-1.5 rounded-full bg-[#22c55e]"></span>
+                </div>
+            </div>
+        </div>
+        <div class="flex items-center gap-2 md:gap-2">
+            <a href="cases.html" class="px-4 py-1.5 md:px-5 md:py-1.5 bg-[#27272a] hover:bg-[#3f3f46] text-[#ffffff] rounded-full text-xs md:text-sm font-medium transition-colors">Work</a>
+            <a href="mailto:jsampallo97@gmail.com" class="px-4 py-1.5 md:px-5 md:py-1.5 bg-[#7c3aed] hover:bg-[#6d28d9] text-[#ffffff] rounded-full text-xs md:text-sm font-medium transition-colors">Contact</a>
+        </div>
+    </nav>
+
+    <!-- Header -->
+    <header class="w-full px-6 md:px-12 pt-24 pb-16 flex flex-col items-center text-center">
+        <h1 class="text-5xl md:text-[5.5rem] leading-[0.85] tracking-tighter font-bold mb-6 uppercase">
+            Selected<br>
+            <span class="text-stone-300">Works</span>
+        </h1>
+        <p class="text-stone-600 max-w-md text-sm md:text-base">I'm a visual designer who loves crafting digital products and brand experiences.</p>
+    </header>
+
+    <!-- Main Content -->
+    <main class="w-full">
+        
+        <!-- Project 1: Consolidating a Fragmented Brand (Left Aligned) -->
+        <section class="w-full py-16 md:py-24 relative z-10">
+            <div class="w-full flex flex-col justify-center">
+                
+                <!-- Headline Above -->
+                <div class="px-6 md:px-12 mb-6 md:mb-8 flex flex-col gap-4">
+                    <div class="flex flex-col md:flex-row md:items-end gap-4 md:gap-8">
+                        <h2 class="text-4xl md:text-5xl lg:text-6xl font-bold text-stone-900 uppercase leading-[0.85] tracking-tighter">
+                            Consolidating a<br>Fragmented Brand
+                        </h2>
+                        <div class="flex flex-wrap gap-2 md:mb-2">
+                            <span class="px-4 py-2 border border-stone-900/20 rounded-full text-[10px] font-bold tracking-[0.2em] uppercase text-stone-600 whitespace-nowrap">Case Study</span>
+                        </div>
                     </div>
                 </div>
+                
+                <!-- Full width Image -->
+                <div class="w-full group">
+                    <a href="kd.html" class="block w-full overflow-hidden border-t border-b border-stone-900/10 bg-stone-100 transition-all duration-500">
+                        <img src="img/kd01.png" alt="Consolidating a Fragmented Brand" class="w-full h-auto object-cover transform transition-transform duration-700 ease-out group-hover:scale-[1.01]">
+                    </a>
+                </div>
+
+                <!-- CTA Below -->
+                <div class="px-6 md:px-12 mt-8 md:mt-10 flex justify-end">
+                    <a href="kd.html" class="group/btn inline-flex items-center gap-4 text-sm font-semibold tracking-widest uppercase pb-2 border-b border-stone-900 hover:text-stone-500 hover:border-stone-500 transition-colors">
+                        Read Case Study 
+                        <svg class="w-4 h-4 transform group-hover/btn:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path></svg>
+                    </a>
+                </div>
+
             </div>
+        </section>
 
-            <div id="nvb">
-                    <a href="cases.html"><div class="nvb_itm">Work</div></a>
-                    <a href="mailto:jsampallo97@gmail.com"><div id="nvb_cta">Contact</div></a> 
+        <!-- Project 2: Easy News App (Right Aligned) -->
+        <section class="w-full py-16 md:py-24 relative z-10 border-t border-stone-900/5">
+            <div class="w-full flex flex-col justify-center">
+                
+                <!-- Headline Above -->
+                <div class="px-6 md:px-12 mb-6 md:mb-8 flex flex-col gap-4 md:items-end text-left md:text-right">
+                    <div class="flex flex-col md:flex-row-reverse md:items-end gap-4 md:gap-8">
+                        <h2 class="text-4xl md:text-5xl lg:text-6xl font-bold text-stone-900 uppercase leading-[0.85] tracking-tighter">
+                            Easy News<br>App
+                        </h2>
+                        <div class="flex flex-wrap gap-2 md:mb-2 md:justify-end">
+                            <span class="px-4 py-2 border border-stone-900/20 rounded-full text-[10px] font-bold tracking-[0.2em] uppercase text-stone-600 whitespace-nowrap">Case Study</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Full width Image -->
+                <div class="w-full group">
+                    <a href="https://www.behance.net/gallery/222687375/Easy-News" target="_blank" class="block w-full overflow-hidden border-t border-b border-stone-900/10 bg-stone-100 transition-all duration-500">
+                        <img src="img/post1.jpg" alt="Easy News App" class="w-full h-auto object-cover transform transition-transform duration-700 ease-out group-hover:scale-[1.01]">
+                    </a>
+                </div>
+
+                <!-- CTA Below -->
+                <div class="px-6 md:px-12 mt-8 md:mt-10 flex justify-start">
+                    <a href="https://www.behance.net/gallery/222687375/Easy-News" target="_blank" class="group/btn inline-flex flex-row-reverse items-center gap-4 text-sm font-semibold tracking-widest uppercase pb-2 border-b border-stone-900 hover:text-stone-500 hover:border-stone-500 transition-colors">
+                        <svg class="w-4 h-4 transform group-hover/btn:-translate-x-1 transition-transform rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path></svg>
+                        View on Behance
+                    </a>
+                </div>
+
             </div>
-        </header>
-        <section>
-            <a href="kd.html">
-                <div class="post">
-                    <span class="flair_c">Case Study</span>
-                    <h3>Consolidating a Fragmented Brand</h3>
-                    <img class="postimg" src="img/kd01.png">
-                    <p>I transformed four disconnected websites into one cohesive platform. This strategic UX redesign streamlined user acquisition and crafted a calming digital experience that harmonizes a multifaceted professional brand.</p>
-                </div>
-            </a>
+        </section>
 
-            <a href="https://www.behance.net/gallery/222687375/Easy-News" target="_blank">
-                <div class="post">
-                    <span class="flair_c">Case Study</span>
-                    <h3>Easy News App</h3>
-                    <img class="postimg" src="img/post1.jpg">
-                    <p>Easy News delivers up-to-date news, specifically adapted for users who face reading comprehension issues and learning disabilities.</p>
+        <!-- Project 3: Superior Yerba Mate (Left Aligned) -->
+        <section class="w-full py-16 md:py-24 relative z-10 border-t border-stone-900/5">
+            <div class="w-full flex flex-col justify-center">
+                
+                <!-- Headline Above -->
+                <div class="px-6 md:px-12 mb-6 md:mb-8 flex flex-col gap-4">
+                    <div class="flex flex-col md:flex-row md:items-end gap-4 md:gap-8">
+                        <h2 class="text-4xl md:text-5xl lg:text-6xl font-bold text-stone-900 uppercase leading-[0.85] tracking-tighter">
+                            Superior<br>Yerba Mate
+                        </h2>
+                        <div class="flex flex-wrap gap-2 md:mb-2">
+                            <span class="px-4 py-2 border border-stone-900/20 rounded-full text-[10px] font-bold tracking-[0.2em] uppercase text-stone-600 whitespace-nowrap">Case Study</span>
+                        </div>
+                    </div>
                 </div>
-            </a>
+                
+                <!-- Full width Image -->
+                <div class="w-full group">
+                    <a href="https://www.behance.net/gallery/221038485/Superior-Yerba-Mate" target="_blank" class="block w-full overflow-hidden border-t border-b border-stone-900/10 bg-stone-100 transition-all duration-500">
+                        <img src="img/post2.jpg" alt="Superior Yerba Mate" class="w-full h-auto object-cover transform transition-transform duration-700 ease-out group-hover:scale-[1.01]">
+                    </a>
+                </div>
 
-            <a href="https://www.behance.net/gallery/221038485/Superior-Yerba-Mate" target="_blank">
-                <div class="post">
-                    <span class="flair_c">Case Study</span>
-                    <h3>Superior Yerba Mate</h3>
-                    <img class="postimg" src="img/post2.jpg">
-                    <p>Web design and content for a high-end brand of yerba mate.</p>
+                <!-- CTA Below -->
+                <div class="px-6 md:px-12 mt-8 md:mt-10 flex justify-end">
+                    <a href="https://www.behance.net/gallery/221038485/Superior-Yerba-Mate" target="_blank" class="group/btn inline-flex items-center gap-4 text-sm font-semibold tracking-widest uppercase pb-2 border-b border-stone-900 hover:text-stone-500 hover:border-stone-500 transition-colors">
+                        View on Behance
+                        <svg class="w-4 h-4 transform group-hover/btn:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path></svg>
+                    </a>
                 </div>
-            </a>
-            
-            <a href="https://www.behance.net/gallery/220419041/CONTNDR" target="_blank">
-                <div class="post">
-                    <span class="flair_c">Case Study</span>
-                    <h3>CONTNDR</h3>
-                    <img class="postimg" src="img/post3.jpg">
-                    <p>Matching app designed for people in need of home service providers.</p>
-                </div>
-            </a>
 
-            <a href="https://www.figma.com/proto/eJA1cAHzE79ZoKiLkR5opM/Design-Exercise?node-id=2-38&t=A3NTyONwGyCwOf37-1&scaling=scale-down-width&content-scaling=fixed&page-id=0%3A1" target="blank">
-                <div class="post">
-                    <span class="flair_e">Design exercise</span>
-                    <h3>Bates Center Homepage</h3>
-                    <img class="postimg" src="img/post4.jpg">
-                    <p>Bates Center is a plastic surgery center focused on refined, patient-first care, combining clinical excellence with warmth, trust, clarity, and a modern digital experience.</p>
+            </div>
+        </section>
+
+        <!-- Project 4: CONTNDR (Right Aligned) -->
+        <section class="w-full py-16 md:py-24 relative z-10 border-t border-stone-900/5">
+            <div class="w-full flex flex-col justify-center">
+                
+                <!-- Headline Above -->
+                <div class="px-6 md:px-12 mb-6 md:mb-8 flex flex-col gap-4 md:items-end text-left md:text-right">
+                    <div class="flex flex-col md:flex-row-reverse md:items-end gap-4 md:gap-8">
+                        <h2 class="text-4xl md:text-5xl lg:text-6xl font-bold text-stone-900 uppercase leading-[0.85] tracking-tighter">
+                            CONTNDR
+                        </h2>
+                        <div class="flex flex-wrap gap-2 md:mb-2 md:justify-end">
+                            <span class="px-4 py-2 border border-stone-900/20 rounded-full text-[10px] font-bold tracking-[0.2em] uppercase text-stone-600 whitespace-nowrap">Case Study</span>
+                        </div>
+                    </div>
                 </div>
+                
+                <!-- Full width Image -->
+                <div class="w-full group">
+                    <a href="https://www.behance.net/gallery/220419041/CONTNDR" target="_blank" class="block w-full overflow-hidden border-t border-b border-stone-900/10 bg-stone-100 transition-all duration-500">
+                        <img src="img/post3.jpg" alt="CONTNDR" class="w-full h-auto object-cover transform transition-transform duration-700 ease-out group-hover:scale-[1.01]">
+                    </a>
+                </div>
+
+                <!-- CTA Below -->
+                <div class="px-6 md:px-12 mt-8 md:mt-10 flex justify-start">
+                    <a href="https://www.behance.net/gallery/220419041/CONTNDR" target="_blank" class="group/btn inline-flex flex-row-reverse items-center gap-4 text-sm font-semibold tracking-widest uppercase pb-2 border-b border-stone-900 hover:text-stone-500 hover:border-stone-500 transition-colors">
+                        <svg class="w-4 h-4 transform group-hover/btn:-translate-x-1 transition-transform rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path></svg>
+                        View on Behance
+                    </a>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- Project 5: Bates Center Homepage (Left Aligned) -->
+        <section class="w-full py-16 md:py-24 relative z-10 border-t border-stone-900/5">
+            <div class="w-full flex flex-col justify-center">
+                
+                <!-- Headline Above -->
+                <div class="px-6 md:px-12 mb-6 md:mb-8 flex flex-col gap-4">
+                    <div class="flex flex-col md:flex-row md:items-end gap-4 md:gap-8">
+                        <h2 class="text-4xl md:text-5xl lg:text-6xl font-bold text-stone-900 uppercase leading-[0.85] tracking-tighter">
+                            Bates Center<br>Homepage
+                        </h2>
+                        <div class="flex flex-wrap gap-2 md:mb-2">
+                            <span class="px-4 py-2 border border-stone-900/20 rounded-full text-[10px] font-bold tracking-[0.2em] uppercase text-stone-600 whitespace-nowrap">Design Exercise</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Full width Image -->
+                <div class="w-full group">
+                    <a href="https://www.figma.com/proto/eJA1cAHzE79ZoKiLkR5opM/Design-Exercise?node-id=2-38&t=A3NTyONwGyCwOf37-1&scaling=scale-down-width&content-scaling=fixed&page-id=0%3A1" target="_blank" class="block w-full overflow-hidden border-t border-b border-stone-900/10 bg-stone-100 transition-all duration-500">
+                        <img src="img/post4.jpg" alt="Bates Center Homepage" class="w-full h-auto object-cover transform transition-transform duration-700 ease-out group-hover:scale-[1.01]">
+                    </a>
+                </div>
+
+                <!-- CTA Below -->
+                <div class="px-6 md:px-12 mt-8 md:mt-10 flex justify-end">
+                    <a href="https://www.figma.com/proto/eJA1cAHzE79ZoKiLkR5opM/Design-Exercise?node-id=2-38&t=A3NTyONwGyCwOf37-1&scaling=scale-down-width&content-scaling=fixed&page-id=0%3A1" target="_blank" class="group/btn inline-flex items-center gap-4 text-sm font-semibold tracking-widest uppercase pb-2 border-b border-stone-900 hover:text-stone-500 hover:border-stone-500 transition-colors">
+                        View Prototype 
+                        <svg class="w-4 h-4 transform group-hover/btn:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path></svg>
+                    </a>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section class="w-full px-6 md:px-12 py-32 flex flex-col items-center text-center border-t border-stone-900/10 mt-12 bg-[#faf9f6]">
+            <h4 class="text-4xl md:text-5xl font-bold tracking-tighter uppercase mb-8 text-stone-900">
+                How's your project<br><span class="text-stone-400">looking?</span>
+            </h4>
+            <a href="mailto:jsampallo97@gmail.com" class="px-8 py-3.5 bg-[#7c3aed] hover:bg-[#6d28d9] text-white rounded-full text-sm font-bold tracking-widest uppercase transition-all shadow-[0_8px_30px_rgb(124,58,237,0.3)] hover:shadow-[0_8px_30px_rgb(124,58,237,0.5)] transform hover:-translate-y-1">
+                Contact Me
             </a>
         </section>
-        
-        <div id="skills">
-        </div>
 
-        <div id="contact">
-                <h4>How's your project looking?</h4>
-                <a href="mailto:jsampallo97@gmail.com" class="cta"">Contact Me</a>
-            </div>
-        <footer>
-            <p id="credits">© 2026 Joaquin Sampallo.</p>
-        </footer>
-    <script src="script.js"></script>
+    </main>
+
+    <!-- Footer -->
+    <footer class="w-full px-6 py-10 md:px-12 border-t border-stone-900/10 relative z-40 bg-stone-50 flex justify-center items-center">
+        <p class="text-xs font-bold tracking-[0.2em] uppercase text-stone-500">© 2026 Joaquin Sampallo.</p>
+    </footer>
+
 </body>
-
 </html>

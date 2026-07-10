@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="en" class="bg-stone-200">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Selected Works | Editorial Portfolio</title>
+    <title>Landing Page Design</title>
     
     <!-- Load Geist Font from Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -72,7 +72,12 @@
             left: 0;
             /* Force GPU acceleration for smooth sub-pixel rendering */
             will-change: transform;
-            transform: translateZ(0); 
+            transform: translateZ(0);
+            /* Anti-blurring properties for transforms */
+            backface-visibility: hidden;
+            -webkit-backface-visibility: hidden;
+            image-rendering: -webkit-optimize-contrast;
+            image-rendering: high-quality;
         }
 
         ::selection {
@@ -95,11 +100,11 @@
     </style>
 </head>
 
-<body class="bg-stone-50 text-stone-900 font-sans antialiased overflow-x-hidden max-w-[1024px] mx-auto shadow-2xl min-h-screen border-x border-stone-900/5">
+<body class="bg-[#fffdf7] text-stone-900 font-sans antialiased overflow-x-hidden max-w-[1024px] mx-auto min-h-screen border-x border-stone-900/5">
 
-    <nav class="w-full px-6 py-4 md:px-8 flex justify-between items-center bg-[#ffffff] text-stone-900">
+    <nav class="w-full px-6 py-4 md:px-8 flex justify-between items-center bg-[#fffdf7] text-stone-900 sticky top-0 z-50 border-b border-stone-900/5 backdrop-blur-sm bg-[#fffdf7]/90">
         <div class="flex items-center gap-3 md:gap-4">
-            <img src="img/joaquin.jpg" alt="Joaquin Sampallo" class="w-10 h-10 md:w-11 md:h-11 rounded-full object-cover grayscale">
+            <img src="img/joaquin.jpg" alt="Joaquin Sampallo" class="w-10 h-10 md:w-11 md:h-11 rounded-full object-cover grayscale border border-stone-900/10">
             <div class="flex flex-col">
                 <span class="font-medium text-base md:text-[17px] leading-tight tracking-tight">Joaquin Sampallo</span>
                 <div class="text-[#a1a1aa] text-xs md:text-sm flex items-center gap-1.5 mt-0.5 font-normal tracking-wide">
@@ -107,9 +112,9 @@
                 </div>
             </div>
         </div>
-        <div class="flex items-center gap-2 md:gap-3">
-            <a href="#" class="px-4 py-1.5 md:px-5 md:py-1.5 bg-[#27272a] hover:bg-[#3f3f46] text-[#ffffff] rounded-full text-xs md:text-sm font-medium transition-colors">Work</a>
-            <a href="#" class="px-4 py-1.5 md:px-5 md:py-1.5 bg-[#7c3aed] hover:bg-[#6d28d9] text-[#ffffff] rounded-full text-xs md:text-sm font-medium transition-colors">Contact</a>
+        <div class="flex items-center gap-2 md:gap-2">
+            <a href="cases.html" class="px-4 py-1.5 md:px-5 md:py-1.5 bg-[#27272a] hover:bg-[#3f3f46] text-[#ffffff] rounded-full text-xs md:text-sm font-medium transition-colors">Work</a>
+            <a href="mailto:jsampallo97@gmail.com" class="px-4 py-1.5 md:px-5 md:py-1.5 bg-[#7c3aed] hover:bg-[#6d28d9] text-[#ffffff] rounded-full text-xs md:text-sm font-medium transition-colors">Contact</a>
         </div>
     </nav>
 
@@ -125,24 +130,24 @@
         
         <!-- Project Item 1 -->
         <!-- Note for CMS: Using `relative z-10` on all items works because DOM order naturally stacks later items on top. No dynamic z-index needed! -->
-        <section class="scroll-rig w-full h-[250vh] relative z-10 bg-stone-50">
-            <div class="sticky top-0 h-[100dvh] w-full flex flex-col justify-center py-12">
+        <section class="scroll-rig w-full h-[250vh] relative z-10">
+            <div class="sticky top-0 h-[100dvh] w-full flex flex-col justify-center py-12 bg-[#fffdf7]">
                 
                 <!-- Headline Above -->
                 <div class="px-6 md:px-12 mb-6 md:mb-10 flex flex-col md:flex-row md:items-end gap-4 md:gap-8">
                     <h2 class="text-massive font-bold text-stone-900 uppercase">
                         Qata
                     </h2>
-                    <div class="flex flex-wrap gap-3">
+                    <div class="flex flex-wrap gap-2">
                         <span class="px-4 py-2 border border-stone-900/20 rounded-full text-[10px] font-bold tracking-[0.2em] uppercase text-stone-600 whitespace-nowrap">Branding</span>
                         <span class="px-4 py-2 border border-stone-900/20 rounded-full text-[10px] font-bold tracking-[0.2em] uppercase text-stone-600 whitespace-nowrap">SaaS</span>
                     </div>
                 </div>
                 
                 <!-- Full Width Image -->
-                <div class="portfolio-frame" style="background-image: url('bg_qata.png');">
+                <div class="portfolio-frame" style="background-image: url('img/bg_qata.png');">
                     <div class="preview-container">
-                        <img src="qata.png" 
+                        <img src="img/l_qata.png" 
                              alt="Joaquin Sampallo" 
                              class="scrolling-image">
                     </div>
@@ -161,24 +166,24 @@
 
         <!-- Project Item 2 (Alternating Layout) -->
         <!-- Note for CMS: Use a conditional class based on loop index (e.g., `if index % 2 !== 0`) to apply `md:flex-row-reverse` and `text-right` to alternate layouts -->
-        <section class="scroll-rig w-full h-[250vh] relative z-10 bg-stone-50">
-            <div class="sticky top-0 h-[100dvh] w-full flex flex-col justify-center py-12">
+        <section class="scroll-rig w-full h-[250vh] relative z-10">
+            <div class="sticky top-0 h-[100dvh] w-full flex flex-col justify-center py-12 bg-[#fffdf7]">
                 
                 <!-- Headline Above -->
                 <div class="px-6 md:px-12 mb-6 md:mb-10 flex flex-col md:flex-row-reverse md:items-end gap-4 md:gap-8 text-right">
                     <h2 class="text-massive font-bold text-stone-900 uppercase">
                         Datateer
                     </h2>
-                    <div class="flex flex-wrap justify-end gap-3">
+                    <div class="flex flex-wrap justify-end gap-2">
                         <span class="px-4 py-2 border border-stone-900/20 rounded-full text-[10px] font-bold tracking-[0.2em] uppercase text-stone-600 whitespace-nowrap">UX</span>
                         <span class="px-4 py-2 border border-stone-900/20 rounded-full text-[10px] font-bold tracking-[0.2em] uppercase text-stone-600 whitespace-nowrap">Landing Page Design</span>
                     </div>
                 </div>
                 
                 <!-- Full Width Image -->
-                <div class="portfolio-frame" style="background-image: url('bg_dat.png');">
+                <div class="portfolio-frame" style="background-image: url('img/bg_dat.png');">
                     <div class="preview-container">
-                        <img src="datateer.png" 
+                        <img src="img/l_dat.png" 
                              alt="Kine Architecture Landing Page Preview" 
                              class="scrolling-image">
                     </div>
@@ -196,24 +201,24 @@
         </section>
 
         <!-- Project Item 3 -->
-        <section class="scroll-rig w-full h-[250vh] relative z-10 bg-stone-50">
-            <div class="sticky top-0 h-[100dvh] w-full flex flex-col justify-center py-12">
+        <section class="scroll-rig w-full h-[250vh] relative z-10">
+            <div class="sticky top-0 h-[100dvh] w-full flex flex-col justify-center py-12 bg-[#fffdf7]">
                 
                 <!-- Headline Above -->
                 <div class="px-6 md:px-12 mb-6 md:mb-10 flex flex-col md:flex-row md:items-end gap-4 md:gap-8">
                     <h2 class="text-massive font-bold text-stone-900 uppercase">
                         Alpha<br>Delivered
                     </h2>
-                    <div class="flex flex-wrap gap-3">
+                    <div class="flex flex-wrap gap-2">
                         <span class="px-4 py-2 border border-stone-900/20 rounded-full text-[10px] font-bold tracking-[0.2em] uppercase text-stone-600 whitespace-nowrap">Branding</span>
                         <span class="px-4 py-2 border border-stone-900/20 rounded-full text-[10px] font-bold tracking-[0.2em] uppercase text-stone-600 whitespace-nowrap">Landing Page Design</span>
                     </div>
                 </div>
                 
                 <!-- Full Width Image -->
-                <div class="portfolio-frame" style="background-image: url('bg_deli.png');">
+                <div class="portfolio-frame" style="background-image: url('img/bg_deli.png');">
                     <div class="preview-container">
-                        <img src="delivered.png" 
+                        <img src="img/l_deli.png" 
                              alt="Lumina Tech Landing Page Preview" 
                              class="scrolling-image">
                     </div>

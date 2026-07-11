@@ -4,152 +4,208 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Consolidating a Fragmented Brand</title>
+
+    <!-- Original Meta Tags -->
+    <title>Consolidating a Fragmented Brand | Joaquin Sampallo</title>
     <meta name="description" content="UX case study brand consolidation">
     <meta name="keywords" content="ux, brand, consolidation, design, website, web">
-    <link rel="stylesheet" href="styles.css">
+    <link rel="icon" type="image/x-icon" href="favico.png">
+
+    <!-- Load Geist Font from Google Fonts (matches cases.html) -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible+Next:ital,wght@0,200..800;1,200..800&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Funnel+Display:wght@300..800&family=Space+Grotesk:wght@300..700&display=swap" rel="stylesheet">
-    <link rel="icon" type="image/x-icon" href="favico.png">
+    <link href="https://fonts.googleapis.com/css2?family=Geist:wght@100..900&display=swap" rel="stylesheet">
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['"Geist"', 'sans-serif'],
+                    },
+                    colors: {
+                        stone: {
+                            50: '#faf9f6',
+                            300: '#d6d3d1',
+                            900: '#1a1a1a',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        ::selection {
+            background-color: #1a1a1a;
+            color: #faf9f6;
+        }
+    </style>
 </head>
-<body>
-    <div id="container">
-        <header>
-            <div id="idcard">
-                <img src="img/joaquin.jpg">
+
+<body class="bg-[#fffdf7] text-stone-900 font-sans antialiased overflow-x-hidden max-w-[1024px] mx-auto min-h-screen border-x border-stone-900/5">
+
+    <!-- Navigation -->
+    <nav class="w-full px-6 py-4 md:px-8 flex justify-between items-center bg-[#fffdf7] text-stone-900 sticky top-0 z-50 border-b border-stone-900/5 backdrop-blur-sm bg-[#fffdf7]/90">
+        <div class="flex items-center gap-3 md:gap-4">
+            <img src="img/joaquin.jpg" alt="Joaquin Sampallo" class="w-10 h-10 md:w-11 md:h-11 rounded-full object-cover grayscale border border-stone-900/10">
+            <div class="flex flex-col">
+                <span class="font-medium text-base md:text-[17px] leading-tight tracking-tight">Joaquin Sampallo</span>
+                <div class="text-[#a1a1aa] text-xs md:text-sm flex items-center gap-1.5 mt-0.5 font-normal tracking-wide">
+                    Currently available <span class="w-1.5 h-1.5 rounded-full bg-[#22c55e]"></span>
+                </div>
+            </div>
+        </div>
+        <div class="flex items-center gap-2 md:gap-2">
+            <a href="cases.html" class="px-4 py-1.5 md:px-5 md:py-1.5 bg-[#27272a] hover:bg-[#3f3f46] text-[#ffffff] rounded-full text-xs md:text-sm font-medium transition-colors">Work</a>
+            <a href="mailto:jsampallo97@gmail.com" class="px-4 py-1.5 md:px-5 md:py-1.5 bg-[#7c3aed] hover:bg-[#6d28d9] text-[#ffffff] rounded-full text-xs md:text-sm font-medium transition-colors">Contact</a>
+        </div>
+    </nav>
+
+    <!-- Case Study Header -->
+    <header class="w-full px-6 md:px-12 pt-16 md:pt-20 pb-10">
+        <a href="cases.html" class="inline-flex items-center gap-2 text-xs font-semibold tracking-widest uppercase text-stone-500 hover:text-stone-900 transition-colors mb-10">
+            <svg class="w-4 h-4 rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path></svg>
+            Back to Work
+        </a>
+
+        <div class="flex flex-col gap-6">
+            <span class="w-fit px-4 py-2 border border-stone-900/20 rounded-full text-[10px] font-bold tracking-[0.2em] uppercase text-stone-600 whitespace-nowrap">Case Study</span>
+
+            <h1 class="text-4xl md:text-6xl lg:text-7xl font-bold text-stone-900 uppercase leading-[0.85] tracking-tighter max-w-3xl">
+                Consolidating a<br>Fragmented Brand
+            </h1>
+            <p class="text-stone-500 max-w-xl text-sm md:text-base">Streamlining the Path to Conversion</p>
+
+            <div class="flex flex-wrap gap-8 md:gap-12 mt-4">
                 <div>
-                    <h3 class="fauxh1">Joaquin Sampallo</h3>
-                    <!-- <span>UX UI Designer • AR 🇦🇷</span> -->
-                    <div id="status">
-                        <div>Currently available</div>
-                        <div id="point">●</div>
-                    </div>
+                    <span class="block text-stone-400 tracking-[0.2em] uppercase text-[10px] font-bold mb-1">Role</span>
+                    <span class="font-semibold text-stone-900 text-sm md:text-base">Lead UX/UI Designer</span>
+                </div>
+                <div>
+                    <span class="block text-stone-400 tracking-[0.2em] uppercase text-[10px] font-bold mb-1">Timeframe</span>
+                    <span class="font-semibold text-stone-900 text-sm md:text-base">8 weeks</span>
                 </div>
             </div>
+        </div>
+    </header>
 
-            <div id="nvb">
-                    <a href="cases.html"><div class="nvb_itm">Work</div></a>
-                    <a href="mailto:jsampallo97@gmail.com"><div id="nvb_cta">Contact</div></a> 
-            </div>
-        </header>
-        <section>
-                <div class="post">
-                    <div class="post_header">
-                        <span class="flair_c">Case Study</span>
+    <!-- Hero Image -->
+    <div class="w-full mt-10 border-t border-b border-stone-900/10 bg-stone-100">
+        <img src="img/kd01.png" alt="Consolidating a Fragmented Brand" class="w-full h-auto object-cover">
+    </div>
 
-                        <div class="data">
-                            <div>
-                                <b>Role:</b> Lead UX/UI Designer
-                            </div>
+    <!-- Main Content -->
+    <main class="w-full">
+        <article class="w-full px-5 md:px-12 py-16 md:py-24">
+            <div class="max-w-2xl mx-auto flex flex-col gap-6">
 
-                            <div>
-                                <b>Timeframe:</b> 8 weeks
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <img class="postimg" src="img/kd01.png">
-                    <h1 class="fauxh3">Consolidating a Fragmented Brand: Streamlining the Path to Conversion</h1>
-
-                    <h5>The Business Problem: A Siloed Digital Ecosystem</h5>
-                    <p>The client is a highly respected professional with a multifaceted career: a clinical therapist, published author, musician, speaker, and podcaster. While his expertise was vast, his digital presence was heavily fractured.
-                    <br><br>
+                <h2 class="text-2xl md:text-3xl font-bold text-stone-900 uppercase tracking-tight leading-none">The Business Problem: A Siloed Digital Ecosystem</h2>
+                <p class="text-stone-600 leading-relaxed text-[15px] md:text-base">
+                    The client is a highly respected professional with a multifaceted career: a clinical therapist, published author, musician, speaker, and podcaster. While his expertise was vast, his digital presence was heavily fractured.
+                </p>
+                <p class="text-stone-600 leading-relaxed text-[15px] md:text-base">
                     His ecosystem consisted of four disconnected websites:
+                </p>
+                <ul class="flex flex-col gap-3 pl-5 list-disc marker:text-stone-400 text-stone-600 leading-relaxed text-[15px] md:text-base">
+                    <li>Personal/General Portfolio</li>
+                    <li>Clinical Practice</li>
+                    <li>Podcast Platform</li>
+                    <li>A premium educational course and community.</li>
+                </ul>
+                <p class="text-stone-600 leading-relaxed text-[15px] md:text-base">
+                    <strong class="text-stone-900 font-semibold">The Impact:</strong> This fragmentation created massive friction in the user journey. A visitor finding him through a podcast interview had no intuitive path to discover his books or enroll in his Waves of Focus community. The fragmented architecture was causing high bounce rates, diluting his brand authority, and ultimately resulting in lost cross-pollination opportunities for his paid services and clinical practice.
+                </p>
 
-                    <ul>
-                            <li>Personal/General Portfolio</li><br>
-                            <li>Clinical Practice</li><br>
-                            <li>Podcast Platform</li><br>
-                            <li>A premium educational course and community.</li>
-                    </ul>
-                    </p>
-
-                    <p>
-                        <strong>The Impact:</strong> This fragmentation created massive friction in the user journey. A visitor finding him through a podcast interview had no intuitive path to discover his books or enroll in his Waves of Focus community. The fragmented architecture was causing high bounce rates, diluting his brand authority, and ultimately resulting in lost cross-pollination opportunities for his paid services and clinical practice.
-                    </p>
-
-                    <img class="postimg" src="img/vkd.gif">
-                    
-                    <h5>Discovery & Empathy: Understanding the Core Philosophy</h5>
-                    <p>Before opening Figma, I needed to understand the human being behind the brand. I embedded myself in the project, conducting in-depth stakeholder interviews with the client.<br><br>
-
-                    Through these discussions, I uncovered his central operational philosophy: "Mastery and meaningful work develop from guided play." As an avid video game enthusiast and a therapist, he strongly believes that true productivity stems from enjoyment and calmness.<br><br>
-
-                    The Insight: The new platform couldn’t just be a corporate directory of services. To convert visitors into community members or clinical patients, the website needed to inherently evoke a sense of deep calm, trust, and subtle playfulness. The design itself had to prove his philosophy.</p>
-
-                    <h5>Strategy & Information Architecture: Merging Four Worlds</h5>
-                    <p>
-                        The most critical phase of the project was solving the structural mess. How do you combine clinical therapy services with music and podcasts without confusing the user's mental model?<br><br>
-
-                        I conducted a content audit across all four existing sites and began mapping a new Information Architecture (IA).
-
-                        <ul>
-                            <li><strong>The Goal:</strong> Create a unified navigation structure that allowed distinct audience segments (e.g., a patient seeking therapy vs. a creative seeking productivity advice) to find exactly what they needed within two clicks, while gently exposing them to his other offerings.</li><br>
-                            <li><strong>The Execution:</strong> We moved away from separate domains and built a centralized hub. I designed a mega-menu and a modular homepage layout that served as a "routing station," guiding users seamlessly to their specific areas of interest.</li>
-                        </ul>
-                    </p>
-                    
-                    <img class="postimg" src="img/kd03.png">
-                    
-                    <h5>Wireframing & Prototyping: Testing the Flow</h5>
-                    <p>
-                        With the IA locked, I moved into low-fidelity wireframing. The focus here was strictly on layout, content hierarchy, and conversion funnels—specifically driving traffic to the Waves of Focus community and clinical bookings.<br><br>
-
-                        We reviewed the wireframes together in iterative cycles. I prioritized an asymmetrical, breathable layout that reduced cognitive load. By testing the user flows early without the distraction of colors or typography, we ensured the "routing" logic actually worked for his diverse audience.
-                    </p>
-
-                    <img class="postimg" src="img/kd04.png">
-
-                    <h5>Visual Design</h5>
-                    <p>
-                        Once the structural foundation was solid, I developed a visual identity that translated his philosophy of "calmness and play" into a digital interface.
-
-                        <ul>
-                            <li><strong>Breathable UI:</strong> We utilized extensive whitespace, soft margins, and a muted, calming color palette to reduce visual noise and lower user anxiety.</li><br>
-
-                            <li><strong>Typography:</strong> Clean, highly legible typography was chosen to prioritize the reading experience for his editorial and clinical content.</li><br>
-
-                            <li><strong>Brand:</strong> To inject warmth and identity, I integrated bespoke Persian-style illustrations throughout the user journey. Instead of generic stock photography, these acted as cultural and personal touchpoints, building immediate trust and lowering the barrier to entry for potential clients.</li>
-                        </ul>
-                    </p>
-
-                    <video autoplay muted loop class="postvid" src="img/kd05.webm">
-                    
-                    <h5>The Outcomes: Measurable Cohesion</h5>
-                    <p>
-                        By transforming a scattered web presence into a centralized, strategic hub, the project resolved the core business problem: audience fragmentation.
-                        
-                        <ul>
-                            <li><strong>Streamlined User Acquisition:</strong> The unified architecture created a single, powerful funnel, allowing traffic from his podcast and speaking events to flow directly into his Waves of Focus community and clinical practice.</li><br>
-
-                            <li><strong>Increased Engagement:</strong> By providing a clear, low-friction user journey, we eliminated the dead-ends of the old ecosystem, actively reducing bounce rates and increasing the average time spent on site.</li><br>
-
-                            <li><strong>Elevated Brand Authority:</strong> The client now has a digital home that accurately reflects his multidisciplinary expertise, packaged in an interface that perfectly embodies his core philosophy of calm, meaningful play.</li>
-                        </ul>
-                    </p>
+                <div class="w-full overflow-hidden border border-stone-900/10 bg-stone-100 my-6">
+                    <img src="img/vkd.gif" alt="Fragmented ecosystem visual" class="w-full h-auto object-cover">
                 </div>
-        </section>
-        
-        <div id="skills">
-        </div>
 
-        <div id="contact">
-                <h4>How's your project looking?</h4>
-                <a href="#contact" class="cta">Contact Me</a>
+                <h2 class="text-2xl md:text-3xl font-bold text-stone-900 uppercase tracking-tight leading-none mt-6">Discovery &amp; Empathy: Understanding the Core Philosophy</h2>
+                <p class="text-stone-600 leading-relaxed text-[15px] md:text-base">
+                    Before opening Figma, I needed to understand the human being behind the brand. I embedded myself in the project, conducting in-depth stakeholder interviews with the client.
+                </p>
+                <p class="text-stone-600 leading-relaxed text-[15px] md:text-base">
+                    Through these discussions, I uncovered his central operational philosophy: "Mastery and meaningful work develop from guided play." As an avid video game enthusiast and a therapist, he strongly believes that true productivity stems from enjoyment and calmness.
+                </p>
+                <p class="text-stone-600 leading-relaxed text-[15px] md:text-base">
+                    <strong class="text-stone-900 font-semibold">The Insight:</strong> The new platform couldn't just be a corporate directory of services. To convert visitors into community members or clinical patients, the website needed to inherently evoke a sense of deep calm, trust, and subtle playfulness. The design itself had to prove his philosophy.
+                </p>
+
+                <h2 class="text-2xl md:text-3xl font-bold text-stone-900 uppercase tracking-tight leading-none mt-6">Strategy &amp; Information Architecture: Merging Four Worlds</h2>
+                <p class="text-stone-600 leading-relaxed text-[15px] md:text-base">
+                    The most critical phase of the project was solving the structural mess. How do you combine clinical therapy services with music and podcasts without confusing the user's mental model?
+                </p>
+                <p class="text-stone-600 leading-relaxed text-[15px] md:text-base">
+                    I conducted a content audit across all four existing sites and began mapping a new Information Architecture (IA).
+                </p>
+                <ul class="flex flex-col gap-3 pl-5 list-disc marker:text-stone-400 text-stone-600 leading-relaxed text-[15px] md:text-base">
+                    <li><strong class="text-stone-900 font-semibold">The Goal:</strong> Create a unified navigation structure that allowed distinct audience segments (e.g., a patient seeking therapy vs. a creative seeking productivity advice) to find exactly what they needed within two clicks, while gently exposing them to his other offerings.</li>
+                    <li><strong class="text-stone-900 font-semibold">The Execution:</strong> We moved away from separate domains and built a centralized hub. I designed a mega-menu and a modular homepage layout that served as a "routing station," guiding users seamlessly to their specific areas of interest.</li>
+                </ul>
+
+                <div class="w-full overflow-hidden border border-stone-900/10 bg-stone-100 my-6">
+                    <img src="img/kd03.png" alt="Information architecture mapping" class="w-full h-auto object-cover">
+                </div>
+
+                <h2 class="text-2xl md:text-3xl font-bold text-stone-900 uppercase tracking-tight leading-none mt-6">Wireframing &amp; Prototyping: Testing the Flow</h2>
+                <p class="text-stone-600 leading-relaxed text-[15px] md:text-base">
+                    With the IA locked, I moved into low-fidelity wireframing. The focus here was strictly on layout, content hierarchy, and conversion funnels—specifically driving traffic to the Waves of Focus community and clinical bookings.
+                </p>
+                <p class="text-stone-600 leading-relaxed text-[15px] md:text-base">
+                    We reviewed the wireframes together in iterative cycles. I prioritized an asymmetrical, breathable layout that reduced cognitive load. By testing the user flows early without the distraction of colors or typography, we ensured the "routing" logic actually worked for his diverse audience.
+                </p>
+
+                <div class="w-full overflow-hidden border border-stone-900/10 bg-stone-100 my-6">
+                    <img src="img/kd04.png" alt="Low-fidelity wireframes" class="w-full h-auto object-cover">
+                </div>
+
+                <h2 class="text-2xl md:text-3xl font-bold text-stone-900 uppercase tracking-tight leading-none mt-6">Visual Design</h2>
+                <p class="text-stone-600 leading-relaxed text-[15px] md:text-base">
+                    Once the structural foundation was solid, I developed a visual identity that translated his philosophy of "calmness and play" into a digital interface.
+                </p>
+                <ul class="flex flex-col gap-3 pl-5 list-disc marker:text-stone-400 text-stone-600 leading-relaxed text-[15px] md:text-base">
+                    <li><strong class="text-stone-900 font-semibold">Breathable UI:</strong> We utilized extensive whitespace, soft margins, and a muted, calming color palette to reduce visual noise and lower user anxiety.</li>
+                    <li><strong class="text-stone-900 font-semibold">Typography:</strong> Clean, highly legible typography was chosen to prioritize the reading experience for his editorial and clinical content.</li>
+                    <li><strong class="text-stone-900 font-semibold">Brand:</strong> To inject warmth and identity, I integrated bespoke Persian-style illustrations throughout the user journey. Instead of generic stock photography, these acted as cultural and personal touchpoints, building immediate trust and lowering the barrier to entry for potential clients.</li>
+                </ul>
+
+                <div class="w-full overflow-hidden border border-stone-900/10 bg-stone-100 my-6">
+                    <video autoplay muted loop playsinline class="w-full h-auto object-cover" src="img/kd05.webm"></video>
+                </div>
+
+                <h2 class="text-2xl md:text-3xl font-bold text-stone-900 uppercase tracking-tight leading-none mt-6">The Outcomes: Measurable Cohesion</h2>
+                <p class="text-stone-600 leading-relaxed text-[15px] md:text-base">
+                    By transforming a scattered web presence into a centralized, strategic hub, the project resolved the core business problem: audience fragmentation.
+                </p>
+                <ul class="flex flex-col gap-3 pl-5 list-disc marker:text-stone-400 text-stone-600 leading-relaxed text-[15px] md:text-base">
+                    <li><strong class="text-stone-900 font-semibold">Streamlined User Acquisition:</strong> The unified architecture created a single, powerful funnel, allowing traffic from his podcast and speaking events to flow directly into his Waves of Focus community and clinical practice.</li>
+                    <li><strong class="text-stone-900 font-semibold">Increased Engagement:</strong> By providing a clear, low-friction user journey, we eliminated the dead-ends of the old ecosystem, actively reducing bounce rates and increasing the average time spent on site.</li>
+                    <li><strong class="text-stone-900 font-semibold">Elevated Brand Authority:</strong> The client now has a digital home that accurately reflects his multidisciplinary expertise, packaged in an interface that perfectly embodies his core philosophy of calm, meaningful play.</li>
+                </ul>
+
             </div>
-        <footer>
-            <p id="credits">© 2026 Joaquin Sampallo.</p>
-        </footer>
-    </div>
-        <div id="bg">
-            <div class="blurball1"></div>
-            <div class="blurball2"></div>
-        </div>
-    </div>
+        </article>
 
-    <script src="script.js"></script>
+        <!-- Contact Section -->
+        <section class="w-full px-6 md:px-12 py-32 flex flex-col items-center text-center border-t border-stone-900/10 mt-12 bg-[#faf9f6]">
+            <h4 class="text-4xl md:text-5xl font-bold tracking-tighter uppercase mb-8 text-stone-900">
+                How's your project<br><span class="text-stone-400">looking?</span>
+            </h4>
+            <a href="mailto:jsampallo97@gmail.com" class="px-8 py-3.5 bg-[#7c3aed] hover:bg-[#6d28d9] text-white rounded-full text-sm font-bold tracking-widest uppercase transition-all shadow-[0_8px_30px_rgb(124,58,237,0.3)] hover:shadow-[0_8px_30px_rgb(124,58,237,0.5)] transform hover:-translate-y-1">
+                Contact Me
+            </a>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="w-full px-6 py-10 md:px-12 border-t border-stone-900/10 relative z-40 bg-stone-50 flex justify-center items-center">
+        <p class="text-xs font-bold tracking-[0.2em] uppercase text-stone-500">© 2026 Joaquin Sampallo.</p>
+    </footer>
+
 </body>
-
 </html>

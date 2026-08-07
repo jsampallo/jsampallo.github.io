@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Original Meta Tags -->
+    <title>A Premium Service Lost in Translation | Joaquin Sampallo</title>
+    <meta name="description" content="UX case study: redesigning Advanced Clean Air Solutions' digital presence for luxury homeowners">
+    <meta name="keywords" content="ux, redesign, air quality, luxury, design, website, web">
+    <link rel="icon" type="image/x-icon" href="favico.png">
+
+    <!-- Load Geist Font from Google Fonts (matches cases.html) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Geist:wght@100..900&display=swap" rel="stylesheet">
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['"Geist"', 'sans-serif'],
+                    },
+                    colors: {
+                        stone: {
+                            50: '#faf9f6',
+                            300: '#d6d3d1',
+                            900: '#1a1a1a',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        ::selection {
+            background-color: #1a1a1a;
+            color: #faf9f6;
+        }
+    </style>
+</head>
+
+<body class="bg-[#fffdf7] text-stone-900 font-sans antialiased overflow-x-hidden max-w-[1024px] mx-auto min-h-screen border-x border-stone-900/5">
+
+    <!-- Navigation -->
+    <nav class="w-full px-4 py-4 md:px-8 flex justify-between items-center gap-2 bg-[#fffdf7] text-stone-900 sticky top-0 z-50 border-b border-stone-900/5 backdrop-blur-sm bg-[#fffdf7]/90">
+        <div class="flex items-center gap-3 md:gap-4 shrink min-w-0">
+            <!-- Wrapped image in relative container to position the dot -->
+            <div class="relative shrink-0">
+                <img src="img/joaquin.jpg" alt="Joaquin Sampallo" class="w-10 h-10 md:w-11 md:h-11 rounded-full object-cover grayscale border border-stone-900/10">
+                <!-- Mobile-only green dot overlay (hidden on sm breakpoint and up) -->
+                <span class="sm:hidden absolute bottom-0 right-0 w-2.5 h-2.5 rounded-full bg-[#22c55e] border-2 border-[#fffdf7]"></span>
+            </div>
+            <div class="flex flex-col min-w-0 max-[350px]:hidden">
+                <span class="font-medium text-[15px] sm:text-base md:text-[17px] leading-tight tracking-tight">Joaquin Sampallo</span>
+                <!-- Desktop-only availability text (hidden below sm breakpoint) -->
+                <div class="hidden sm:flex text-[#a1a1aa] text-xs md:text-sm items-center gap-1.5 mt-0.5 font-normal tracking-wide">
+                    Currently available <span class="w-1.5 h-1.5 rounded-full bg-[#22c55e]"></span>
+                </div>
+            </div>
+        </div>
+        <!-- Pills matching project tags -->
+        <div class="flex items-center gap-1.5 sm:gap-2 shrink-0">
+            <a href="cases.html" class="px-3 md:px-4 py-2 border border-stone-900/20 rounded-full text-[10px] font-bold tracking-[0.2em] uppercase text-stone-600 whitespace-nowrap hover:bg-stone-900/5 transition-colors">Web</a>
+            <a href="visuals.html" class="px-3 md:px-4 py-2 border border-stone-900/20 rounded-full text-[10px] font-bold tracking-[0.2em] uppercase text-stone-600 whitespace-nowrap hover:bg-stone-900/5 transition-colors">Visuals</a>
+            <a href="mailto:jsampallo97@gmail.com" class="px-4 py-2 bg-[#7c3aed] hover:bg-[#6d28d9] text-[#ffffff] rounded-full text-[12px] md:text-[13px] font-bold transition-colors flex items-center justify-center min-w-[32px]">@</a>
+        </div>
+    </nav>
+
+    <!-- Case Study Header -->
+    <header class="w-full px-6 md:px-12 pt-16 md:pt-20 pb-10">
+        <a href="cases.html" class="inline-flex items-center gap-2 text-xs font-semibold tracking-widest uppercase text-stone-500 hover:text-stone-900 transition-colors mb-10">
+            <svg class="w-4 h-4 rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path></svg>
+            Back to Work
+        </a>
+
+        <div class="flex flex-col gap-6">
+            <span class="w-fit px-4 py-2 border border-stone-900/20 rounded-full text-[10px] font-bold tracking-[0.2em] uppercase text-stone-600 whitespace-nowrap">Case Study</span>
+
+            <h1 class="text-4xl md:text-6xl lg:text-7xl font-bold text-stone-900 uppercase leading-[0.85] tracking-tighter max-w-3xl">
+                A Premium Service<br>Lost in Translation
+            </h1>
+            <p class="text-stone-500 max-w-xl text-sm md:text-base">Redesigning Advanced Clean Air Solutions for a Luxury Clientele</p>
+
+            <div class="flex flex-wrap gap-8 md:gap-12 mt-4">
+                <div>
+                    <span class="block text-stone-400 tracking-[0.2em] uppercase text-[10px] font-bold mb-1">Role</span>
+                    <span class="font-semibold text-stone-900 text-sm md:text-base">Lead UX/UI Designer</span>
+                </div>
+                <div>
+                    <span class="block text-stone-400 tracking-[0.2em] uppercase text-[10px] font-bold mb-1">Client</span>
+                    <span class="font-semibold text-stone-900 text-sm md:text-base">Advanced Clean Air Solutions</span>
+                </div>
+                <div>
+                    <span class="block text-stone-400 tracking-[0.2em] uppercase text-[10px] font-bold mb-1">Industry</span>
+                    <span class="font-semibold text-stone-900 text-sm md:text-base">Indoor Air Quality Testing</span>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Image -->
+    <div class="w-full mt-10 border-t border-b border-stone-900/10 bg-stone-100">
+        <img src="img/acas_hero.png" alt="Original hero section establishing the baseline problem" class="w-full h-auto object-cover">
+    </div>
+
+    <!-- Main Content -->
+    <main class="w-full">
+        <article class="w-full px-5 md:px-12 py-16 md:py-24">
+            <div class="max-w-2xl mx-auto flex flex-col gap-6">
+
+                <h2 class="text-2xl md:text-3xl font-bold text-stone-900 uppercase tracking-tight leading-none">The Cost of a Confusing First Impression</h2>
+                <p class="text-stone-600 leading-relaxed text-[15px] md:text-base">
+                    Advanced Clean Air Solutions provides critical indoor air quality testing for a very specific demographic: luxury residence homeowners across the Santa Barbara, Ventura, and North LA areas. When dealing with high-end real estate and the health of their families, these clients expect absolute professionalism, clarity, and trust from the very first interaction.
+                </p>
+                <p class="text-stone-600 leading-relaxed text-[15px] md:text-base">
+                    However, the company was facing a critical business challenge: they simply weren't getting enough qualified leads due to a severe disconnect between their high-value real-world service and their digital first impression.
+                </p>
+
+                <div class="w-full overflow-hidden border border-stone-900/10 bg-stone-100 my-6">
+                    <img src="img/acas_01.jpg" alt="Original hero section establishing the baseline problem" class="w-full h-auto object-cover">
+                </div>
+
+                <p class="text-stone-600 leading-relaxed text-[15px] md:text-base">
+                    Upon analyzing their existing digital presence, the root of the problem became immediately clear. The website was failing to communicate the reality of their work. A prospective luxury homeowner landing on the site was met with a generic outdoor photograph and a rigid navy-and-orange color scheme.
+                </p>
+                <p class="text-stone-600 leading-relaxed text-[15px] md:text-base">
+                    The hero section—the most valuable digital real estate on the site—didn't scream "we are indoor air quality experts." It forced the user to read dense text blocks just to figure out what the company actually did, causing immediate friction and high bounce rates.
+                </p>
+                <p class="text-stone-600 leading-relaxed text-[15px] md:text-base">
+                    <strong class="text-stone-900 font-semibold">The Insight:</strong> My immediate instinct as the lead designer was that a surface-level UI tweak wouldn't be enough. The entire visual identity of the brand was actively working against them. The aesthetic felt outdated and corporate, making it incredibly difficult for their specific target audience to resonate with the offering.
+                </p>
+                <p class="text-stone-600 leading-relaxed text-[15px] md:text-base">
+                    To save their lead generation, we needed a complete overhaul. We had to visually demonstrate exactly what they do, the moment the page loads, while elevating the brand identity to match the luxury homes they service.
+                </p>
+
+                <h2 class="text-2xl md:text-3xl font-bold text-stone-900 uppercase tracking-tight leading-none mt-6">Designing for Calm and Clarity</h2>
+
+                <h3 class="text-lg md:text-xl font-bold text-stone-900 tracking-tight leading-none mt-2">Finding the Right Aesthetic</h3>
+                <p class="text-stone-600 leading-relaxed text-[15px] md:text-base">
+                    The visual transformation didn't happen overnight. We ran multiple design tests to find the perfect visual language for a high-end demographic. We initially experimented with keeping the old site's palette, and then explored a more vibrant variety of blues against a stark white background. Finally, the winning concept emerged: a soothing, premium-looking, and reassuring gradient design. This specific aesthetic was chosen because it directly evokes the feelings of "calm" and "health"—the exact emotional response a homeowner wants when hiring an indoor air quality expert.
+                </p>
+
+                <div class="w-full overflow-hidden border border-stone-900/10 bg-stone-100 my-6">
+                    <img src="img/acas_02.png" alt="Close-up comparison of the old harsh navy/orange color block vs the new soothing gradient mesh" class="w-full h-auto object-cover">
+                </div>
+
+                <h3 class="text-lg md:text-xl font-bold text-stone-900 tracking-tight leading-none mt-2">Restructuring the Information Architecture</h3>
+                <p class="text-stone-600 leading-relaxed text-[15px] md:text-base">
+                    When it came to the layout, the decision was obvious: the dense, intimidating blocks of text had to go. To fix this, I created a new underlying template where elements were arranged logically, breaking the information down into bite-sized, scannable chunks. Because this structural shift was so significant, we couldn't just move old text into new boxes. The entire content was rewritten from the ground up, starting with the Homepage, to match this new, streamlined architecture.
+                </p>
+
+                <div class="w-full overflow-hidden border border-stone-900/10 bg-stone-100 my-6">
+                    <img src="img/acas_03.gif" alt="Side-by-side of the old text-heavy Comprehensive Mold Testing section vs the new card-based Advanced Services grid" class="w-full h-auto object-cover">
+                </div>
+
+                <h3 class="text-lg md:text-xl font-bold text-stone-900 tracking-tight leading-none mt-2">The "Lightbulb Moment": Visual Rhythm and Removing Friction</h3>
+                <p class="text-stone-600 leading-relaxed text-[15px] md:text-base">
+                    A major breakthrough in the design process came when I established a working background contrast strategy to guide the user's eye. To keep users engaged, I created a specific visual rhythm: starting with the strong, context-rich Hero image, transitioning into clean, white-predominant sections for optimal readability, and then strategically breaking the pattern with gradient or blurred backgrounds. This made the scrolling experience dynamic and interesting rather than monotonous.
+                </p>
+                <p class="text-stone-600 leading-relaxed text-[15px] md:text-base">
+                    Finally, we tackled the conversion engine: the contact form. The original setup was overly complicated and visually demanding. After a few rounds of back-and-forth with the clients, I ruthlessly simplified it. We stripped away unnecessary fields and shifted from a clunky two-column layout to a frictionless, single-column design, making it as effortless as possible for luxury homeowners to request a consultation.
+                </p>
+
+                <div class="w-full overflow-hidden border border-stone-900/10 bg-stone-100 my-6">
+                    <img src="img/acas_04.png" alt="Comparison of the old blocky orange contact form vs the sleek single-column form" class="w-full h-auto object-cover">
+                </div>
+
+                <h2 class="text-2xl md:text-3xl font-bold text-stone-900 uppercase tracking-tight leading-none mt-6">A Digital Presence that Matches the Reality</h2>
+
+                <h3 class="text-lg md:text-xl font-bold text-stone-900 tracking-tight leading-none mt-2">The Client Reaction</h3>
+                <p class="text-stone-600 leading-relaxed text-[15px] md:text-base">
+                    Presenting the final design was incredibly rewarding. The client loved it all the way through, noting that the new interface was exactly what they had envisioned but couldn't quite put into words. We successfully translated their abstract desire for a better website into a tangible, premium digital experience.
+                </p>
+
+                <div class="w-full overflow-hidden border border-stone-900/10 bg-stone-100 my-6">
+                    <img src="img/acas_05.png" alt="Side-by-side of the old hero section vs the new hero section" class="w-full h-auto object-cover">
+                </div>
+
+                <h3 class="text-lg md:text-xl font-bold text-stone-900 tracking-tight leading-none mt-2">The Business Impact: Trust and Positioning</h3>
+                <p class="text-stone-600 leading-relaxed text-[15px] md:text-base">
+                    The most significant outcome of this redesign is the dramatic shift in brand positioning. By entirely revamping the visual system and information architecture, Advanced Clean Air Solutions gained immediate brand trust. Their digital presence is finally aligned with the high-end, vital service they provide to luxury homeowners, ensuring that when a potential client lands on their page, they feel they are in expert hands.
+                </p>
+
+                <div class="w-full overflow-hidden">
+                    <img src="https://placehold.co/1200x900/d6d3d1/1a1a1a?text=new.jpg%3A+Final+Full-Page+Mockup" alt="Final full-page scrolling mockup framed inside a desktop monitor" class="w-full h-auto object-cover">
+                </div>
+
+                <h3 class="text-lg md:text-xl font-bold text-stone-900 tracking-tight leading-none mt-6">Core UX Value Delivered</h3>
+                <p class="text-stone-600 leading-relaxed text-[15px] md:text-base italic border-l-2 border-stone-900/20 pl-4">
+                    "By aligning the visual identity with their premium offering and streamlining the information architecture, I delivered a frictionless, reassuring user experience designed to convert high-end homeowners."
+                </p>
+
+            </div>
+        </article>
+
+        <!-- Contact Section -->
+        <section class="w-full px-6 md:px-12 py-32 flex flex-col items-center text-center border-t border-stone-900/10 mt-12 bg-[#faf9f6]">
+            <h4 class="text-4xl md:text-5xl font-bold tracking-tighter uppercase mb-8 text-stone-900">
+                How's your project<br><span class="text-stone-400">looking?</span>
+            </h4>
+            <a href="mailto:jsampallo97@gmail.com" class="px-8 py-3.5 bg-[#7c3aed] hover:bg-[#6d28d9] text-white rounded-full text-sm font-bold tracking-widest uppercase transition-all shadow-[0_8px_30px_rgb(124,58,237,0.3)] hover:shadow-[0_8px_30px_rgb(124,58,237,0.5)] transform hover:-translate-y-1">
+                Contact Me
+            </a>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="w-full px-6 py-10 md:px-12 border-t border-stone-900/10 relative z-40 bg-stone-50 flex justify-center items-center">
+        <p class="text-xs font-bold tracking-[0.2em] uppercase text-stone-500">© 2026 Joaquin Sampallo.</p>
+    </footer>
+
+</body>
+</html>

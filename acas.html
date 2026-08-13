@@ -43,6 +43,49 @@
             background-color: #1a1a1a;
             color: #faf9f6;
         }
+        .portfolio-frame {
+            width: 100%;
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 6% 4%; 
+            position: relative;
+        }
+
+        @media (min-width: 768px) {
+            .portfolio-frame {
+                padding: 6%;
+            }
+        }
+
+        /* 16:9 Inner Scrollable Design Container */
+        .preview-container {
+            width: 100%;
+            max-width: 120rem;
+            aspect-ratio: 16 / 9;
+            overflow: hidden;
+            box-shadow: 0 20px 40px -10px rgb(0 0 0 / 0.2);
+            position: relative;
+            border-radius: 10px;
+        }
+
+        /* The Image now uses CSS Transform driven by JS for LERP Smoothing */
+        .scrolling-image {
+            width: 100%;
+            height: auto;
+            position: absolute;
+            top: 0;
+            left: 0;
+            /* Force GPU acceleration */
+            will-change: transform;
+            transform: translateZ(0);
+            backface-visibility: hidden;
+            -webkit-backface-visibility: hidden;
+            image-rendering: -webkit-optimize-contrast;
+            image-rendering: high-quality;
+        }
     </style>
 </head>
 
@@ -53,7 +96,7 @@
         <div class="flex items-center gap-3 md:gap-4 shrink min-w-0">
             <!-- Wrapped image in relative container to position the dot -->
             <div class="relative shrink-0">
-                <img src="img/joaquin.jpg" alt="Joaquin Sampallo" class="w-10 h-10 md:w-11 md:h-11 rounded-full object-cover grayscale border border-stone-900/10">
+                <img src="img/joaquin-sampallo.jpg" alt="Joaquin Sampallo" class="w-10 h-10 md:w-11 md:h-11 rounded-full object-cover grayscale border border-stone-900/10">
                 <!-- Mobile-only green dot overlay (hidden on sm breakpoint and up) -->
                 <span class="sm:hidden absolute bottom-0 right-0 w-2.5 h-2.5 rounded-full bg-[#22c55e] border-2 border-[#fffdf7]"></span>
             </div>
@@ -192,22 +235,51 @@
                     The most significant outcome of this redesign is the dramatic shift in brand positioning. By entirely revamping the visual system and information architecture, Advanced Clean Air Solutions gained immediate brand trust. Their digital presence is finally aligned with the high-end, vital service they provide to luxury homeowners, ensuring that when a potential client lands on their page, they feel they are in expert hands.
                 </p>
 
-                <div class="w-full overflow-hidden">
+                <!-- <div class="w-full overflow-hidden">
                     <img src="https://placehold.co/1200x900/d6d3d1/1a1a1a?text=new.jpg%3A+Final+Full-Page+Mockup" alt="Final full-page scrolling mockup framed inside a desktop monitor" class="w-full h-auto object-cover">
-                </div>
+                </div> -->
 
                 <h3 class="text-lg md:text-xl font-bold text-stone-900 tracking-tight leading-none mt-6">Core UX Value Delivered</h3>
                 <p class="text-stone-600 leading-relaxed text-[15px] md:text-base italic border-l-2 border-stone-900/20 pl-4">
                     "By aligning the visual identity with their premium offering and streamlining the information architecture, I delivered a frictionless, reassuring user experience designed to convert high-end homeowners."
                 </p>
 
+                <!-- NEW COMPONENT: Inline Sticky Scroll -->
+                <div class="scroll-rig w-full h-[150vh] relative my-6">
+                    <!-- top-[calc(50vh-X)] effectively centers the element vertically based on an average body image height. Styled exactly like standard body images (aspect-video, straight edges, standard border). -->
+                    <div class="sticky top-[calc(50vh-10rem)] sm:top-[calc(50vh-13rem)] w-full overflow-hidden border border-stone-900/10 bg-stone-100 aspect-video inline-scroll-container relative rounded-xl">
+                        <img src="img/acas_full.jpg" 
+                             onerror="this.src='https://placehold.co/800x2400/d6d3d1/1a1a1a?text=Inline+Sticky+Scroll+Detail'" 
+                             alt="Scrollable detail view of the mobile interface" 
+                             class="scrolling-image">
+                    </div>
+                </div>
+
             </div>
         </article>
+
+        <!-- Final Design Full Page Scrollable Mockup
+        <section class="scroll-rig w-full h-[250vh] relative z-10 border-t border-stone-900/10">
+            <div class="sticky top-0 h-[100dvh] w-full flex flex-col justify-center py-12 bg-[#fffdf7]">
+                
+                
+                <div class="portfolio-frame bg-gradient-to-br from-[#c6e6ce] to-[#8ca7d2]" style="background-image: url('img/acas_bg.jpg');">
+                    <div class="preview-container">
+                        
+                        <img src="img/acas_full.jpg" 
+                             onerror="this.src='https://placehold.co/1200x3000/d6d3d1/1a1a1a?text=Long+Full-Page+Mockup+Scroll'" 
+                             alt="Full Page Design Mockup" 
+                             class="scrolling-image">
+                    </div>
+                </div>
+
+            </div>
+        </section> -->
 
         <!-- Contact Section -->
         <section class="w-full px-6 md:px-12 py-32 flex flex-col items-center text-center border-t border-stone-900/10 mt-12 bg-[#faf9f6]">
             <h4 class="text-4xl md:text-5xl font-bold tracking-tighter uppercase mb-8 text-stone-900">
-                How's your project<br><span class="text-stone-400">looking?</span>
+                Tell me about<br><span class="text-stone-400">your project</span>
             </h4>
             <a href="mailto:jsampallo97@gmail.com" class="px-8 py-3.5 bg-[#7c3aed] hover:bg-[#6d28d9] text-white rounded-full text-sm font-bold tracking-widest uppercase transition-all shadow-[0_8px_30px_rgb(124,58,237,0.3)] hover:shadow-[0_8px_30px_rgb(124,58,237,0.5)] transform hover:-translate-y-1">
                 Contact Me
@@ -220,6 +292,106 @@
     <footer class="w-full px-6 py-10 md:px-12 border-t border-stone-900/10 relative z-40 bg-stone-50 flex justify-center items-center">
         <p class="text-xs font-bold tracking-[0.2em] uppercase text-stone-500">© 2026 Joaquin Sampallo.</p>
     </footer>
+
+    <!-- Added JavaScript for smooth scroll logic -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const rigs = document.querySelectorAll('.scroll-rig');
+            
+            // Array to maintain progress data for each section
+            let scrollData = Array.from(rigs).map(rig => {
+                const container = rig.querySelector('.preview-container, .inline-scroll-container');
+                const stickyEl = rig.querySelector('.sticky');
+                
+                return {
+                    section: rig,
+                    img: rig.querySelector('.scrolling-image'),
+                    container: container,
+                    stickyEl: stickyEl,
+                    targetProgress: 0,
+                    currentProgress: 0,
+                    maxScroll: 0,
+                    cachedStickyOffset: 0,
+                    cachedStickyHeight: 0,
+                    nextY: 0
+                };
+            });
+
+            // Calculate heights and cache static values to prevent layout thrashing
+            const calculateHeights = () => {
+                scrollData.forEach(data => {
+                    if (data.img && data.container) {
+                        data.maxScroll = Math.max(0, data.img.clientHeight - data.container.clientHeight);
+                    }
+                    if (data.stickyEl) {
+                        // Cache these values once on load/resize instead of 60 times a second
+                        data.cachedStickyOffset = parseInt(window.getComputedStyle(data.stickyEl).top) || 0;
+                        data.cachedStickyHeight = data.stickyEl.offsetHeight;
+                    }
+                });
+            };
+
+            // Use ResizeObserver for bulletproof dimension tracking
+            const observer = new ResizeObserver(() => {
+                calculateHeights();
+            });
+
+            scrollData.forEach(data => {
+                if (data.container) observer.observe(data.container);
+                if (data.img) {
+                    observer.observe(data.img);
+                    if (data.img.complete) {
+                        calculateHeights();
+                    } else {
+                        data.img.addEventListener('load', calculateHeights);
+                    }
+                }
+            });
+
+            // Linear Interpolation (LERP) function for smoothing
+            const lerp = (start, end, factor) => start + (end - start) * factor;
+
+            // Animation Loop (Optimized to prevent jumping/stuttering)
+            const renderLoop = () => {
+                
+                // PHASE 1: READ-ONLY (Calculate math, do not touch the DOM styles)
+                scrollData.forEach(data => {
+                    if (!data.img || !data.container || !data.stickyEl) return;
+
+                    const sectionRect = data.section.getBoundingClientRect();
+                    const scrollDistance = Math.max(1, sectionRect.height - data.cachedStickyHeight);
+                    
+                    let progress = 0;
+                    
+                    if (sectionRect.top <= data.cachedStickyOffset) {
+                        progress = Math.min(1, Math.max(0, (data.cachedStickyOffset - sectionRect.top) / scrollDistance));
+                    }
+
+                    data.targetProgress = progress;
+                    
+                    // Decrease LERP factor slightly for buttery smoothness
+                    data.currentProgress = lerp(data.currentProgress, data.targetProgress, 0.10); 
+
+                    if (data.maxScroll > 0) {
+                        // Store the result, but don't apply it yet
+                        data.nextY = -(data.maxScroll * data.currentProgress);
+                    }
+                });
+
+                // PHASE 2: WRITE-ONLY (Apply styles all at once to prevent layout thrashing)
+                scrollData.forEach(data => {
+                    if (data.img && data.maxScroll > 0) {
+                        // Rounding to 2 decimal places can also help sub-pixel jitter
+                        data.img.style.transform = `translate3d(0, ${data.nextY.toFixed(2)}px, 0)`; 
+                    }
+                });
+
+                requestAnimationFrame(renderLoop);
+            };
+
+            requestAnimationFrame(renderLoop);
+        });
+    </script>
 
 </body>
 </html>

@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Original Meta Tags -->
+    <title>Designing a Lead Magnet Built to Book Calls | Joaquin Sampallo</title>
+    <meta name="description" content="UX case study: a quiz lead magnet designed and built for a Pareto Talent bootcamp contest, made to qualify cold founders and lead them to a sales call">
+    <meta name="keywords" content="ux, lead magnet, funnel, quiz, conversion, design, website, web">
+    <link rel="icon" type="image/x-icon" href="/favico.png">
+
+    <!-- Load Geist Font from Google Fonts (matches cases.html) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Geist:wght@100..900&display=swap" rel="stylesheet">
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['"Geist"', 'sans-serif'],
+                    },
+                    colors: {
+                        stone: {
+                            50: '#faf9f6',
+                            300: '#d6d3d1',
+                            900: '#1a1a1a',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        ::selection {
+            background-color: #1a1a1a;
+            color: #faf9f6;
+        }
+    </style>
+</head>
+
+<body class="bg-[#fffdf7] text-stone-900 font-sans antialiased overflow-x-hidden max-w-[1024px] mx-auto min-h-screen border-x border-stone-900/5">
+
+    <!-- Navigation -->
+    <nav class="w-full px-4 py-4 md:px-8 flex justify-between items-center gap-2 bg-[#fffdf7] text-stone-900 sticky top-0 z-50 border-b border-stone-900/5 backdrop-blur-sm bg-[#fffdf7]/90">
+        <div class="flex items-center gap-3 md:gap-4 shrink min-w-0">
+            <!-- Wrapped image in relative container to position the dot -->
+            <div class="relative shrink-0">
+                <img src="/img/joaquin-sampallo.jpg" alt="Joaquin Sampallo" class="w-10 h-10 md:w-11 md:h-11 rounded-full object-cover grayscale border border-stone-900/10">
+                <!-- Mobile-only green dot overlay (hidden on sm breakpoint and up) -->
+                <span class="sm:hidden absolute bottom-0 right-0 w-2.5 h-2.5 rounded-full bg-[#22c55e] border-2 border-[#fffdf7]"></span>
+            </div>
+            <div class="flex flex-col min-w-0 max-[350px]:hidden">
+                <span class="font-medium text-[15px] sm:text-base md:text-[17px] leading-tight tracking-tight">Joaquin Sampallo</span>
+                <!-- Desktop-only availability text (hidden below sm breakpoint) -->
+                <div class="hidden sm:flex text-[#a1a1aa] text-xs md:text-sm items-center gap-1.5 mt-0.5 font-normal tracking-wide">
+                    Currently available <span class="w-1.5 h-1.5 rounded-full bg-[#22c55e]"></span>
+                </div>
+            </div>
+        </div>
+        <!-- Pills matching project tags -->
+        <div class="flex items-center gap-1.5 sm:gap-2 shrink-0">
+            <a href="/" class="px-3 md:px-4 py-2 border border-stone-900/20 rounded-full text-[10px] font-bold tracking-[0.2em] uppercase text-stone-600 whitespace-nowrap hover:bg-stone-900/5 transition-colors">UX</a>
+            <a href="/visuals/" class="px-3 md:px-4 py-2 border border-stone-900/20 rounded-full text-[10px] font-bold tracking-[0.2em] uppercase text-stone-600 whitespace-nowrap hover:bg-stone-900/5 transition-colors">Visuals</a>
+            <a href="mailto:jsampallo97@gmail.com" class="px-4 py-2 bg-[#7c3aed] hover:bg-[#6d28d9] text-[#ffffff] rounded-full text-[12px] md:text-[13px] font-bold transition-colors flex items-center justify-center min-w-[32px]">@</a>
+        </div>
+    </nav>
+
+    <!-- Case Study Header -->
+    <header class="w-full px-6 md:px-12 pt-16 md:pt-20 pb-10">
+        <a href="/" class="inline-flex items-center gap-2 text-xs font-semibold tracking-widest uppercase text-stone-500 hover:text-stone-900 transition-colors mb-10">
+            <svg class="w-4 h-4 rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path></svg>
+            Back to Work
+        </a>
+
+        <div class="flex flex-col gap-6">
+            <span class="w-fit px-4 py-2 border border-stone-900/20 rounded-full text-[10px] font-bold tracking-[0.2em] uppercase text-stone-600 whitespace-nowrap">Case Study</span>
+
+            <h1 class="text-4xl md:text-6xl lg:text-7xl font-bold text-stone-900 uppercase leading-[0.85] tracking-tighter max-w-3xl">
+                Designing a Lead<br>Magnet Built to Book Calls
+            </h1>
+            <p class="text-stone-500 max-w-xl text-sm md:text-base">The 2-Minute Delegation Blueprint: a quiz funnel for Pareto Talent that turns cold founders into qualified sales calls</p>
+
+            <div class="flex flex-wrap gap-8 md:gap-12 mt-4">
+                <div>
+                    <span class="block text-stone-400 tracking-[0.2em] uppercase text-[10px] font-bold mb-1">Role</span>
+                    <span class="font-semibold text-stone-900 text-sm md:text-base">UX Designer &amp; Builder</span>
+                </div>
+                <div>
+                    <span class="block text-stone-400 tracking-[0.2em] uppercase text-[10px] font-bold mb-1">Timeframe</span>
+                    <span class="font-semibold text-stone-900 text-sm md:text-base">5 days</span>
+                </div>
+                <div>
+                    <span class="block text-stone-400 tracking-[0.2em] uppercase text-[10px] font-bold mb-1">Stack</span>
+                    <span class="font-semibold text-stone-900 text-sm md:text-base">Claude Code, GoHighLevel, Netlify</span>
+                </div>
+                <div>
+                    <span class="block text-stone-400 tracking-[0.2em] uppercase text-[10px] font-bold mb-1">Context</span>
+                    <span class="font-semibold text-stone-900 text-sm md:text-base">Pareto bootcamp contest</span>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Image -->
+    <div class="w-full mt-10 border-t border-b border-stone-900/10 bg-stone-100">
+        <img src="/img/db00.jpg" alt="The founder's Delegation Blueprint card: built for agency owners, first 3 handoffs, work style, and 15 hours a week they could hand off" class="w-full h-auto object-cover">
+    </div>
+
+    <!-- Main Content -->
+    <main class="w-full">
+        <article class="w-full px-5 md:px-12 py-16 md:py-24">
+            <div class="max-w-2xl mx-auto flex flex-col gap-6">
+
+                <h2 class="text-2xl md:text-3xl font-bold text-stone-900 uppercase tracking-tight leading-none">The Business Problem: Cold Traffic With Nowhere to Land</h2>
+                <p class="text-stone-600 leading-relaxed text-[15px] md:text-base">
+                    I built this as a contest entry inside a bootcamp run by Pareto Talent. The brief was a real one: design the lead magnet for Pareto's own funnel, from ad to sales call. It never ran on paid traffic, so this is the story of the thinking and the build, not of the numbers.
+                </p>
+                <p class="text-stone-600 leading-relaxed text-[15px] md:text-base">
+                    Pareto Talent finds, trains, and places executive assistants from Latin America (they call them "right hands") with US founders doing $500K+ a year. Every sale starts with one conversation: the Matching Call.
+                </p>
+                <p class="text-stone-600 leading-relaxed text-[15px] md:text-base">
+                    The company wants to run paid ads to founders who have never heard of it. The catch: a cold founder isn't ready to book a sales call, and there was nothing in between. No reason to leave an email, and no way to tell a qualified founder from a curious one before the sales team spent time on a call.
+                </p>
+                <p class="text-stone-600 leading-relaxed text-[15px] md:text-base">
+                    <strong class="text-stone-900 font-semibold">The Insight:</strong> Founders don't put off this hire because they doubt they need help. They put it off because they don't know <em>who</em> to hire or <em>what</em> they'd hand over. One client put it better than I could: "The reason I need them is because I don't have time. And the reason I can't find them is because I don't have time." So the lead magnet had to remove that uncertainty in minutes, and lead straight into the call.
+                </p>
+
+                <h2 class="text-2xl md:text-3xl font-bold text-stone-900 uppercase tracking-tight leading-none mt-6">Mapping the Journey Before Designing a Single Page</h2>
+                <p class="text-stone-600 leading-relaxed text-[15px] md:text-base">
+                    Before deciding what the lead magnet would be, I mapped the whole path from ad to call. That way every later decision had a job to do in the system, not just on the page.
+                </p>
+                <ul class="flex flex-col gap-3 pl-5 list-disc marker:text-stone-400 text-stone-600 leading-relaxed text-[15px] md:text-base">
+                    <li><strong class="text-stone-900 font-semibold">One qualifier:</strong> annual revenue, with the line at $500K, Pareto's ideal-client floor. It's the only thing that routes a lead.</li>
+                    <li><strong class="text-stone-900 font-semibold">Two lanes:</strong> qualified founders go to a booking page and the Matching Call. Everyone else gets a thank-you page and nurture emails that bring them back when they're ready.</li>
+                    <li><strong class="text-stone-900 font-semibold">Recovery loops:</strong> founders who qualify but don't book get a call or SMS, then an email. No-shows get a same-day rebook message.</li>
+                    <li><strong class="text-stone-900 font-semibold">What I cut:</strong> my first draft had six traffic sources, a referral fast lane, retargeting, and a third "not a fit" lane. I cut all of it so the first version could ship in days. Any of it can come back once there's data saying it's worth it.</li>
+                </ul>
+
+                <div class="w-full overflow-hidden border border-stone-900/10 bg-stone-100 my-6">
+                    <!-- Stacked version on phones so the labels stay readable. Sources: 04-CAREER/ux-portfolio/diagram-src/ -->
+                    <picture>
+                        <source media="(max-width: 639px)" srcset="/img/db02-mobile.jpg">
+                        <img src="/img/db02.jpg" alt="Lead journey map: four traffic sources lead to the landing page and contact form. Founders at $500K+ go to booking, the Matching Call, and close; missed bookings and no-shows get a call, SMS or email that brings them back to booking. Founders under $500K get a not-a-fit thank-you page and nurture emails that bring them back to the landing page." class="w-full h-auto object-cover">
+                    </picture>
+                </div>
+
+                <h2 class="text-2xl md:text-3xl font-bold text-stone-900 uppercase tracking-tight leading-none mt-6">Research: What Everyone Else Gives Away</h2>
+                <p class="text-stone-600 leading-relaxed text-[15px] md:text-base">
+                    I broke down the lead magnets of Pareto's three closest competitors on five points: format, promise, audience, how it qualifies, and what happens after opt-in. One used a quiz that scores the founder's delegation skills, one generated an automated "time freedom" report, and one offered ROI calculators with no email gate.
+                </p>
+                <ul class="flex flex-col gap-3 pl-5 list-disc marker:text-stone-400 text-stone-600 leading-relaxed text-[15px] md:text-base">
+                    <li><strong class="text-stone-900 font-semibold">Everyone ends at a call.</strong> The lead magnet's real job is to warm up and qualify a lead before a sales conversation.</li>
+                    <li><strong class="text-stone-900 font-semibold">Personalization wins.</strong> Each one hands the founder something about their own situation: a level, a report, or a number.</li>
+                    <li><strong class="text-stone-900 font-semibold">The gap:</strong> none of them showed the founder a picture of the person they actually need. That became the opening.</li>
+                </ul>
+
+                <h2 class="text-2xl md:text-3xl font-bold text-stone-900 uppercase tracking-tight leading-none mt-6">Choosing the Format: A Sample of the Real Product</h2>
+                <p class="text-stone-600 leading-relaxed text-[15px] md:text-base">
+                    I worked through the lead magnet in five decisions, one at a time: format, promise, title, qualification, and the next-step offer. For the format, I weighed four options:
+                </p>
+                <ul class="flex flex-col gap-3 pl-5 list-disc marker:text-stone-400 text-stone-600 leading-relaxed text-[15px] md:text-base">
+                    <li><strong class="text-stone-900 font-semibold">A "how well do you delegate" quiz:</strong> rejected as the main hook, because a competitor already owns it.</li>
+                    <li><strong class="text-stone-900 font-semibold">"Meet your 3 matches" before the call:</strong> rejected because it would be dishonest. Real matches need the call, a behavioral assessment, and a human review.</li>
+                    <li><strong class="text-stone-900 font-semibold">A delegation template kit:</strong> easy to build, but it qualifies no one, and it mostly helps the founders who'd rather do it themselves.</li>
+                    <li><strong class="text-stone-900 font-semibold">A free audit done by a right hand:</strong> high value, but too slow and costly to give every lead.</li>
+                </ul>
+                <p class="text-stone-600 leading-relaxed text-[15px] md:text-base">
+                    <strong class="text-stone-900 font-semibold">The Decision:</strong> a 10-question quiz that builds a spec card of the founder's ideal right hand: work style, skills, tools, and the first three areas to hand off. It's a sample of what Pareto actually sells (the matching), delivered as software.
+                </p>
+                <p class="text-stone-600 leading-relaxed text-[15px] md:text-base">
+                    It also set one honesty rule I designed around for the rest of the project: the card is a spec, never a person. It has no name, uses an illustrated avatar, and never implies that matches have already been found.
+                </p>
+                <p class="text-stone-600 leading-relaxed text-[15px] md:text-base">
+                    The name followed from the promise: <strong class="text-stone-900 font-semibold">The 2-Minute Delegation Blueprint</strong>, "Know exactly who to hire, and the first 3 things to hand them." I picked "Delegation" over Pareto's house term "right hand" because cold traffic understands it without any context. "Right hand" shows up inside the quiz, once the founder is already invested.
+                </p>
+
+                <div class="w-full overflow-hidden border border-stone-900/10 bg-stone-100 my-6">
+                    <img src="/img/db01.jpg" alt="Landing page: The 2-Minute Delegation Blueprint headline next to a sample right-hand card" class="w-full h-auto object-cover">
+                </div>
+
+                <h2 class="text-2xl md:text-3xl font-bold text-stone-900 uppercase tracking-tight leading-none mt-6">Designing the Questions: Every Answer Builds Something</h2>
+                <p class="text-stone-600 leading-relaxed text-[15px] md:text-base">
+                    I designed the result card first and worked backwards, so every question had to earn its place by filling a field on the card. If a question didn't change the output, it was cut.
+                </p>
+                <ul class="flex flex-col gap-3 pl-5 list-disc marker:text-stone-400 text-stone-600 leading-relaxed text-[15px] md:text-base">
+                    <li><strong class="text-stone-900 font-semibold">Varied, tap-only inputs:</strong> lists, "pick 3" tiles, 4-stop sliders, and A/B choices keep the rhythm moving and the quiz under two minutes on a phone, which is where ad clicks land.</li>
+                    <li><strong class="text-stone-900 font-semibold">Honest math:</strong> hours per week × the value of an hour gives a weekly figure ("15 hrs/wk you could hand off, worth $5,625/wk"). It says "could hand off", never "will get back", so it never reads as a guarantee.</li>
+                    <li><strong class="text-stone-900 font-semibold">Tight scope:</strong> timeline moved to the booking page (only qualified founders need it) and role moved to the call. That kept the quiz at exactly 10 questions, matching the "10 quick questions · 2 minutes" promise on the button.</li>
+                </ul>
+
+                <div class="w-full overflow-hidden border border-stone-900/10 bg-stone-100 my-6">
+                    <img src="/img/db04.jpg" alt="Three quiz screens on mobile: pick-3 tiles, an hours slider, and an A/B choice" class="w-full h-auto object-cover">
+                </div>
+
+                <h2 class="text-2xl md:text-3xl font-bold text-stone-900 uppercase tracking-tight leading-none mt-6">Iteration: From Diagnosing the Founder to Building a Person</h2>
+                <p class="text-stone-600 leading-relaxed text-[15px] md:text-base">
+                    The first working version read like a test the founder was taking (and nobody clicks an ad hoping to get graded). It also looked too close to an older audit tool on Pareto's own website. So I kept every answer option and every mapping on the card the same, and changed only the frame.
+                </p>
+                <p class="text-stone-600 leading-relaxed text-[15px] md:text-base">
+                    In v2, the founder isn't being assessed; they're building their right hand. Each screen names the trait it's setting ("Building · Ownership level"), and a silhouette in a progress ring fills in as answers come in, until "Your right hand is ready" appears right before the contact form. Same questions, a totally different feeling: momentum and ownership instead of judgment.
+                </p>
+
+                <div class="w-full overflow-hidden border border-stone-900/10 bg-stone-100 my-6">
+                    <img src="/img/db03.jpg" alt="Before and after: the same question framed as diagnosing the founder vs. building their right hand" class="w-full h-auto object-cover">
+                </div>
+
+                <h2 class="text-2xl md:text-3xl font-bold text-stone-900 uppercase tracking-tight leading-none mt-6">The Result: Give Away the What, Sell the How</h2>
+                <p class="text-stone-600 leading-relaxed text-[15px] md:text-base">
+                    The result page is where the lead magnet hands off to the sale. An early draft promised the founder their profile and first handoffs again on the call, but the quiz had already given those away. So I set a rule: <strong class="text-stone-900 font-semibold">the quiz gives away the <em>what</em> and the <em>who</em>; the call sells the <em>how</em> and the actual people.</strong>
+                </p>
+                <ul class="flex flex-col gap-3 pl-5 list-disc marker:text-stone-400 text-stone-600 leading-relaxed text-[15px] md:text-base">
+                    <li><strong class="text-stone-900 font-semibold">The card:</strong> "Your Right Hand", with an avatar picked from the founder's answers, so the same answers always give the same face.</li>
+                    <li><strong class="text-stone-900 font-semibold">The bridge:</strong> a line built from the founder's own answer ("You said your business would <em>stall</em> if you disappeared for two weeks. That's the gap a right hand closes.").</li>
+                    <li><strong class="text-stone-900 font-semibold">The offer:</strong> three things only the call can give (a real work-style assessment, the full system behind the person, and hand-picked profiles), with the booking calendar on the same page.</li>
+                </ul>
+
+                <div class="w-full overflow-hidden border border-stone-900/10 bg-stone-100 my-6">
+                    <img src="/img/db06.jpg" alt="Results page with the founder's right-hand card and the bridge to the Matching Call" class="w-full h-auto object-cover">
+                </div>
+
+                <h2 class="text-2xl md:text-3xl font-bold text-stone-900 uppercase tracking-tight leading-none mt-6">Two Lanes, No Dead Ends</h2>
+                <p class="text-stone-600 leading-relaxed text-[15px] md:text-base">
+                    Founders under the revenue line still get their full blueprint. Instead of a calendar, their page gives them a first move they can make this week (list it, record it, hand it off) and a video of Pareto's CEO stepping away from his business for two weeks. Nurture emails then bring them back to the quiz when they're ready.
+                </p>
+                <p class="text-stone-600 leading-relaxed text-[15px] md:text-base">
+                    Founders who book land on a confirmation page with a short welcome video from Pareto's co-founder, plus prep and what to expect, so they show up warm. Around the pages I wrote the follow-up sequence by email and SMS (blueprint delivery, confirmation, reminders, didn't-book nudges, a no-show rebook, and nurture) and five Meta image ads, each with one persona and one angle.
+                </p>
+
+                <div class="w-full overflow-hidden border border-stone-900/10 bg-stone-100 my-6">
+                    <img src="/img/db07.jpg" alt="Not-qualified page: a first move for this week and a video" class="w-full h-auto object-cover">
+                </div>
+
+                <div class="w-full overflow-hidden border border-stone-900/10 bg-stone-100 my-6">
+                    <img src="/img/db08.jpg" alt="Booked thank-you page" class="w-full h-auto object-cover">
+                </div>
+
+                <h2 class="text-2xl md:text-3xl font-bold text-stone-900 uppercase tracking-tight leading-none mt-6">Designing in Code With AI</h2>
+                <p class="text-stone-600 leading-relaxed text-[15px] md:text-base">
+                    Instead of handing off static mockups, I designed directly in the browser, building every page with Claude Code. That changed how I could work as a designer:
+                </p>
+                <ul class="flex flex-col gap-3 pl-5 list-disc marker:text-stone-400 text-stone-600 leading-relaxed text-[15px] md:text-base">
+                    <li><strong class="text-stone-900 font-semibold">Real iterations, not pictures of them:</strong> I tested copy, motion, and flow in a real browser, on desktop and mobile, as I made them. A reframe like v1 to v2 never had to wait for a design-to-dev handoff.</li>
+                    <li><strong class="text-stone-900 font-semibold">One brand, not a lookalike:</strong> the pages use paretotalent.com's design tokens (dark surfaces, a single emerald accent, glass cards, slow blur-up reveals), so the funnel feels like part of the main site.</li>
+                    <li><strong class="text-stone-900 font-semibold">Real integrations:</strong> the contact form is a GoHighLevel embed that receives the quiz answers as 9 hidden fields. The revenue question stays in that form because a CRM automation branches on it, and the pages read the answer back to send each founder to the right lane.</li>
+                    <li><strong class="text-stone-900 font-semibold">Polishing the seams:</strong> third-party embeds rarely look native (and this one definitely didn't on the first try). I removed GHL's forced scrollbars and wrappers, restyled the form to match the brand, and pre-filled the booking calendar with the founder's name and email so they never type them twice.</li>
+                </ul>
+
+                <div class="w-full overflow-hidden border border-stone-900/10 bg-stone-100 my-6">
+                    <img src="/img/db05.jpg" alt="The GoHighLevel form embedded as the quiz's last step" class="w-full h-auto object-cover">
+                </div>
+
+                <p class="text-stone-600 leading-relaxed text-[15px] md:text-base">
+                    I ran the build like a launch: a work breakdown in seven milestones with a critical path, tracked in ClickUp, a QA pass across both lanes and the in-app Facebook and Instagram browsers (where ad clicks actually open), and a saved backup of every version.
+                </p>
+
+                <h2 class="text-2xl md:text-3xl font-bold text-stone-900 uppercase tracking-tight leading-none mt-6">The Outcomes: A Full Funnel in Five Days</h2>
+                <p class="text-stone-600 leading-relaxed text-[15px] md:text-base">
+                    From the first journey map to a deployed, tested funnel took five days, and the project shipped on its deadline.
+                </p>
+                <ul class="flex flex-col gap-3 pl-5 list-disc marker:text-stone-400 text-stone-600 leading-relaxed text-[15px] md:text-base">
+                    <li><strong class="text-stone-900 font-semibold">A complete system, not a page:</strong> landing page, 10-question quiz, CRM-connected form, revenue routing, two result pages, booking, a confirmation page, the follow-up sequence, and five ads ready to launch.</li>
+                    <li><strong class="text-stone-900 font-semibold">Qualification built in:</strong> it's designed so sales only talks to founders above the revenue line, and every call starts with the founder's blueprint already in the CRM.</li>
+                    <li><strong class="text-stone-900 font-semibold">Value for everyone:</strong> founders who don't qualify still leave with something useful and stay in nurture instead of bouncing.</li>
+                    <li><strong class="text-stone-900 font-semibold">Handed off like real work:</strong> I submitted it with a Loom walkthrough of the whole journey, the creatives, and the message list, so Pareto's CEO could review it on his own time.</li>
+                </ul>
+                <p class="text-stone-600 leading-relaxed text-[15px] md:text-base">
+                    <strong class="text-stone-900 font-semibold">What I'd measure:</strong> since it was a contest entry, it never ran on real traffic, so there are no conversion numbers to show (yet). If it went live, the first read would be click-through rate per creative, cost per lead, qualified rate, and opt-in to booked rate.
+                </p>
+                <p class="text-stone-600 leading-relaxed text-[15px] md:text-base">
+                    If I had to keep one lesson from this project, it's that the cuts did more work than the additions: one qualifier, two lanes, ten questions.
+                </p>
+
+            </div>
+
+            <div class="w-full flex justify-center mt-12 mb-8">
+                <a href="https://jsleadmagnet.netlify.app/" target="_blank" rel="noopener noreferrer" class="px-8 py-3.5 bg-[#7c3aed] hover:bg-[#6d28d9] text-white rounded-full text-sm font-bold tracking-widest uppercase transition-all shadow-[0_8px_30px_rgb(124,58,237,0.3)] hover:shadow-[0_8px_30px_rgb(124,58,237,0.5)] transform hover:-translate-y-1">
+                    Try the Live Quiz
+                </a>
+            </div>
+
+        </article>
+
+
+        <!-- Contact Section -->
+        <section class="w-full px-6 md:px-12 py-32 flex flex-col items-center text-center border-t border-stone-900/10 mt-12 bg-[#faf9f6]">
+            <h4 class="text-4xl md:text-5xl font-bold tracking-tighter uppercase mb-8 text-stone-900">
+                Tell me about<br><span class="text-stone-400">your project</span>
+            </h4>
+            <a href="mailto:jsampallo97@gmail.com" class="px-8 py-3.5 bg-[#7c3aed] hover:bg-[#6d28d9] text-white rounded-full text-sm font-bold tracking-widest uppercase transition-all shadow-[0_8px_30px_rgb(124,58,237,0.3)] hover:shadow-[0_8px_30px_rgb(124,58,237,0.5)] transform hover:-translate-y-1">
+                Contact Me
+            </a>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="w-full px-6 py-10 md:px-12 border-t border-stone-900/10 relative z-40 bg-stone-50 flex justify-center items-center">
+        <p class="text-xs font-bold tracking-[0.2em] uppercase text-stone-500">© 2026 Joaquin Sampallo.</p>
+    </footer>
+
+</body>
+</html>

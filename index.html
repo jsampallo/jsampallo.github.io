@@ -1,271 +1,167 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Joaquin Sampallo | Designer &amp; Builder</title>
-    <meta name="description" content="Joaquin Sampallo is a UX designer who builds what he designs: landing pages, funnels and product flows, shipped in code with AI. Also a digital retoucher.">
-    <meta name="keywords" content="ux, ui, web design, product design, landing page design, branding">
-    <link rel="icon" type="image/x-icon" href="/favico.png">
-    
-    <!-- Load Geist Font from Google Fonts (from Landing Design) -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Geist:wght@100..900&display=swap" rel="stylesheet">
-    
-    <!-- Tailwind CSS -->
-    <script src="https://cdn.tailwindcss.com"></script>
-    
-    <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    fontFamily: {
-                        sans: ['"Geist"', 'sans-serif'],
-                    },
-                    colors: {
-                        stone: {
-                            50: '#faf9f6',
-                            300: '#d6d3d1',
-                            900: '#1a1a1a', 
-                        }
-                    }
-                }
-            }
-        }
-    </script>
-
-    <style>
-        ::selection {
-            background-color: #1a1a1a;
-            color: #faf9f6;
-        }
-    </style>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Joaquin Sampallo | Product &amp; UX/UI Designer</title>
+<meta name="description" content="Joaquin Sampallo, product and UX/UI designer from Argentina. I turn complex ideas into digital products that are simple, clear and easy to use, and build them in code.">
+<link rel="alternate" hreflang="en" href="https://www.jsampallo.com.ar/">
+<link rel="alternate" hreflang="es" href="https://www.jsampallo.com.ar/es/">
+<script>
+// Spanish browsers go to /es/, unless the visitor already picked a language with the EN/ES link
+(function () {
+  var saved; try { saved = localStorage.getItem('lang'); } catch (e) {}
+  var langs = navigator.languages || [navigator.language];
+  var first = langs.filter(function (l) { return /^(en|es)/i.test(l); })[0] || 'en';
+  if ((saved || first).slice(0, 2).toLowerCase() === 'es') location.replace('/es/' + location.hash);
+})();
+</script>
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png?v=2">
+<link rel="icon" type="image/png" sizes="512x512" href="/favicon-512.png?v=2">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600&family=Geist+Mono:wght@400;500&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/home.css">
 </head>
+<body>
 
-<body class="bg-[#fffdf7] text-stone-900 font-sans antialiased overflow-x-hidden max-w-[1024px] mx-auto min-h-screen border-x border-stone-900/5">
-
-    <!-- Navigation -->
-    <nav class="w-full px-4 py-4 md:px-8 flex justify-between items-center gap-2 bg-[#fffdf7] text-stone-900 sticky top-0 z-50 border-b border-stone-900/5 backdrop-blur-sm bg-[#fffdf7]/90">
-        <div class="flex items-center gap-3 md:gap-4 shrink min-w-0">
-            <!-- Wrapped image in relative container to position the dot -->
-            <div class="relative shrink-0">
-                <img src="/img/joaquin-sampallo.jpg" alt="Joaquin Sampallo" class="w-10 h-10 md:w-11 md:h-11 rounded-full object-cover grayscale border border-stone-900/10">
-                <!-- Mobile-only green dot overlay (hidden on sm breakpoint and up) -->
-                <span class="sm:hidden absolute bottom-0 right-0 w-2.5 h-2.5 rounded-full bg-[#22c55e] border-2 border-[#fffdf7]"></span>
-            </div>
-            <div class="flex flex-col min-w-0 max-[350px]:hidden">
-                <span class="font-medium text-[15px] sm:text-base md:text-[17px] leading-tight tracking-tight">Joaquin Sampallo</span>
-                <!-- Desktop-only availability text (hidden below sm breakpoint) -->
-                <div class="hidden sm:flex text-[#a1a1aa] text-xs md:text-sm items-center gap-1.5 mt-0.5 font-normal tracking-wide">
-                    Currently available <span class="w-1.5 h-1.5 rounded-full bg-[#22c55e]"></span>
-                </div>
-            </div>
-        </div>
-        <!-- Pills matching project tags -->
-        <div class="flex items-center gap-1.5 sm:gap-2 shrink-0">
-            <a href="/" class="px-3 md:px-4 py-2 border border-stone-900/20 rounded-full text-[10px] font-bold tracking-[0.2em] uppercase text-stone-600 whitespace-nowrap hover:bg-stone-900/5 transition-colors">UX</a>
-            <a href="/visuals/" class="px-3 md:px-4 py-2 border border-stone-900/20 rounded-full text-[10px] font-bold tracking-[0.2em] uppercase text-stone-600 whitespace-nowrap hover:bg-stone-900/5 transition-colors">Visuals</a>
-            <a href="mailto:jsampallo97@gmail.com" class="px-4 py-2 bg-[#7c3aed] hover:bg-[#6d28d9] text-[#ffffff] rounded-full text-[12px] md:text-[13px] font-bold transition-colors flex items-center justify-center min-w-[32px]">@</a>
-        </div>
+<header class="top" id="top">
+  <div class="wrap top-in">
+    <a href="/" class="top-link">Joaquin Sampallo</a>
+    <nav class="top-nav top-link" aria-label="Main">
+      <a href="#work">Work</a>
+      <a href="#about">About</a>
+      <a href="#contact">Contact</a>
+      <a href="/es/" lang="es" hreflang="es" data-lang="es" aria-label="Ver en español">ES</a>
     </nav>
+  </div>
+</header>
 
-    <!-- Header -->
-    <header class="w-full px-6 md:px-12 pt-24 pb-16 flex flex-col items-center text-center">
-        <h1 class="text-5xl md:text-[5.5rem] leading-[0.85] tracking-tighter font-bold mb-6 uppercase">
-            Design<br>
-            <span class="text-stone-300">&amp; Build</span>
-        </h1>
-        <p class="text-stone-600 max-w-md text-sm md:text-base">I'm a UX designer who builds what I design: landing pages, funnels and product flows, shipped in code with AI. I'm also a digital retoucher.</p>
-    </header>
+<main>
 
-    <!-- Main Content -->
-    <main class="w-full">
+<!-- ============ HERO ============ -->
+<section class="hero wrap">
+  <p class="status">Available for work · Argentina, remote (UTC−3)</p>
+  <div class="hero-b">
+    <p class="who"><img src="/img/joaquin-sampallo.png" alt="" width="32" height="32">Joaquin Sampallo, product &amp; UX/UI designer</p>
+    <h1 class="hero-h" data-reveal>I turn complex ideas <span class="faint">into products that are simple to use</span></h1>
+    <p class="lede">I design the brand, the flows and the screens, then build them in code with AI. Right now that's Qata, my own B2B SaaS.</p>
+  </div>
+</section>
 
-        <!-- Project 1: Delegation Blueprint lead magnet (Left Aligned) -->
-        <section class="w-full py-16 md:py-24 relative z-10">
-            <div class="w-full flex flex-col justify-center">
+<!-- ============ FEATURED ============ -->
+<section class="sec wrap" id="work">
+  <div class="featured">
+    <figure class="stage stage-feat">
+      <iframe class="cover" src="/studies/qata/cover.html" title="Animated demo of Qata: a customer builds an order, it arrives in WhatsApp already written, and the owner confirms it" loading="lazy" tabindex="-1"></iframe>
+    </figure>
+    <div class="feat-cap">
+      <div class="row">
+        <p class="lab"><span class="client"><img src="/studies/qata/images/qata-logo.svg" alt="" width="20" height="20">Qata · 2026</span>Founder, designer &amp; builder</p>
+        <div class="body">
+          <h3>Turning WhatsApp Into an Order Desk</h3>
+          <p>My own B2B SaaS. Small food businesses get a digital catálogo, and every order lands in the owner's WhatsApp already written. Designed and built solo, and live at qata.ar.</p>
+          <a class="more" href="/studies/qata/">Read the case study →</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
 
-                <!-- Headline Above -->
-                <div class="px-6 md:px-12 mb-6 md:mb-8 flex flex-col gap-4">
-                    <div class="flex flex-col md:flex-row md:items-end gap-4 md:gap-8">
-                        <h2 class="text-4xl md:text-5xl lg:text-6xl font-bold text-stone-900 uppercase leading-[0.85] tracking-tighter">
-                            Designing a Lead Magnet<br class="hidden md:inline"> Built to Book Calls
-                        </h2>
-                        <div class="flex flex-wrap gap-2 md:mb-2">
-                            <span class="px-4 py-2 border border-stone-900/20 rounded-full text-[10px] font-bold tracking-[0.2em] uppercase text-stone-600 whitespace-nowrap">Case Study</span>
-                        </div>
-                    </div>
-                </div>
+<!-- ============ NUMBERS ============ -->
+<section class="wrap numbers">
+  <div class="num"><b>10 days</b><span>From seven-month-old code to live subscriptions, on Qata</span></div>
+  <div class="num"><b>5 days</b><span>From brief to a full quiz funnel in code, for Pareto Talent</span></div>
+  <div class="num"><b>4 → 1</b><span>Websites merged into one hub, for Kourosh Dini</span></div>
+</section>
 
-                <!-- Full width Image -->
-                <div class="w-full group">
-                    <a href="/studies/db/" class="block w-full overflow-hidden border-t border-b border-stone-900/10 bg-stone-100 transition-all duration-500">
-                        <img src="/img/db00.jpg" alt="The Delegation Blueprint card for Pareto Talent" class="w-full h-auto object-cover transform transition-transform duration-700 ease-out group-hover:scale-[1.01]">
-                    </a>
-                </div>
+<!-- ============ MORE WORK ============ -->
+<section class="sec wrap" id="more">
+  <div class="row">
+    <h2 class="lab">More Work</h2>
+    <div class="body">
+      <h3 class="title">Selected Projects</h3>
+      <ol class="index">
+        <li><a class="ix" href="/studies/db/"><span class="ix-n">02</span><div><h4>Designing a Lead Magnet Built to Book Calls</h4><p>Pareto Talent · A quiz funnel that builds a founder's ideal "right hand", designed and built in code</p></div><span class="ix-s">Read →</span></a></li>
+        <li><a class="ix" href="/studies/acas/"><span class="ix-n">03</span><div><h4>A Premium Service Lost in Translation</h4><p>Advanced Clean Air Solutions · A website redesign for a luxury clientele</p></div><span class="ix-s">Read →</span></a></li>
+        <li><a class="ix" href="/studies/kd/"><span class="ix-n">04</span><div><h4>Consolidating a Fragmented Brand</h4><p>Kourosh Dini · Four websites merged into one hub, with a new information architecture</p></div><span class="ix-s">Read →</span></a></li>
+        <li><a class="ix" href="https://www.behance.net/gallery/222687375/Easy-News" target="_blank" rel="noopener"><span class="ix-n">05</span><div><h4>Easy News</h4><p>An accessible news app built on Easy Read principles, tested with six people aged 8 to 40</p></div><span class="ix-s">Behance ↗</span></a></li>
+      </ol>
+    </div>
+  </div>
+</section>
 
-                <!-- CTA Below -->
-                <div class="px-6 md:px-12 mt-8 md:mt-10 flex justify-end">
-                    <a href="/studies/db/" class="group/btn inline-flex items-center gap-4 text-sm font-semibold tracking-widest uppercase pb-2 border-b border-stone-900 hover:text-stone-500 hover:border-stone-500 transition-colors">
-                        Read Case Study
-                        <svg class="w-4 h-4 transform group-hover/btn:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path></svg>
-                    </a>
-                </div>
+<!-- ============ STATEMENT ============ -->
+<!-- Joaquin's own lesson from building Qata (case-study note, "Testing It Myself") -->
+<section class="say wrap">
+  <p class="say-t" data-lit>Making a product simple is the hardest part.</p>
+  <p class="say-t" data-lit>It doesn't come from the first design. It comes from testing, iterating and going back and forth.</p>
+</section>
 
-            </div>
-        </section>
+<!-- ============ APPROACH ============ -->
+<section class="sec wrap" id="approach">
+  <div class="row">
+    <h2 class="lab">Approach</h2>
+    <div class="body">
+      <h3 class="title">From the Brand to the Working Product</h3>
+      <ul class="principles">
+        <li><h4>Complex ideas, made simple</h4><p>Financial reporting for construction companies, dense service pages, a pizza order over WhatsApp. I find the few things that matter and make them obvious.</p></li>
+        <li><h4>Designed, then built</h4><p>I design the brand, the flows and the screens, then build them in code with Claude Code. What ships is what I designed.</p></li>
+        <li><h4>Comfortable with clients</h4><p>I've presented my own designs in client meetings at a US agency, after three years in sales and customer service.</p></li>
+      </ul>
+    </div>
+  </div>
+</section>
 
-        <!-- Project 2: Consolidating a Fragmented Brand (Right Aligned) -->
-        <section class="w-full py-16 md:py-24 relative z-10 border-t border-stone-900/5">
-            <div class="w-full flex flex-col justify-center">
+<!-- ============ ABOUT ============ -->
+<section class="sec wrap" id="about">
+  <div class="row">
+    <h2 class="lab">About</h2>
+    <div class="body lead">
+      <img class="avatar" src="/img/joaquin-sampallo.png" alt="Joaquin Sampallo" width="64" height="64">
+      <p>I'm a product and UX/UI designer from Roque Pérez, a small town in Buenos Aires, working remotely.</p>
+      <p>Until September 2026 I was a UX/UI designer at Alpha Efficiency, a US design agency, where I led website redesigns. Now I'm building Qata, my own B2B SaaS: the brand, the onboarding, the dashboards and the storefront.</p>
+      <p class="muted">Before UX, I spent four years as a freelance digital retoucher.</p>
+    </div>
+  </div>
+  <div class="row">
+    <div class="lab"></div>
+    <div class="body">
+      <div class="learn">
+        <article><div><h4>Founder &amp; Product Designer, Qata</h4><time>Sep 2026 – now</time></div><p>My own B2B SaaS for taking food orders through WhatsApp. Brand, onboarding, storefront and dashboards, built with Claude Code and live at qata.ar.</p></article>
+        <article><div><h4>UX/UI Designer, Alpha Efficiency</h4><time>Aug 2025 – Sep 2026</time></div><p>A US design agency. I led website redesigns and presented my designs in client meetings.</p></article>
+        <article><div><h4>Graphic Designer, FUA Marketing</h4><time>Jul 2023 – Oct 2023</time></div><p>Marketing assets, social posts and ad creatives.</p></article>
+        <article><div><h4>Sales &amp; Customer Service</h4><time>Feb 2022 – Aug 2025</time></div><p>Two building-material suppliers. Customers in person and by phone, deliveries and customer accounts.</p></article>
+        <article><div><h4>Digital Retoucher, Freelance</h4><time>Apr 2019 – Nov 2022</time></div><p>Photo retouching for clients.</p></article>
+        <article><div><h4>Google UX Design Professional Certificate</h4><time>2025</time></div><p>Google, on Coursera.</p></article>
+      </div>
+    </div>
+  </div>
+</section>
 
-                <!-- Headline Above -->
-                <div class="px-6 md:px-12 mb-6 md:mb-8 flex flex-col gap-4 md:items-end text-left md:text-right">
-                    <div class="flex flex-col md:flex-row-reverse md:items-end gap-4 md:gap-8">
-                        <h2 class="text-4xl md:text-5xl lg:text-6xl font-bold text-stone-900 uppercase leading-[0.85] tracking-tighter">
-                            Consolidating a<br>Fragmented Brand
-                        </h2>
-                        <div class="flex flex-wrap gap-2 md:mb-2 md:justify-end">
-                            <span class="px-4 py-2 border border-stone-900/20 rounded-full text-[10px] font-bold tracking-[0.2em] uppercase text-stone-600 whitespace-nowrap">Case Study</span>
-                        </div>
-                    </div>
-                </div>
-                
-                <!-- Full width Image -->
-                <div class="w-full group">
-                    <a href="/studies/kd/" class="block w-full overflow-hidden border-t border-b border-stone-900/10 bg-stone-100 transition-all duration-500">
-                        <img src="/img/kd01.png" alt="Joaquin Sampallo" class="w-full h-auto object-cover transform transition-transform duration-700 ease-out group-hover:scale-[1.01]">
-                    </a>
-                </div>
+<!-- ============ CONTACT ============ -->
+<section class="sec wrap" id="contact">
+  <div class="row">
+    <h2 class="lab">Contact</h2>
+    <div class="body">
+      <h3 class="title">Open to Remote Roles and Projects</h3>
+      <p class="intro-p">Product, UX/UI or web design. Email is the fastest way to reach me.</p>
+    </div>
+  </div>
+</section>
 
-                <!-- CTA Below -->
-                <div class="px-6 md:px-12 mt-8 md:mt-10 flex justify-start">
-                    <a href="/studies/kd/" class="group/btn inline-flex flex-row-reverse items-center gap-4 text-sm font-semibold tracking-widest uppercase pb-2 border-b border-stone-900 hover:text-stone-500 hover:border-stone-500 transition-colors">
-                        <svg class="w-4 h-4 transform group-hover/btn:-translate-x-1 transition-transform rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path></svg>
-                        Read Case Study
-                    </a>
-                </div>
+</main>
 
-            </div>
-        </section>
+<footer class="foot wrap">
+  <div class="foot-links">
+    <a href="mailto:jsampallo97@gmail.com">jsampallo97@gmail.com</a>
+    <a href="https://www.linkedin.com/in/jsampallo/" target="_blank" rel="noopener">LinkedIn ↗</a>
+  </div>
+  <p class="copy">© 2026 Joaquin Sampallo</p>
+</footer>
 
-        <!-- Project 3: ACAS (Left Aligned) -->
-        <section class="w-full py-16 md:py-24 relative z-10 border-t border-stone-900/5">
-            <div class="w-full flex flex-col justify-center">
-
-                <!-- Headline Above -->
-                <div class="px-6 md:px-12 mb-6 md:mb-8 flex flex-col gap-4">
-                    <div class="flex flex-col md:flex-row md:items-end gap-4 md:gap-8">
-                        <h2 class="text-4xl md:text-5xl lg:text-6xl font-bold text-stone-900 uppercase leading-[0.85] tracking-tighter">
-                            A Premium Service<br>Lost in Translation
-                        </h2>
-                        <div class="flex flex-wrap gap-2 md:mb-2">
-                            <span class="px-4 py-2 border border-stone-900/20 rounded-full text-[10px] font-bold tracking-[0.2em] uppercase text-stone-600 whitespace-nowrap">Case Study</span>
-                        </div>
-                    </div>
-                </div>
-                
-                <!-- Full width Image -->
-                <div class="w-full group">
-                    <a href="/studies/acas/" class="block w-full overflow-hidden border-t border-b border-stone-900/10 bg-stone-100 transition-all duration-500">
-                        <img src="/img/acas_hero.png" alt="Joaquin Sampallo" class="w-full h-auto object-cover transform transition-transform duration-700 ease-out group-hover:scale-[1.01]">
-                    </a>
-                </div>
-
-                <!-- CTA Below -->
-                <div class="px-6 md:px-12 mt-8 md:mt-10 flex justify-end">
-                    <a href="/studies/acas/" class="group/btn inline-flex items-center gap-4 text-sm font-semibold tracking-widest uppercase pb-2 border-b border-stone-900 hover:text-stone-500 hover:border-stone-500 transition-colors">
-                        Read Case Study
-                        <svg class="w-4 h-4 transform group-hover/btn:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path></svg>
-                    </a>
-                </div>
-
-            </div>
-        </section>
-
-        <!-- Project 4: Easy News App (Right Aligned) -->
-        <section class="w-full py-16 md:py-24 relative z-10 border-t border-stone-900/5">
-            <div class="w-full flex flex-col justify-center">
-
-                <!-- Headline Above -->
-                <div class="px-6 md:px-12 mb-6 md:mb-8 flex flex-col gap-4 md:items-end text-left md:text-right">
-                    <div class="flex flex-col md:flex-row-reverse md:items-end gap-4 md:gap-8">
-                        <h2 class="text-4xl md:text-5xl lg:text-6xl font-bold text-stone-900 uppercase leading-[0.85] tracking-tighter">
-                            Easy News<br>App
-                        </h2>
-                        <div class="flex flex-wrap gap-2 md:mb-2 md:justify-end">
-                            <span class="px-4 py-2 border border-stone-900/20 rounded-full text-[10px] font-bold tracking-[0.2em] uppercase text-stone-600 whitespace-nowrap">Case Study</span>
-                        </div>
-                    </div>
-                </div>
-                
-                <!-- Full width Image -->
-                <div class="w-full group">
-                    <a href="https://www.behance.net/gallery/222687375/Easy-News" target="_blank" class="block w-full overflow-hidden border-t border-b border-stone-900/10 bg-stone-100 transition-all duration-500">
-                        <img src="/img/post1.jpg" alt="Joaquin Sampallo" class="w-full h-auto object-cover transform transition-transform duration-700 ease-out group-hover:scale-[1.01]">
-                    </a>
-                </div>
-
-                <!-- CTA Below -->
-                <div class="px-6 md:px-12 mt-8 md:mt-10 flex justify-start">
-                    <a href="https://www.behance.net/gallery/222687375/Easy-News" target="_blank" class="group/btn inline-flex flex-row-reverse items-center gap-4 text-sm font-semibold tracking-widest uppercase pb-2 border-b border-stone-900 hover:text-stone-500 hover:border-stone-500 transition-colors">
-                        <svg class="w-4 h-4 transform group-hover/btn:-translate-x-1 transition-transform rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path></svg>
-                        Read Case Study
-                    </a>
-                </div>
-
-            </div>
-        </section>
-
-        <!-- Project 4: Selected Landing Pages (Right Aligned) -->
-        <!-- <section class="w-full py-16 md:py-24 relative z-10 border-t border-stone-900/5">
-            <div class="w-full flex flex-col justify-center">
-                
-                <div class="px-6 md:px-12 mb-6 md:mb-8 flex flex-col gap-4 md:items-end text-left md:text-right">
-                    <div class="flex flex-col md:flex-row-reverse md:items-end gap-4 md:gap-8">
-                        <h2 class="text-4xl md:text-5xl lg:text-6xl font-bold text-stone-900 uppercase leading-[0.85] tracking-tighter">
-                            Selected<br>Landing Pages
-                        </h2>
-                        <div class="flex flex-wrap gap-2 md:mb-2 md:justify-end">
-                            <span class="px-4 py-2 border border-stone-900/20 rounded-full text-[10px] font-bold tracking-[0.2em] uppercase text-stone-600 whitespace-nowrap">Landing Page Design</span>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="w-full group">
-                    <a href="/landing/" class="block w-full overflow-hidden border-t border-b border-stone-900/10 bg-stone-100 transition-all duration-500">
-                        <img src="/img/landing.png" alt="Joaquin Sampallo" class="w-full h-auto object-cover transform transition-transform duration-700 ease-out group-hover:scale-[1.01]">
-                    </a>
-                </div>
-
-                <div class="px-6 md:px-12 mt-8 md:mt-10 flex justify-start">
-                    <a href="/landing/" class="group/btn inline-flex flex-row-reverse items-center gap-4 text-sm font-semibold tracking-widest uppercase pb-2 border-b border-stone-900 hover:text-stone-500 hover:border-stone-500 transition-colors">
-                        <svg class="w-4 h-4 transform group-hover/btn:-translate-x-1 transition-transform rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path></svg>
-                        See All Landing Pages
-                    </a>
-                </div>
-
-            </div>
-        </section> -->
-
-        <!-- Contact Section -->
-        <section class="w-full px-6 md:px-12 py-32 flex flex-col items-center text-center border-t border-stone-900/10 mt-12 bg-[#faf9f6]">
-            <h4 class="text-4xl md:text-5xl font-bold tracking-tighter uppercase mb-8 text-stone-900">
-                Tell me about<br><span class="text-stone-400">your project</span>
-            </h4>
-            <a href="mailto:jsampallo97@gmail.com" class="px-8 py-3.5 bg-[#7c3aed] hover:bg-[#6d28d9] text-white rounded-full text-sm font-bold tracking-widest uppercase transition-all shadow-[0_8px_30px_rgb(124,58,237,0.3)] hover:shadow-[0_8px_30px_rgb(124,58,237,0.5)] transform hover:-translate-y-1">
-                Contact Me
-            </a>
-        </section>
-
-    </main>
-
-    <!-- Footer -->
-    <footer class="w-full px-6 py-10 md:px-12 border-t border-stone-900/10 relative z-40 bg-stone-50 flex justify-center items-center">
-        <p class="text-xs font-bold tracking-[0.2em] uppercase text-stone-500">© 2026 Joaquin Sampallo.</p>
-    </footer>
+<script src="/home.js"></script>
 
 </body>
 </html>

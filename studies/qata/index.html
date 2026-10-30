@@ -1,0 +1,231 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Qata Case Study</title>
+<meta name="description" content="Qata: turning WhatsApp into an order desk for small food businesses. Case study by Joaquin Sampallo.">
+<link rel="alternate" hreflang="en" href="https://www.jsampallo.com.ar/studies/qata/">
+<link rel="alternate" hreflang="es" href="https://www.jsampallo.com.ar/es/studies/qata/">
+<script>
+// Spanish browsers go to /es/, unless the visitor already picked a language with the EN/ES link
+(function () {
+  var saved; try { saved = localStorage.getItem('lang'); } catch (e) {}
+  var langs = navigator.languages || [navigator.language];
+  var first = langs.filter(function (l) { return /^(en|es)/i.test(l); })[0] || 'en';
+  if ((saved || first).slice(0, 2).toLowerCase() === 'es') location.replace('/es/studies/qata/' + location.hash);
+})();
+</script>
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png?v=2">
+<link rel="icon" type="image/png" sizes="512x512" href="/favicon-512.png?v=2">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600&family=Geist+Mono:wght@400;500&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<header class="top" id="top">
+  <div class="wrap top-in">
+    <a href="/" class="top-link">← All work</a>
+    <a href="https://qata.ar" class="top-link dim" target="_blank" rel="noopener">qata.ar ↗</a>
+  </div>
+</header>
+
+<main>
+
+<!-- ============ INTRO ============ -->
+<section class="intro wrap" id="intro" data-sec="Intro">
+  <dl class="meta">
+    <div><dt>Product</dt><dd>Qata</dd></div>
+    <div><dt>Year</dt><dd>2026</dd></div>
+    <div><dt>Role</dt><dd>Founder, product designer &amp; builder</dd></div>
+    <div><dt>Team</dt><dd>Solo</dd></div>
+  </dl>
+  <h1>Turning WhatsApp Into an Order Desk</h1>
+  <p class="lede">A digital catálogo for small food businesses. Customers build their order on a link, and it lands in the owner's WhatsApp already written.</p>
+</section>
+
+<div class="wrap">
+  <figure class="stage stage-hero">
+    <div class="demo auto" id="hero-demo"></div>
+  </figure>
+</div>
+
+<!-- ============ NUMBERS ============ -->
+<section class="wrap numbers">
+  <div class="num"><b>0%</b><span>Commission on every order</span></div>
+  <div class="num"><b>10 days</b><span>From seven-month-old code to live subscriptions</span></div>
+  <div class="num"><b>~125 KB</b><span>To open a store on mobile data</span></div>
+</section>
+
+<!-- ============ OVERVIEW ============ -->
+<section class="sec wrap" id="overview" data-sec="Overview">
+  <div class="row">
+    <h2 class="lab">Overview</h2>
+    <div class="body lead">
+      <p>Qata gives small food businesses (burger places, pizzerías, bakeries) a digital catálogo. Their customers browse it, build an order, and send it to the owner's WhatsApp, already written.</p>
+      <p>In small Argentine towns, WhatsApp already is the order system: voice notes, photos of a printed menu and a lot of “¿qué querías?”. The alternative, delivery apps, takes a commission on every sale and keeps the customer.</p>
+      <p class="muted">I designed and built Qata on my own, about an hour a day, with AI (Claude Code). After a seven-month pause I came back to scattered code, audited it, and took it to live subscriptions in ten days.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ============ PROBLEM ============ -->
+<section class="sec wrap" id="problem" data-sec="The Problem">
+  <div class="row">
+    <h2 class="lab">The Problem</h2>
+    <div class="body">
+      <h3 class="title">Why Ordering by WhatsApp Breaks</h3>
+      <div class="facts">
+        <div><span class="fico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 9a2 2 0 0 1-2 2H6l-4 4V4a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2z"/><path d="M18 9h2a2 2 0 0 1 2 2v11l-4-4h-6a2 2 0 0 1-2-2v-1"/></svg></span><h4>Orders in pieces</h4><p>An order arrives as five messages and a voice note. The owner rebuilds it by hand, then asks for the address again.</p></div>
+        <div><span class="fico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M19 5 5 19"/><circle cx="6.5" cy="6.5" r="2.5"/><circle cx="17.5" cy="17.5" r="2.5"/></svg></span><h4>A cut of every sale</h4><p>Delivery apps tidy up the mess, but they keep a percentage, and the customer.</p></div>
+        <div><span class="fico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect width="14" height="20" x="5" y="2" rx="2"/><path d="m10 9 4 4m0-4-4 4"/><path d="M12 18h.01"/></svg></span><h4>No app, no account</h4><p>Nobody downloads an app to order a pizza. The store has to open from a link in an Instagram bio.</p></div>
+        <div><span class="fico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 17H7A5 5 0 0 1 7 7"/><path d="M15 7h2a5 5 0 0 1 4 8"/><path d="M8 12h4"/><path d="m2 2 20 20"/></svg></span><h4>A link can't report back</h4><p>A WhatsApp link opens the chat with the text typed. It can't tell anyone whether the customer actually hit send.</p></div>
+        <div><span class="fico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect width="14" height="20" x="5" y="2" rx="2"/><path d="M9 7h6M9 11h6M9 15h3"/></svg></span><h4>Run from a phone</h4><p>Owners manage the shop between orders, on their phone, with no technical background.</p></div>
+        <div><span class="fico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 20h.01"/><path d="M7 20v-4"/><path d="M12 20v-8" opacity=".3"/><path d="M17 20V8" opacity=".3"/></svg></span><h4>Slow phones, thin data</h4><p>Customers in small towns are often on older phones and patchy mobile data.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ APPROACH ============ -->
+<section class="sec wrap" id="approach" data-sec="Approach">
+  <div class="row">
+    <h2 class="lab">Approach</h2>
+    <div class="body">
+      <h3 class="title">Rebuilt in Code, an Hour a Day</h3>
+      <div class="prose">
+        <p>Before designing anything, I did an audit. Qata started as a prototype made with another AI tool, and after seven months away the code was spread across files. I mapped every file, every table and every promise the landing made, and marked each one as built or not. It turned up a gap in the database rules that exposed data. I fixed it the same day.</p>
+        <p>From then on I designed directly in code with Claude Code, and kept a vault of notes as the project's memory: every decision, flow and change written down, so an hour a day was enough to pick up exactly where I'd left off.</p>
+      </div>
+      <ul class="principles">
+        <li><h4>Nothing new to learn</h4><p>WhatsApp stays the channel. Cash and transfers stay the payment. Qata only puts the order in order.</p></li>
+        <li><h4>Nothing to retype</h4><p>Every order arrives complete: products, varieties, time, address, payment and a code.</p></li>
+        <li><h4>Their brand, not ours</h4><p>Customers see the store's name, colors and link. Qata stays out of the way.</p></li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- ============ FEATURES ============ -->
+<section class="sec wrap" id="customer" data-sec="For the Customer">
+  <div class="row">
+    <h2 class="lab">Details</h2>
+    <div class="body">
+      <h3 class="title">For the Customer</h3>
+      <p class="intro-p">One link, no account. The catálogo has to be quick to read and hard to get wrong.</p>
+    </div>
+  </div>
+  <div class="feats">
+        <figure class="feat"><div class="stage fx" data-fx="variety"></div><figcaption><b>Varieties</b> One product, several sizes. Sold-out ones can't be picked.</figcaption></figure>
+        <figure class="feat"><div class="stage fx" data-fx="search"></div><figcaption><b>Forgiving search</b> Ignores accents and capitals, and reads descriptions too.</figcaption></figure>
+        <figure class="feat"><div class="stage fx" data-fx="qr"></div><figcaption><b>Table QR</b> The same store as a menu for the table, with no cart.</figcaption></figure>
+        <figure class="feat"><div class="stage fx" data-fx="closed"></div><figcaption><b>Open and closed</b> One switch. Closed stores can still show their menu.</figcaption></figure>
+  </div>
+</section>
+
+<section class="sec wrap" id="owner" data-sec="For the Owner">
+  <div class="row">
+    <div class="lab"></div>
+    <div class="body">
+      <h3 class="title">For the Owner</h3>
+      <p class="intro-p">The rush happens at nine on a Friday night, with the fryer on and the phone buzzing. The panel has to keep up without asking for attention.</p>
+    </div>
+  </div>
+  <div class="feats">
+        <figure class="feat"><div class="stage fx" data-fx="code"></div><figcaption><b>Order codes</b> Every WhatsApp matches its order in the panel.</figcaption></figure>
+        <figure class="feat"><div class="stage fx" data-fx="confirm"></div><figcaption><b>Por confirmar</b> Only orders that really arrived get counted.</figcaption></figure>
+        <figure class="feat"><div class="stage fx" data-fx="bell"></div><figcaption><b>Live orders</b> New orders appear by themselves and ring a counter bell, Qata's own sound.</figcaption></figure>
+        <figure class="feat"><div class="stage fx" data-fx="edit"></div><figcaption><b>Editable orders</b> Ran out of something? Change the order and send the customer the new version.</figcaption></figure>
+  </div>
+</section>
+
+<section class="sec wrap" id="setup" data-sec="Setting Up">
+  <div class="row">
+    <div class="lab"></div>
+    <div class="body">
+      <h3 class="title">Setting Up the Store</h3>
+      <p class="intro-p">Owners build the store themselves, on their phone, without taking a single photo if they don't want to.</p>
+    </div>
+  </div>
+  <div class="feats">
+        <figure class="feat"><div class="stage fx" data-fx="photo"></div><figcaption><b>Suggested photos</b> Type the product's name and a photo from the library appears.</figcaption></figure>
+        <figure class="feat"><div class="stage fx" data-fx="message"></div><figcaption><b>Their own message</b> Owners write the WhatsApp message. The fields fill themselves.</figcaption></figure>
+        <figure class="feat"><div class="stage fx" data-fx="themes"></div><figcaption><b>Six themes</b> Ready-made starting points, previewed live with the store's own products.</figcaption></figure>
+        <figure class="feat"><div class="stage fx" data-fx="contrast"></div><figcaption><b>Contrast check</b> Whatever colors they pick, the text stays readable.</figcaption></figure>
+  </div>
+</section>
+
+<!-- ============ TRY IT ============ -->
+<section class="sec wrap" id="try" data-sec="Try It">
+  <div class="row">
+    <h2 class="lab">Try It</h2>
+    <div class="body">
+      <h3 class="title">Order Something</h3>
+      <p class="intro-p">A sample store, La Esquina. Add a few things, pick pickup or delivery, and send the order. Then switch sides: send the WhatsApp, and confirm the order from the owner's panel.</p>
+      <div class="tools">
+        <button class="tool" id="try-reset" type="button">Start over</button>
+        <button class="tool" id="try-sound" type="button" aria-pressed="true">Sound on</button>
+      </div>
+    </div>
+  </div>
+  <figure class="stage stage-try">
+    <div class="demo" id="try-demo"></div>
+  </figure>
+</section>
+
+<!-- ============ OUTCOME ============ -->
+<section class="sec wrap" id="outcome" data-sec="Outcome">
+  <div class="row">
+    <h2 class="lab">Outcome</h2>
+    <div class="body">
+      <h3 class="title">Live, and Ready for Its First Ten</h3>
+      <div class="prose">
+        <p>Qata is live at qata.ar. Mercado Pago subscriptions went live on October 28, the terms and privacy policy are written, and the name is filed as a trademark.</p>
+        <p>Next come ten founding businesses. They use Qata free for as long as it exists, in exchange for real orders and honest feedback. The first real numbers will come from them. The goal is 200 businesses by October 2027.</p>
+        <!-- TODO: add results after the founding testers' first month -->
+      </div>
+    </div>
+  </div>
+  <div class="feats">
+        <figure class="feat"><div class="stage fx" data-fx="library"></div><figcaption><b>Next: a photo for every item</b> A library that covers what restaurants and bakeries sell.</figcaption></figure>
+        <figure class="feat"><div class="stage fx" data-fx="made"></div><figcaption><b>A link back from every store</b> A small “Hecho con Qata” line closes every catálogo and links back to qata.ar.</figcaption></figure>
+  </div>
+</section>
+
+<!-- ============ HINDSIGHT ============ -->
+<section class="sec wrap" id="hindsight" data-sec="Hindsight">
+  <div class="row">
+    <h2 class="lab">Hindsight</h2>
+    <div class="body">
+      <h3 class="title">What I Learned</h3>
+      <div class="learn">
+        <article><h4>I audit first now</h4><p>Coming back to seven-month-old code, my instinct was to redesign. Mapping what actually existed came first, and it found a data leak and promises the product didn't keep yet. Now I check every claim on the landing against the code.</p></article>
+        <article><h4>Some things you just can't know</h4><p>A WhatsApp link can't say whether the message was sent. Instead of guessing, the order waits as “por confirmar” until the owner sees it arrive. One tap per order buys honest numbers.</p></article>
+        <article><h4>My smart guess wasn't smart</h4><p>Photo suggestions picked the wrong burger when two photos shared a word. Showing every match, most specific first, worked better than trying to guess right.</p></article>
+      </div>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer class="foot wrap">
+  <a href="/">← All work</a>
+  <a href="https://qata.ar" target="_blank" rel="noopener">Visit qata.ar ↗</a>
+</footer>
+
+<nav class="prog" id="prog" aria-label="Sections">
+  <div class="prog-menu" id="prog-menu"></div>
+  <button class="prog-btn" id="prog-btn" type="button" aria-expanded="false">
+    <svg class="ring" viewBox="0 0 20 20" aria-hidden="true"><circle cx="10" cy="10" r="7.5" class="ring-bg"/><circle id="prog-arc" cx="10" cy="10" r="7.5" class="ring-fg" stroke-dasharray="47.1" stroke-dashoffset="47.1"/></svg>
+    <span class="pct" id="prog-pct">0%</span>
+    <span id="prog-name">Intro</span>
+  </button>
+</nav>
+
+<script src="main.js"></script>
+</body>
+</html>

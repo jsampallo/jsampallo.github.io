@@ -8,6 +8,7 @@ const sleep = ms => new Promise(r => setTimeout(r, ms));
 const $ = (s, el = document) => el.querySelector(s);
 const $$ = (s, el = document) => [...el.querySelectorAll(s)];
 const reduced = matchMedia('(prefers-reduced-motion: reduce)').matches;
+const T = document.documentElement.lang.startsWith('es') ? { before: '4 sitios', after: '1 sitio' } : { before: '4 sites', after: '1 site' };
 
 // Loops only run while their element is on screen and the tab is visible
 const watchers = new Map();
@@ -33,14 +34,83 @@ const ICON = {
   signal: '<path d="M2 20h.01M7 20v-4M12 20v-8M17 20V8M22 20V4"/>',
   wifi: '<path d="M12 20h.01M2 8.800a15 15 0 0 1 20 0M5 12.900a10 10 0 0 1 14 0M8.500 16.400a5 5 0 0 1 7 0"/>',
   batt: '<rect width="16" height="10" x="2" y="7" rx="2"/><path d="M22 11v2"/><rect width="9" height="4" x="5" y="10" fill="currentColor"/>',
+  search: '<circle cx="11" cy="11" r="8"/><path d="m21 21-4.300-4.300"/>',
   at: '<circle cx="12" cy="12" r="4"/><path d="M16 8v5a3 3 0 0 0 6 0v-1a10 10 0 1 0-4 8"/>',
   check: '<path d="M20 6 9 17l-5-5"/>',
 };
 const ic = (n, s = 16, w = 2) => `<svg class="i" width="${s}" height="${s}" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="${w}" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">${ICON[n]}</svg>`;
 const IMG = n => `/studies/kd/images/${n}`;
+// Scale a fixed-size drawing to its stage
+const fitArt = (fx, art, pad = 0, max = 1.3) => {
+  const fit = () => fx.style.setProperty('--s', Math.min(max, (fx.clientWidth - pad) / art.offsetWidth, (fx.clientHeight - pad) / art.offsetHeight).toFixed(3));
+  new ResizeObserver(fit).observe(fx); new ResizeObserver(fit).observe(art); fit();
+};
 
 /* ================= the animations ================= */
 const FX = {
+  // Four sites become one sitemap. Portfolio rises to the hub, three sites keep their place, five sections join them
+  map(fx) {
+    const S = [
+      ['hub', 'Personal portfolio', 'kouroshdini.com', 80, 34, 155, 16, 170, 56],
+      ['pod', 'Podcast', 'rhythmsoffocus.com', 270, 34, 133, 112, 101, 40],
+      ['psy', 'Psychoanalysis', 'kouroshdinimd.com', 80, 140, 20, 190, 101, 40],
+      ['wav', 'Waves of Focus', 'wavesoffocus.com', 270, 140, 359, 190, 101, 40],
+    ];
+    const NEW = [['Blog', 20, 112], ['Music', 246, 112], ['Courses &amp; Books', 359, 112], ['About', 133, 190], ['Contact', 246, 190]];
+    fx.innerHTML = `
+      <div class="art mp">
+        <svg class="mp-l" viewBox="0 0 480 270" aria-hidden="true">
+          <path pathLength="1" d="M240 72V171"/><path pathLength="1" d="M70.500 112V92H409.500V112"/><path pathLength="1" d="M183.500 92V112M296.500 92V112"/>
+          <path pathLength="1" d="M70.500 190V171H409.500V190"/><path pathLength="1" d="M183.500 171V190M296.500 171V190"/>
+        </svg>
+        ${NEW.map(([t, x, y], i) => `<div class="n add" style="left:${x}px;top:${y}px;--i:${i}"><b>${t}</b></div>`).join('')}
+        ${S.map(([k, t, d, x0, y0, x1, y1, w1, h1]) => `<div class="n site ${k}" style="--x0:${x0}px;--y0:${y0}px;--x1:${x1}px;--y1:${y1}px;--w1:${w1}px;--h1:${h1}px">
+          ${k === 'hub' ? `<img src="${IMG('kd-logo.svg')}" alt="" width="30" height="30">` : ''}
+          <div class="n-t"><span class="l"><b>${t}</b>${k === 'hub' ? '<b class="z">Homepage</b>' : ''}</span><small>${d}</small></div>
+        </div>`).join('')}
+        <span class="mp-t">${T.before}</span>
+      </div>`;
+    const art = fx.firstElementChild, tag = $('.mp-t', art);
+    fitArt(fx, art, 8);
+    const reset = () => { art.classList.add('snap'); art.classList.remove('on', 'fade'); tag.textContent = T.before; void art.offsetWidth; art.classList.remove('snap'); };
+    if (reduced) { art.classList.add('on'); tag.textContent = T.after; return; }
+    loop(fx, async () => {
+      reset(); await wait(fx, 2300);
+      art.classList.add('on'); await sleep(1200); tag.textContent = T.after;
+      await wait(fx, 5000);
+      art.classList.add('fade'); await sleep(500);
+    });
+  },
+
+  // A desktop mockup: a loading skeleton of shapes turns into the final design, one element at a time
+  wire(fx) {
+    let n = 1;
+    const e = (html, cls = '') => `<span class="e ${cls}" style="--i:${n++}"><i class="sk"></i><span class="re">${html}</span></span>`;
+    const bar = `${e(`<img src="${IMG('kd-logo.svg')}" alt="" width="26" height="26">`, 'logo')}<div class="wf-nav">${['Blog', 'Podcast', 'Music'].map(t => e(t)).join('')}</div>${e(ic('search', 15, 2), 'srch')}`;
+    const copy = [e('Kourosh Dini, MD', 'h'), e('Mind, Music, &amp; Mastery', 'h'), e('From overwhelmed to engaged.', 'p'), e('Begin taking charge with a simple “visit.”', 'p'), e('Take Your First Step', 'b')].join('');
+    // The sun and the trees have no skeleton: they arrive last, on the paper
+    fx.innerHTML = `
+      <div class="art wf">
+        <div class="wf-br"><i></i><i></i><i></i></div>
+        <div class="wf-v">
+          <i class="wf-p"></i>
+          <i class="wf-sun fd" style="--i:${n}"></i>
+          <img class="wf-t l fd" style="--i:${n + 1}" src="${IMG('tree-left.webp')}" alt="">
+          <img class="wf-t r fd" style="--i:${n + 2}" src="${IMG('tree-right.webp')}" alt="">
+          <div class="wf-bar">${bar}</div>
+          <div class="wf-c">${copy}</div>
+        </div>
+      </div>`;
+    const art = fx.firstElementChild;
+    fitArt(fx, art, 40);
+    if (reduced) { art.classList.add('on'); return; }
+    loop(fx, async () => {
+      await wait(fx, 2200);
+      art.classList.add('on'); await wait(fx, 6800);
+      art.classList.remove('on'); await sleep(1300);
+    });
+  },
+
   // The first step on a phone: the button, the sign-up, sent
   phone(fx) {
     fx.innerHTML = `
@@ -107,7 +177,7 @@ const FX = {
         <section class="kt-b">
           <h4>A Wandering Mind Can Be a Powerful Mind</h4>
           <div class="kt-g">
-            <img src="${IMG('ui-waves-box.jpg')}" alt="">
+            <img src="${IMG('ui-waves-box.jpg')}" alt="" width="158" height="167">
             <div>
               <p class="kt-o">An interactive community of peers</p>
               <p class="kt-o">Live Q&amp;A group sessions with Kourosh</p>
@@ -117,6 +187,8 @@ const FX = {
         </section>
       </div></div>`;
     const art = fx.firstElementChild, R = k => $(`[data-r="${k}"]`, fx), pg = $('.kt-pg', fx), play = $('.pl-p', fx), b = $('.kt-b', fx);
+    // Scroll until the community section sits in the middle of the card
+    const toB = () => `translateY(${-Math.round(b.offsetTop + b.offsetHeight / 2 - art.clientHeight / 2)}px)`;
     const fit = () => fx.style.setProperty('--s', Math.min(1.1, (fx.clientWidth - 28) / art.offsetWidth, (fx.clientHeight - 28) / art.offsetHeight).toFixed(3));
     new ResizeObserver(fit).observe(fx); fit();
     const reset = () => {
@@ -126,12 +198,12 @@ const FX = {
       void fx.offsetWidth; fx.classList.remove('snap');
     };
     reset();
-    if (reduced) { pg.style.transform = 'translateY(-166px)'; b.classList.add('on'); return; }
+    if (reduced) { pg.style.transform = toB(); b.classList.add('on'); return; }
     loop(fx, async () => {
       reset(); await wait(fx, 1700);
       tap(fx, play); await sleep(200); play.classList.add('on');
       for (let i = 1; i <= 5; i++) { R('t').textContent = `00:00:0${i}`; R('bar').style.width = `${i * 2.4}%`; await wait(fx, 520); }
-      pg.style.transform = 'translateY(-166px)'; b.classList.add('on'); await wait(fx, 1900);
+      pg.style.transform = toB(); b.classList.add('on'); await wait(fx, 1900);
       await press(fx, R('go')); await wait(fx, 2500);
       art.classList.add('fade'); await sleep(450);
     });

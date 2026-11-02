@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Page not found | Joaquin Sampallo</title>
+<meta name="robots" content="noindex">
+<script>
+// GitHub Pages serves this page for any address that doesn't exist.
+// Old addresses forward to where the page lives now and keep the visitor's #section. Everything else sees the message below
+(function () {
+  var moved = {
+    '/acas.html': '/studies/acas/',
+    '/kd.html': '/studies/kd/',
+    '/landing.html': '/',
+    '/landing': '/',
+    '/qata.html': '/studies/qata/',
+    '/qata': '/studies/qata/',
+    '/visuals.html': '/visuals/',
+    '/studies/db': '/studies/pareto/'
+  };
+  var path = location.pathname.replace(/(\/index\.html|\/)$/, '');
+  if (moved[path]) {
+    document.documentElement.style.visibility = 'hidden';
+    location.replace(moved[path] + location.hash);
+    return;
+  }
+  // Same language rule as the home page, and anything under /es/ stays in Spanish
+  var saved; try { saved = localStorage.getItem('lang'); } catch (e) {}
+  var langs = navigator.languages || [navigator.language];
+  var first = langs.filter(function (l) { return /^(en|es)/i.test(l); })[0] || 'en';
+  if (/^\/es(\/|$)/.test(path) || (saved || first).slice(0, 2).toLowerCase() === 'es') {
+    document.documentElement.lang = 'es-AR';
+    document.title = 'Página no encontrada | Joaquin Sampallo';
+  }
+})();
+</script>
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png?v=2">
+<link rel="icon" type="image/png" sizes="512x512" href="/favicon-512.png?v=2">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600&family=Geist+Mono:wght@400;500&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/home.css">
+<style>
+html[lang="en"] .es, html[lang="es-AR"] .en { display: none; }
+.nf-link { display: inline-block; margin-top: 32px; font-size: 15px; text-decoration: none; border-bottom: 1px solid var(--line); padding-bottom: 2px; transition: border-color .2s; }
+.nf-link:hover { border-color: var(--fg); }
+</style>
+</head>
+<body>
+
+<header class="top">
+  <div class="wrap top-in">
+    <a href="/" class="top-link en">Joaquin Sampallo</a>
+    <a href="/es/" class="top-link es">Joaquin Sampallo</a>
+  </div>
+</header>
+
+<main class="hero wrap">
+  <p class="lab">404</p>
+  <div class="hero-b">
+    <div class="en">
+      <h1 class="hero-h">This page <span class="faint">doesn't exist</span></h1>
+      <p class="lede">It may have moved. All my work is on the home page.</p>
+      <a href="/" class="nf-link">← All work</a>
+    </div>
+    <div class="es">
+      <h1 class="hero-h">Esta página <span class="faint">no existe</span></h1>
+      <p class="lede">Puede que se haya movido. Todo mi trabajo está en la página de inicio.</p>
+      <a href="/es/" class="nf-link">← Todo el trabajo</a>
+    </div>
+  </div>
+</main>
+
+</body>
+</html>

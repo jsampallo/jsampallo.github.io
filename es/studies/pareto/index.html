@@ -1,0 +1,230 @@
+<!doctype html>
+<html lang="es-AR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Caso de estudio de Pareto Talent</title>
+<meta name="description" content="Diseñar un lead magnet pensado para agendar llamadas: un funnel completo con quiz para Pareto Talent. Caso de estudio de Joaquin Sampallo.">
+<link rel="alternate" hreflang="en" href="https://www.jsampallo.com.ar/studies/pareto/">
+<link rel="alternate" hreflang="es" href="https://www.jsampallo.com.ar/es/studies/pareto/">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png?v=2">
+<link rel="icon" type="image/png" sizes="512x512" href="/favicon-512.png?v=2">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600&family=Geist+Mono:wght@400;500&family=Plus+Jakarta+Sans:wght@500;600;700;800&family=DM+Sans:wght@400;500;600&family=Space+Grotesk:wght@500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/studies/pareto/styles.css">
+</head>
+<body>
+
+<header class="top" id="top">
+  <div class="wrap top-in">
+    <a href="/es/" class="top-link">← Todo el trabajo</a>
+    <a href="https://jsleadmagnet.netlify.app/" class="top-link dim" target="_blank" rel="noopener">Quiz en vivo ↗</a>
+  </div>
+</header>
+
+<main>
+
+<!-- ============ INTRO ============ -->
+<section class="intro wrap" id="intro" data-sec="Intro">
+  <dl class="meta">
+    <div><dt>Cliente</dt><dd>Pareto Talent</dd></div>
+    <div><dt>Año</dt><dd>2026</dd></div>
+    <div><dt>Rol</dt><dd>Diseñador UX y desarrollador</dd></div>
+    <div><dt>Contexto</dt><dd>Concurso de un bootcamp</dd></div>
+  </dl>
+  <h1>Diseñar un lead magnet pensado para agendar llamadas</h1>
+  <p class="lede">Un funnel con quiz totalmente funcional, hecho para el concurso de un bootcamp. Diez preguntas le dan a un founder el perfil de la persona que tiene que contratar.</p>
+</section>
+
+<div class="wrap">
+  <figure class="stage stage-hero">
+    <div id="hero-demo"></div>
+  </figure>
+</div>
+
+<!-- ============ NUMBERS ============ -->
+<section class="wrap numbers">
+  <div class="num"><b>5 días</b><span>Del primer mapa al funnel publicado</span></div>
+  <div class="num"><b>10 preguntas</b><span>Cada una completa un campo del resultado</span></div>
+  <div class="num"><b>2 caminos</b><span>Una línea de facturación define quién llega a la llamada</span></div>
+</section>
+
+<!-- ============ OVERVIEW ============ -->
+<section class="sec wrap" id="overview" data-sec="Resumen">
+  <div class="row">
+    <h2 class="lab">Resumen</h2>
+    <div class="body lead">
+      <p>Hice este proyecto para un concurso dentro de un bootcamp de Pareto Talent. El brief era real: diseñar el lead magnet del propio funnel de Pareto, desde el anuncio hasta la llamada de ventas.</p>
+      <p>Pareto busca, capacita y ubica asistentes ejecutivos de Latinoamérica, a quienes llama “manos derechas”, con founders de Estados Unidos que facturan más de USD 500K al año. Cada venta empieza con una conversación: la Matching Call.</p>
+      <p class="muted">Es un lead magnet totalmente funcional: páginas publicadas, un CRM conectado, automatizaciones, emails y anuncios, todo diseñado y desarrollado en código con Claude Code. Nunca corrió con tráfico pago, así que esta es una historia sobre cómo lo pensé y lo construí, no sobre números de conversión.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ============ PROBLEM ============ -->
+<section class="sec wrap" id="problem" data-sec="El problema">
+  <div class="row">
+    <h2 class="lab">El problema</h2>
+    <div class="body">
+      <h3 class="title">Tráfico frío sin dónde aterrizar</h3>
+      <div class="facts">
+        <div><span class="fico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.700c.1.900.4 1.800.7 2.700a2 2 0 0 1-.5 2.100L8 9.800a16 16 0 0 0 6 6l1.300-1.300a2 2 0 0 1 2.100-.4c.9.3 1.800.6 2.700.7a2 2 0 0 1 1.700 2Z"/></svg></span><h4>Demasiado pronto para una llamada</h4><p>Pareto quería pautar para founders que nunca habían oído hablar de la empresa. Un founder en frío no está listo para agendar una llamada de ventas.</p></div>
+        <div><span class="fico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.970 5.700a1.940 1.940 0 0 1-2.060 0L2 7"/></svg></span><h4>Ningún motivo para dejar el email</h4><p>No había nada entre el anuncio y el equipo de ventas, así que tampoco había un motivo para dejar el email.</p></div>
+        <div><span class="fico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M10 20a1 1 0 0 0 .55.890l2 1A1 1 0 0 0 14 21v-7a2 2 0 0 1 .520-1.340L21.740 4.670A1 1 0 0 0 21 3H3a1 1 0 0 0-.740 1.670l7.220 7.990A2 2 0 0 1 10 14z"/></svg></span><h4>Ningún filtro</h4><p>Nada separaba a un founder calificado de uno curioso antes de que el equipo le dedicara tiempo a una llamada.</p></div>
+      </div>
+      <div class="prose">
+        <p>Los founders no postergan esta contratación porque duden de que necesitan ayuda. La postergan porque no saben a quién contratar ni qué le delegarían. Un cliente de Pareto lo dijo mejor que yo: “La razón por la que los necesito es que no tengo tiempo. Y la razón por la que no los encuentro es que no tengo tiempo”.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ JOURNEY ============ -->
+<section class="sec wrap" id="journey" data-sec="El recorrido">
+  <div class="row">
+    <h2 class="lab">Enfoque</h2>
+    <div class="body">
+      <h3 class="title">Primero, mapear todo el recorrido</h3>
+      <div class="prose">
+        <p>Antes de decidir qué iba a ser el lead magnet, mapeé el camino del anuncio a la llamada. Así, cada decisión posterior tuvo una función en el sistema, no solo en la página.</p>
+      </div>
+    </div>
+  </div>
+    <div class="feats">
+    <figure class="feat"><div class="stage fx" data-fx="map"></div><figcaption><b>El recorrido ideal</b> El camino del anuncio al cierre. Cada seguimiento existe para traer a un lead de vuelta.</figcaption></figure>
+    <figure class="feat"><div class="stage fx" data-fx="workflow"></div><figcaption><b>La automatización</b> Un workflow de GoHighLevel revisa quién agendó y sigue en contacto con quien no lo hizo.</figcaption></figure>
+  </div>
+  <div class="row after-stage">
+    <div class="lab"></div>
+    <div class="body">
+      <ul class="principles">
+        <li><h4>Un solo filtro</h4><p>La facturación anual, con la línea en USD 500K. Es lo único que define el camino de cada lead.</p></li>
+        <li><h4>Dos caminos</h4><p>Los founders calificados van a un calendario. El resto se queda con su blueprint y recibe emails de nurture.</p></li>
+        <li><h4>Sin callejones sin salida</h4><p>Quien no agenda recibe un recordatorio, y quien no se presenta, un mensaje para reagendar.</p></li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- ============ FORMAT ============ -->
+<section class="sec wrap" id="format" data-sec="El formato">
+  <div class="row">
+    <h2 class="lab">El formato</h2>
+    <div class="body">
+      <h3 class="title">Una muestra del producto real</h3>
+      <div class="prose">
+        <p>Analicé los lead magnets de los tres competidores más cercanos de Pareto. Todos terminaban en una llamada y todos le daban al founder algo personal: un nivel, un informe o un número. Ninguno le mostraba a la persona que realmente necesita.</p>
+        <p>Ahí estaba la oportunidad. El lead magnet es un quiz que arma el perfil de la mano derecha ideal del founder: estilo de trabajo, habilidades, herramientas y las primeras tres cosas para delegar. Es una muestra de lo que vende Pareto, en forma de software.</p>
+        <p>Una regla de honestidad guió todo el proyecto: la tarjeta es un perfil, nunca una persona. No tiene nombre, usa un avatar ilustrado y nunca da a entender que ya se encontró a alguien.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ DETAILS ============ -->
+<section class="sec wrap" id="getting-in" data-sec="Hacerlos entrar">
+  <div class="row">
+    <h2 class="lab">Detalles</h2>
+    <div class="body">
+      <h3 class="title">Hacerlos entrar</h3>
+      <p class="intro-p">Cinco anuncios para Meta, cada uno con su perfil y su ángulo, llevan a una sola página y un solo quiz.</p>
+    </div>
+  </div>
+  <div class="feats">
+    <figure class="feat"><div class="stage fx" data-fx="landing"></div><figcaption><b>La landing</b> Hecha con los design tokens de paretotalent.com, para que el funnel se sienta parte del sitio principal.</figcaption></figure>
+    <figure class="feat"><div class="stage fx" data-fx="form"></div><figcaption><b>El formulario</b> Un embed de GoHighLevel, adaptado a la marca, que recibe las respuestas del quiz en 9 campos ocultos.</figcaption></figure>
+  </div>
+</section>
+
+<section class="sec wrap" id="result" data-sec="El resultado">
+  <div class="row">
+    <div class="lab"></div>
+    <div class="body">
+      <h3 class="title">El resultado</h3>
+      <p class="intro-p">Diseñé primero el resultado y trabajé hacia atrás. Si una pregunta no cambiaba el resultado, la sacaba.</p>
+    </div>
+  </div>
+  <div class="feats">
+    <figure class="feat"><div class="stage fx" data-fx="math"></div><figcaption><b>Cuentas honestas</b> Horas por el valor de una hora. Dice “could hand off” (podrías delegar), nunca “will get back” (vas a recuperar).</figcaption></figure>
+    <figure class="feat"><div class="stage fx" data-fx="card"></div><figcaption><b>La tarjeta</b> Cada campo sale de una respuesta, así que el resultado se siente propio.</figcaption></figure>
+  </div>
+</section>
+
+<section class="sec wrap" id="next-step" data-sec="El siguiente paso">
+  <div class="row">
+    <div class="lab"></div>
+    <div class="body">
+      <h3 class="title">El siguiente paso</h3>
+      <p class="intro-p">El quiz regala el qué y el quién. La llamada vende el cómo y a las personas reales.</p>
+    </div>
+  </div>
+  <div class="feats">
+    <figure class="feat"><div class="stage fx" data-fx="lanes"></div><figcaption><b>Dos caminos</b> Los founders por encima de la línea ven un calendario. El resto recibe un primer paso para esta semana.</figcaption></figure>
+    <figure class="feat"><div class="stage fx" data-fx="email"></div><figcaption><b>El email</b> La tarjeta llega a la bandeja con la marca de Pareto, como parte del seguimiento que escribí para email y SMS.</figcaption></figure>
+  </div>
+</section>
+
+<!-- ============ TRY IT ============ -->
+<section class="sec wrap" id="try" data-sec="Probalo">
+  <div class="row">
+    <h2 class="lab">Probalo</h2>
+    <div class="body">
+      <h3 class="title">Armá un blueprint</h3>
+      <p class="intro-p">El funnel sigue online. Hacé el quiz hasta el formulario para ver cómo se siente.</p>
+      <div class="tools"><a class="tool" href="https://jsleadmagnet.netlify.app/" target="_blank" rel="noopener">Abrir el quiz en vivo ↗</a></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ OUTCOME ============ -->
+<section class="sec wrap" id="outcome" data-sec="Resultado">
+  <div class="row">
+    <h2 class="lab">Resultado</h2>
+    <div class="body">
+      <h3 class="title">Un funnel completo en cinco días</h3>
+      <div class="prose">
+        <p>Del primer mapa a un funnel publicado y probado pasaron cinco días, y salió en fecha: landing, quiz, formulario conectado al CRM, derivación por facturación, dos páginas de resultado, agenda, página de confirmación, la secuencia de seguimiento y cinco anuncios.</p>
+        <p>Lo entregué con un recorrido en Loom por todo el funnel, las piezas y la lista de mensajes.</p>
+        <p>Nunca corrió con tráfico real, así que no hay números de conversión. Si saliera a pauta, miraría primero el CTR por anuncio, el costo por lead, la tasa de calificados y la de opt-in a llamada agendada.</p>
+        <!-- TODO: add the contest result or judges' feedback if there is any -->
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ HINDSIGHT ============ -->
+<section class="sec wrap" id="hindsight" data-sec="Mirando atrás">
+  <div class="row">
+    <h2 class="lab">Mirando atrás</h2>
+    <div class="body">
+      <h3 class="title">Lo que aprendí</h3>
+      <div class="learn">
+        <article><h4>Lo que saqué hizo la mayor parte del trabajo</h4><p>Mi primer borrador tenía seis fuentes de tráfico, un camino de referidos, retargeting y un tercer camino de “no califica”. Un filtro, dos caminos y diez preguntas se podían lanzar en días, y el resto puede volver cuando haya datos.</p></article>
+        <article><h4>Un quiz puede sentirse como un examen</h4><p>Nadie hace clic en un anuncio con ganas de que lo evalúen. Las respuestas siguieron siendo las mismas, pero armar a una persona se sintió como avanzar, no como ser juzgado.</p></article>
+        <article><h4>El resultado no puede robarle su lugar a la llamada</h4><p>Un primer borrador le prometía al founder su perfil otra vez en la llamada, cuando el quiz ya se lo había dado. Separar el qué del cómo le dio a la llamada su propio motivo para existir.</p></article>
+      </div>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer class="foot wrap">
+  <a href="/es/">← Todo el trabajo</a>
+  <a href="https://jsleadmagnet.netlify.app/" target="_blank" rel="noopener">Probar el quiz en vivo ↗</a>
+</footer>
+
+<nav class="prog" id="prog" aria-label="Sections">
+  <div class="prog-menu" id="prog-menu"></div>
+  <button class="prog-btn" id="prog-btn" type="button" aria-expanded="false">
+    <svg class="ring" viewBox="0 0 20 20" aria-hidden="true"><circle cx="10" cy="10" r="7.5" class="ring-bg"/><circle id="prog-arc" cx="10" cy="10" r="7.5" class="ring-fg" stroke-dasharray="47.1" stroke-dashoffset="47.1"/></svg>
+    <span class="pct" id="prog-pct">0%</span>
+    <span id="prog-name">Intro</span>
+  </button>
+</nav>
+
+<script src="/studies/pareto/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,239 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Pareto Talent Case Study</title>
+<meta name="description" content="Designing a lead magnet built to book calls: a full quiz funnel for Pareto Talent. Case study by Joaquin Sampallo.">
+<link rel="alternate" hreflang="en" href="https://www.jsampallo.com.ar/studies/pareto/">
+<link rel="alternate" hreflang="es" href="https://www.jsampallo.com.ar/es/studies/pareto/">
+<script>
+// Spanish browsers go to /es/, unless the visitor already picked a language with the EN/ES link
+(function () {
+  var saved; try { saved = localStorage.getItem('lang'); } catch (e) {}
+  var langs = navigator.languages || [navigator.language];
+  var first = langs.filter(function (l) { return /^(en|es)/i.test(l); })[0] || 'en';
+  if ((saved || first).slice(0, 2).toLowerCase() === 'es') location.replace('/es/studies/pareto/' + location.hash);
+})();
+</script>
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png?v=2">
+<link rel="icon" type="image/png" sizes="512x512" href="/favicon-512.png?v=2">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600&family=Geist+Mono:wght@400;500&family=Plus+Jakarta+Sans:wght@500;600;700;800&family=DM+Sans:wght@400;500;600&family=Space+Grotesk:wght@500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/studies/pareto/styles.css">
+</head>
+<body>
+
+<header class="top" id="top">
+  <div class="wrap top-in">
+    <a href="/" class="top-link">← All work</a>
+    <a href="https://jsleadmagnet.netlify.app/" class="top-link dim" target="_blank" rel="noopener">Live quiz ↗</a>
+  </div>
+</header>
+
+<main>
+
+<!-- ============ INTRO ============ -->
+<section class="intro wrap" id="intro" data-sec="Intro">
+  <dl class="meta">
+    <div><dt>Client</dt><dd>Pareto Talent</dd></div>
+    <div><dt>Year</dt><dd>2026</dd></div>
+    <div><dt>Role</dt><dd>UX designer &amp; builder</dd></div>
+    <div><dt>Context</dt><dd>Bootcamp contest</dd></div>
+  </dl>
+  <h1>Designing a Lead Magnet Built to Book Calls</h1>
+  <p class="lede">A fully working quiz funnel, built for a bootcamp contest. Ten questions give a founder the spec of the person they should hire.</p>
+</section>
+
+<div class="wrap">
+  <figure class="stage stage-hero">
+    <div id="hero-demo"></div>
+  </figure>
+</div>
+
+<!-- ============ NUMBERS ============ -->
+<section class="wrap numbers">
+  <div class="num"><b>5 days</b><span>From the first map to a deployed funnel</span></div>
+  <div class="num"><b>10 questions</b><span>Each one fills a field on the result</span></div>
+  <div class="num"><b>2 lanes</b><span>One revenue line decides who gets a call</span></div>
+</section>
+
+<!-- ============ OVERVIEW ============ -->
+<section class="sec wrap" id="overview" data-sec="Overview">
+  <div class="row">
+    <h2 class="lab">Overview</h2>
+    <div class="body lead">
+      <p>I built this for a contest inside a bootcamp run by Pareto Talent. The brief was real: design the lead magnet for Pareto's own funnel, from the ad to the sales call.</p>
+      <p>Pareto finds, trains and places executive assistants from Latin America, which it calls right hands, with US founders doing $500K+ a year. Every sale starts with one conversation, the Matching Call.</p>
+      <p class="muted">It's a fully working lead magnet: live pages, a connected CRM, automations, emails and ads, all designed and built in code with Claude Code. It never ran on paid traffic, so this is a story about the thinking and the build, not about conversion numbers.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ============ PROBLEM ============ -->
+<section class="sec wrap" id="problem" data-sec="The Problem">
+  <div class="row">
+    <h2 class="lab">The Problem</h2>
+    <div class="body">
+      <h3 class="title">Cold Traffic With Nowhere to Land</h3>
+      <div class="facts">
+        <div><span class="fico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.700c.1.900.4 1.800.7 2.700a2 2 0 0 1-.5 2.100L8 9.800a16 16 0 0 0 6 6l1.300-1.300a2 2 0 0 1 2.100-.4c.9.3 1.800.6 2.700.7a2 2 0 0 1 1.700 2Z"/></svg></span><h4>Too soon for a call</h4><p>Pareto wanted paid ads to founders who had never heard of it. A cold founder isn't ready to book a sales call.</p></div>
+        <div><span class="fico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.970 5.700a1.940 1.940 0 0 1-2.060 0L2 7"/></svg></span><h4>No reason to opt in</h4><p>Nothing sat between the ad and the sales team, so there was no reason to leave an email.</p></div>
+        <div><span class="fico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M10 20a1 1 0 0 0 .55.890l2 1A1 1 0 0 0 14 21v-7a2 2 0 0 1 .520-1.340L21.740 4.670A1 1 0 0 0 21 3H3a1 1 0 0 0-.740 1.670l7.220 7.990A2 2 0 0 1 10 14z"/></svg></span><h4>No filter</h4><p>Nothing told a qualified founder from a curious one before the team spent time on a call.</p></div>
+      </div>
+      <div class="prose">
+        <p>Founders don't put off this hire because they doubt they need help. They put it off because they don't know who to hire or what they'd hand over. One Pareto client said it better than I could: “The reason I need them is because I don't have time. And the reason I can't find them is because I don't have time.”</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ JOURNEY ============ -->
+<section class="sec wrap" id="journey" data-sec="The Journey">
+  <div class="row">
+    <h2 class="lab">Approach</h2>
+    <div class="body">
+      <h3 class="title">Map the Whole Journey First</h3>
+      <div class="prose">
+        <p>Before deciding what the lead magnet would be, I mapped the path from the ad to the call. That gave every later decision a job to do in the system, not just on the page.</p>
+      </div>
+    </div>
+  </div>
+    <div class="feats">
+    <figure class="feat"><div class="stage fx" data-fx="map"></div><figcaption><b>The ideal journey</b> The path from the ad to the close. Every follow-up exists to bring a lead back to it.</figcaption></figure>
+    <figure class="feat"><div class="stage fx" data-fx="workflow"></div><figcaption><b>The automation</b> A GoHighLevel workflow checks who booked and keeps following up with who didn't.</figcaption></figure>
+  </div>
+  <div class="row after-stage">
+    <div class="lab"></div>
+    <div class="body">
+      <ul class="principles">
+        <li><h4>One qualifier</h4><p>Annual revenue, with the line at $500K. It's the only thing that routes a lead.</p></li>
+        <li><h4>Two lanes</h4><p>Qualified founders go to a calendar. Everyone else keeps the blueprint and gets nurture emails.</p></li>
+        <li><h4>No dead ends</h4><p>Founders who don't book get a nudge, and no-shows get a rebook message.</p></li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- ============ FORMAT ============ -->
+<section class="sec wrap" id="format" data-sec="The Format">
+  <div class="row">
+    <h2 class="lab">The Format</h2>
+    <div class="body">
+      <h3 class="title">A Sample of the Real Product</h3>
+      <div class="prose">
+        <p>I broke down the lead magnets of Pareto's three closest competitors. All of them ended at a call, and all of them handed the founder something personal: a level, a report or a number. None of them showed the founder the person they actually need.</p>
+        <p>That became the opening. The lead magnet is a quiz that builds a spec of the founder's ideal right hand: work style, skills, tools and the first three things to hand off. It's a sample of what Pareto sells, delivered as software.</p>
+        <p>One honesty rule held for the whole project: the card is a spec, never a person. It has no name, uses an illustrated avatar and never implies that matches have been found.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ DETAILS ============ -->
+<section class="sec wrap" id="getting-in" data-sec="Getting Them In">
+  <div class="row">
+    <h2 class="lab">Details</h2>
+    <div class="body">
+      <h3 class="title">Getting Them In</h3>
+      <p class="intro-p">Five Meta ads, each with its own persona and angle, lead to one page and one quiz.</p>
+    </div>
+  </div>
+  <div class="feats">
+    <figure class="feat"><div class="stage fx" data-fx="landing"></div><figcaption><b>The landing page</b> Built with paretotalent.com's design tokens, so the funnel feels like part of the main site.</figcaption></figure>
+    <figure class="feat"><div class="stage fx" data-fx="form"></div><figcaption><b>The contact form</b> A GoHighLevel embed, restyled to match, that receives the quiz answers as 9 hidden fields.</figcaption></figure>
+  </div>
+</section>
+
+<section class="sec wrap" id="result" data-sec="The Result">
+  <div class="row">
+    <div class="lab"></div>
+    <div class="body">
+      <h3 class="title">The Result</h3>
+      <p class="intro-p">I designed the result first and worked backwards. If a question didn't change the output, it was cut.</p>
+    </div>
+  </div>
+  <div class="feats">
+    <figure class="feat"><div class="stage fx" data-fx="math"></div><figcaption><b>Honest math</b> Hours times the value of an hour. It says “could hand off”, never “will get back”.</figcaption></figure>
+    <figure class="feat"><div class="stage fx" data-fx="card"></div><figcaption><b>The spec card</b> Every field comes from an answer, so the result feels like theirs.</figcaption></figure>
+  </div>
+</section>
+
+<section class="sec wrap" id="next-step" data-sec="The Next Step">
+  <div class="row">
+    <div class="lab"></div>
+    <div class="body">
+      <h3 class="title">The Next Step</h3>
+      <p class="intro-p">The quiz gives away the what and the who. The call sells the how and the actual people.</p>
+    </div>
+  </div>
+  <div class="feats">
+    <figure class="feat"><div class="stage fx" data-fx="lanes"></div><figcaption><b>Two lanes</b> Founders above the line get a calendar. Everyone else gets a first move for this week.</figcaption></figure>
+    <figure class="feat"><div class="stage fx" data-fx="email"></div><figcaption><b>The email</b> The card lands in the inbox on brand, one step of the follow-up I wrote for email and SMS.</figcaption></figure>
+  </div>
+</section>
+
+<!-- ============ TRY IT ============ -->
+<section class="sec wrap" id="try" data-sec="Try It">
+  <div class="row">
+    <h2 class="lab">Try It</h2>
+    <div class="body">
+      <h3 class="title">Build a Blueprint</h3>
+      <p class="intro-p">The funnel is still online. Take the quiz up to the form to see how it feels.</p>
+      <div class="tools"><a class="tool" href="https://jsleadmagnet.netlify.app/" target="_blank" rel="noopener">Open the live quiz ↗</a></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ OUTCOME ============ -->
+<section class="sec wrap" id="outcome" data-sec="Outcome">
+  <div class="row">
+    <h2 class="lab">Outcome</h2>
+    <div class="body">
+      <h3 class="title">A Full Funnel in Five Days</h3>
+      <div class="prose">
+        <p>From the first map to a deployed, tested funnel took five days, and it shipped on deadline: landing page, quiz, CRM-connected form, revenue routing, two result pages, booking, a confirmation page, the follow-up sequence and five ads.</p>
+        <p>I handed it in with a Loom walkthrough of the whole journey, the creatives and the message list.</p>
+        <p>It never ran on real traffic, so there are no conversion numbers. If it went live, I'd start with click-through per ad, cost per lead, qualified rate and opt-in to booked rate.</p>
+        <!-- TODO: add the contest result or judges' feedback if there is any -->
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ HINDSIGHT ============ -->
+<section class="sec wrap" id="hindsight" data-sec="Hindsight">
+  <div class="row">
+    <h2 class="lab">Hindsight</h2>
+    <div class="body">
+      <h3 class="title">What I Learned</h3>
+      <div class="learn">
+        <article><h4>The cuts did the most work</h4><p>My first draft had six traffic sources, a referral lane, retargeting and a third “not a fit” lane. One qualifier, two lanes and ten questions could ship in days, and the rest can come back once there's data.</p></article>
+        <article><h4>A quiz can feel like a test</h4><p>Nobody clicks an ad hoping to get graded. Every answer stayed the same, but building a person felt like momentum instead of judgment.</p></article>
+        <article><h4>The result can't steal the call</h4><p>An early draft promised the founder their profile again on the call, after the quiz had already given it away. Separating the what from the how gave the call its own reason to exist.</p></article>
+      </div>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer class="foot wrap">
+  <a href="/">← All work</a>
+  <a href="https://jsleadmagnet.netlify.app/" target="_blank" rel="noopener">Try the live quiz ↗</a>
+</footer>
+
+<nav class="prog" id="prog" aria-label="Sections">
+  <div class="prog-menu" id="prog-menu"></div>
+  <button class="prog-btn" id="prog-btn" type="button" aria-expanded="false">
+    <svg class="ring" viewBox="0 0 20 20" aria-hidden="true"><circle cx="10" cy="10" r="7.5" class="ring-bg"/><circle id="prog-arc" cx="10" cy="10" r="7.5" class="ring-fg" stroke-dasharray="47.1" stroke-dashoffset="47.1"/></svg>
+    <span class="pct" id="prog-pct">0%</span>
+    <span id="prog-name">Intro</span>
+  </button>
+</nav>
+
+<script src="/studies/pareto/main.js"></script>
+</body>
+</html>

@@ -106,6 +106,17 @@ a.ix h4 { transition: color .2s; }
 a.ix:hover h4 { color: var(--muted); }
 a.ix .ix-s { color: var(--fg); }
 
+/* ---------- 3D & retouching teaser ---------- */
+.vis { position: relative; display: block; text-decoration: none; }
+.vis-g { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 12px; margin-top: 32px; }
+.vis-g img { display: block; width: 100%; aspect-ratio: 1; border-radius: var(--r); object-fit: cover; background: var(--stage); transition: opacity .2s; }
+.vis:hover .vis-g img { opacity: .88; }
+.vis-t { display: flex; flex-wrap: wrap; align-items: baseline; justify-content: space-between; gap: 8px 24px; margin-top: 16px; font-size: 18px; color: var(--muted); }
+.vis .more { margin-top: 0; color: var(--fg); }
+.vis .more::after { content: none; }
+.vis:hover .more { border-color: var(--fg); }
+.ns { display: none; }
+
 /* ---------- approach ---------- */
 .principles { list-style: none; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 24px; margin-top: 44px; }
 .principles li { padding-top: 18px; border-top: 1px solid var(--line); }
@@ -137,7 +148,13 @@ a.ix .ix-s { color: var(--fg); }
 @media (max-width: 640px) {
   .wrap { padding-left: max(16px, env(safe-area-inset-left, 0px)); padding-right: max(16px, env(safe-area-inset-right, 0px)); }
   body { font-size: 16px; }
-  .top-nav { gap: 16px; }
+  .top-nav { gap: 12px; }
+  .top-nav .opt { display: none; } /* no room next to the name: About is one scroll away */
+  .top-in > .top-link, .top-nav a { white-space: nowrap; }
+  .nl { display: none; }
+  .ns { display: inline; }
+  .vis-g { gap: 8px; margin-top: 24px; }
+  .vis-g img { border-radius: 10px; }
   .hero { padding-top: 20px; padding-bottom: 32px; }
   .status { font-size: 12px; }
   .hero-b { padding-top: 64px; }

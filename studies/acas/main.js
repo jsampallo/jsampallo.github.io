@@ -11,11 +11,9 @@ const reduced = matchMedia('(prefers-reduced-motion: reduce)').matches;
 // Page chrome around the mockups (the mockups themselves are the client's real site, always in English)
 const T = document.documentElement.lang.startsWith('es')
   ? { before: 'Antes', after: 'Después', dirs: ['Paleta vieja', 'Degradé suave'],
-      bands: ['Hero fuerte', 'Lectura', 'Corte', 'Lectura', 'Cierre'], pages: ['Inicio', 'Inspección de moho', 'Limpieza de ductos'],
-      review: [['Concepto', 'Armado con Claude'], ['Imagen', 'Generada en Nano Banana Pro'], ['Chequeo', 'Comparada con el equipo real']] }
+      review: [['Concepto', 'Armado con Claude'], ['Imagen', 'Generada en Nano Banana Pro']] }
   : { before: 'Before', after: 'After', dirs: ['Old palette', 'Soft gradient'],
-      bands: ['Strong hero', 'Reading', 'Break', 'Reading', 'Close'], pages: ['Home', 'Mold Inspection', 'Air Duct Cleaning'],
-      review: [['Concept', 'Worked out with Claude'], ['Image', 'Generated in Nano Banana Pro'], ['Check', 'Compared with the real equipment']] };
+      review: [['Concept', 'Worked out with Claude'], ['Image', 'Generated in Nano Banana Pro']] };
 
 // Loops only run while their element is on screen and the tab is visible
 const watchers = new Map();
@@ -34,6 +32,7 @@ const P = {
   drop: '<path d="M12 22a7 7 0 0 0 7-7c0-2-1-3.9-3-5.5s-3.5-4-4-6.5c-.5 2.500-2 4.900-4 6.500S5 13 5 15a7 7 0 0 0 7 7z"/>',
   heart: '<path d="M19 14c1.500-1.500 3-3.200 3-5.500A5.500 5.500 0 0 0 16.500 3c-1.800 0-3 .5-4.500 2-1.500-1.500-2.700-2-4.500-2A5.500 5.500 0 0 0 2 8.500c0 2.300 1.500 4 3 5.500l7 7Z"/>',
   check: '<path d="M20 6 9 17l-5-5"/>',
+  chev: '<path d="m9 18 6-6-6-6"/>',
   badge: '<path d="M3.900 8.600a4 4 0 0 1 4.700-4.700 4 4 0 0 1 6.800 0 4 4 0 0 1 4.700 4.700 4 4 0 0 1 0 6.800 4 4 0 0 1-4.700 4.700 4 4 0 0 1-6.800 0 4 4 0 0 1-4.700-4.700 4 4 0 0 1 0-6.800Z"/><path d="m9 12 2 2 4-4"/>',
 };
 const ic = (n, s = 16, w = 2) => `<svg class="i" width="${s}" height="${s}" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="${w}" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">${P[n]}</svg>`;
@@ -292,7 +291,7 @@ const FX = {
           <p>We use professional sampling methods and ISO/IEC 17025:2017 accredited third-party laboratory analysis, led by Certified Industrial Hygienists and nationally recognized mycology experts, to identify mold types, measure spore concentrations, and compare indoor levels to outdoor baselines — so you receive accurate, defensible data, not misleading results.</p>
         </div>
         <div class="sc-new">
-          <h4>We Only Test, and That Keeps Us Honest</h4>
+          <h4>We Only Test, and<br>That Keeps Us Honest</h4>
           <hr>
           <p>When you are worried about the air inside your home, the last thing you need is someone turning your concern into a bigger project.</p>
           <p>Our work is built around clear evidence, independent analysis, and honest interpretation.</p>
@@ -312,55 +311,108 @@ const FX = {
     });
   },
 
-  // The homepage as bands: dark, light, gradient, light, dark
-  rhythm(fx) {
-    const skel = {
-      hero: '<i class="w6"></i><i class="w4"></i><i class="btn"></i>',
-      white: '<span class="pic"></span><div><i class="w9"></i><i class="w9"></i><i class="w6"></i></div>',
-      grad: '<u></u><u></u><u></u>',
-      steps: '<s></s><s></s><s></s><s></s>',
-      dark: '<i class="w6"></i><i class="w8"></i>',
+  // The four steps of the service: one card, morphing from step to step
+  steps(fx) {
+    const S = [
+      ['Free Estimate<br>Over The Phone', 'Call us for a transparent price and a quick read on whether testing makes sense for your situation.'],
+      ['On-Site<br>Inspection', 'A trained inspector visits your home, collects air and surface samples, and looks for hidden moisture with thermal imaging, no walls opened.'],
+      ['Accredited<br>Lab Analysis', "Your samples go to an independent, accredited lab that names what's in the air, measures how much, and compares it against the outdoor baseline."],
+      ['Virtual<br>Results Review', 'We sit down with you on a video call to walk through the report so you know what the numbers mean and what your options are.'],
+    ];
+    const art = mount(fx, `
+      <div class="st">
+        <div class="st-top"><span class="st-n"><span class="st-r">${S.map((_, i) => `<b>${i + 1}</b>`).join('')}</span></span><span class="st-go">${ic('chev', 24, 2)}</span></div>
+        <div class="st-t"><h4></h4><p></p></div>
+      </div>`, 'ms');
+    const num = $('.st-r', art), go = $('.st-go', art), t = $('.st-t', art), h = $('h4', art), p = $('p', art);
+    let n = 0;
+    const split = html => html.split('<br>').map(l => l.split(' ').map(w => `<span style="--i:${n++}">${w}</span>`).join(' ')).join('<br>');
+    const fill = i => { n = 0; h.innerHTML = split(S[i][0]); p.innerHTML = split(S[i][1]); };
+    const show = async i => {
+      num.style.setProperty('--n', i);
+      t.classList.add('out'); await sleep(300);
+      fill(i); t.classList.add('pre'); t.classList.remove('out'); void t.offsetWidth;
+      t.classList.remove('pre');
     };
-    const rows = [['hero', 'dk'], ['white', ''], ['grad', 'gr'], ['steps', ''], ['dark', 'dk end']];
-    mount(fx, `<div class="ry">${rows.map(([k, c], i) => `<div class="ry-b ${c} k-${k}">${skel[k]}</div><p class="ry-t">${T.bands[i]}</p>`).join('')}</div>`, 'sm');
+    fill(0);
+    if (reduced) return;
+    let at = 0;
+    loop(fx, async () => {
+      await wait(fx, 3000);
+      tap(fx, go); go.classList.add('press'); await sleep(200); go.classList.remove('press');
+      at = (at + 1) % S.length; await show(at);
+    });
   },
 
-  // The new type pairing, with the site's real headline
-  type(fx) {
-    mount(fx, `
-      <div class="ty">
-        <div class="ty-a">
-          <div><b>Aa</b><span>Roboto</span></div>
-          <div class="sf"><b>Aa</b><span>Instrument Serif</span></div>
+  // The team on a wheel: one card in focus, the next ones turning in above and below
+  team(fx) {
+    const S = [
+      ['Meg West', 'CEO and Landscape Architect', 'I combine my environmental management and landscape design background to tackle mold-related health issues and help build healthier communities.', 'meg'],
+      ['Sid Zagri', 'President and Expert Mold Inspector', "I'm passionate about uncovering the root causes of mold and moisture problems to safeguard your indoor environment and improve your wellbeing.", 'sid'],
+      ['Drew', 'Indoor Environment Specialist', 'My background in atmospheric sciences drives my passion for understanding indoor air quality. I use advanced methods to make every inspection thorough, comfortable, and respectful.', 'drew'],
+      ['Clarissa', 'Business Coordinator', 'I love helping clients feel supported from the very first call. My goal is to keep the process clear and organized, so every person feels heard and cared for.', 'clarissa'],
+    ];
+    const art = mount(fx, `<div class="tm">${S.map(([name, role, quote, img]) => `
+      <article class="tm-c">
+        <img class="tm-ph" src="/studies/acas/images/staff-${img}.webp" alt="" width="160" height="160" loading="lazy" decoding="async">
+        <div class="tm-b">
+          <img class="tm-lg" src="/studies/acas/images/acas-logo.svg" alt="" width="25" height="24">
+          <h4>${name}</h4><b>${role}</b><p>“${quote}”</p>
         </div>
-        <h4>Independent Mold Testing<em>in Santa Barbara &amp; Ventura Counties.</em></h4>
-        <p>Clear Answers. Healthy Air. Peace of Mind.</p>
-      </div>`, 'sm');
+      </article>`).join('')}</div>`, 'mt', 14);
+    const cards = $$('.tm-c', art);
+    const place = at => cards.forEach((c, i) => { const d = (i - at + 4) % 4; c.dataset.p = d === 3 ? -1 : d; });
+    place(0);
+    if (reduced) return;
+    let at = 0;
+    loop(fx, async () => {
+      await wait(fx, 3200);
+      // The top card leaves over the top, then waits out of sight at the bottom
+      const top = cards.find(c => c.dataset.p === '-1');
+      at = (at + 1) % 4; place(at); top.dataset.p = -2;
+      await sleep(950);
+      art.classList.add('snap'); top.dataset.p = 2; void art.offsetWidth; art.classList.remove('snap');
+    });
   },
 
-  // How the hero images were made
+  // The AI hero reel, edge to edge, with how it was made on top
   review(fx) {
-    mount(fx, `
-      <div class="rv">
-        <img src="/studies/acas/images/ai-technician.jpg" alt="" width="1200" height="705" loading="lazy" decoding="async">
+    fx.innerHTML = `
+      <div class="m rv">
+        <img src="/studies/acas/images/ai-heroes.webp" alt="" width="1200" height="705" loading="lazy" decoding="async">
         <ul>${T.review.map(([k, v]) => `<li><span class="rv-c">${ic('check', 13, 3)}</span><b>${k}</b><em>${v}</em></li>`).join('')}</ul>
-      </div>`, 'sm');
+      </div>`;
   },
 
-  // The homepage system on three real pages (real page titles; same section pattern, checked on the live site)
+  // One template in close-up: each page contracts into a stripe as the next one opens (real page titles and copy).
+  // Sized by width alone, with even space at the top and sides: the pages run past the bottom of the stage
   pages(fx) {
-    const P = [['Independent Mold Testing', 3, '#2b2926'], ['House Mold Inspection', 2, '#30343a'], ['Residential Air Duct Cleaning', 3, '#2f3a3d']];
-    mount(fx, `<div class="tp">${P.map(([t, n, c], i) => `
-      <figure>
-        <div class="tp-p">
-          <div class="tp-h" style="background:${c}"><span></span><b>${t}</b><i></i></div>
-          <div class="tp-w"><u></u><u></u><u></u></div>
-          <div class="tp-g">${'<s></s>'.repeat(n)}</div>
-          <div class="tp-d"><u></u><u></u></div>
-          <div class="tp-w"><u></u><u></u></div>
+    const P = [
+      ['Independent Mold Testing', 'in Santa Barbara &amp; Ventura Counties.', 'new-hero.webp', 'We Only Test, and<br>That Keeps Us Honest', 'When you are worried about the air inside your home, the last thing you need is someone turning your concern into a bigger project.', 'When the Air Starts Raising Questions'],
+      ['House Mold Inspection', 'for Clear Answers', 'ai-technician.webp', 'Home Should Be the One Place<br>Your Lungs Take a Break', 'Home is where you let your guard down. You stop thinking about what you touch or what you breathe, and you trust the place to take care of you.', 'What Bad Air Is Doing to Your Body'],
+      ['Residential Air Duct Cleaning', 'A Cleaner HVAC System.', 'ai-duct.webp', 'Clean Air Begins<br>Inside the Ductwork', 'A healthy home starts with clean air. Our residential air duct cleaning service helps improve indoor air quality and support HVAC performance.', 'Signs It May Be Time to Clean Your Ductwork'],
+    ];
+    fx.innerHTML = `<div class="art m tz">${P.map(([t, em, img, head, text, next], i) => `
+      <section class="tz-p ${i ? '' : 'on'}">
+        <div class="tz-pg">
+          <div class="tz-h" style="background-image:url('/studies/acas/images/${img}')">
+            <div class="tz-top"><img src="/studies/acas/images/acas-logo.svg" alt="" width="25" height="24"><span>(805) 334-8498</span></div>
+            <h4>${t}<em>${em}</em></h4>
+          </div>
+          <div class="tz-w"><h4>${head}</h4><hr><p>${text}</p></div>
+          <div class="tz-g"><h4>${next}</h4></div>
         </div>
-        <figcaption>${T.pages[i]}</figcaption>
-      </figure>`).join('')}</div>`, 'sm');
+      </section>`).join('')}</div>`;
+    const art = fx.firstElementChild, ps = $$('.tz-p', art);
+    const fit = () => { const g = Math.round(fx.clientWidth * .075); art.style.top = `${g}px`; fx.style.setProperty('--s', ((fx.clientWidth - g * 2) / art.offsetWidth).toFixed(3)); };
+    new ResizeObserver(fit).observe(fx); fit();
+    if (reduced) return;
+    let at = 0;
+    loop(fx, async () => {
+      await wait(fx, 3600);
+      at = (at + 1) % ps.length;
+      ps.forEach((p, k) => p.classList.toggle('on', k === at));
+    });
   },
 };
 
